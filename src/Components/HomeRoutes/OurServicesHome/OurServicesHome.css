@@ -1,0 +1,71 @@
+.OurServicesHomeContainer {
+    background-image: url("https://cdn.prod.website-files.com/66f7e75deaee2c0e17b0887d/670d57cf79fd0b4bdb83d391_Background%203%201.svg");
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
+}
+
+
+
+.OurServicesCollapseContainer {
+    max-width: 90%;
+    margin-left: auto;
+}
+
+.OurServicesCollapseContainer .ant-collapse {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: transparent;
+    border-radius: 0px;
+}
+
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-item .ant-collapse-expand-icon {
+    display: none;
+}
+
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-item-active  .ant-collapse-header-text svg{
+    rotate: 45deg;
+    transition: .5s;
+}
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-header-text svg {
+    position: absolute;
+    right: 20px;
+    font-size: 50px;
+    transition: .5s;
+    color:#cfb43ba3 ;
+}
+
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-header-text .flex {
+    display: flex;
+    align-items: center;
+}
+
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-header {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    padding: 50px 30px;
+    text-transform: uppercase;
+}
+
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-content {
+    border-top: 0px;
+    background-color: transparent !important;
+}
+
+.serviceImageContainer img {
+    width: 170px;
+    height: 70%;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+
+.serviceImageContainer{
+    display: flex;
+    align-items: center;
+}

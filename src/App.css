@@ -1,0 +1,38 @@
+/* Logo background with white background */
+.logo-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  opacity: 0; /* Start with 0 opacity */
+  animation: logoFadeIn 2s ease-in-out forwards; /* 2 second fade-in animation */
+}
+
+/* Logo fade-in animation */
+@keyframes logoFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px); /* Start slightly smaller and lower */
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05) translateY(-5px); /* Slight bounce effect */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0); /* Final position and size */
+  }
+}

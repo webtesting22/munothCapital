@@ -1,0 +1,55 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Modal } from 'antd'
+import HomeRoute from './Components/HomeRoutes/HomeRoute'
+import ReloadModelsfirst from './Components/ReloadModels/ReloadModelsfirst'
+import ReloadModelsSecond from './Components/ReloadModels/ReloadModelsSecond'
+
+function App() {
+  const [count, setCount] = useState(0)
+  const [showSecondModal, setShowSecondModal] = useState(false)
+  const [modalsClosed, setModalsClosed] = useState(false)
+
+  const handleFirstModalClose = () => {
+    console.log("First modal closed, showing second modal")
+    setShowSecondModal(true)
+  }
+
+  const handleSecondModalClose = () => {
+    console.log("Second modal closed")
+    setShowSecondModal(false)
+    setModalsClosed(true) // Mark that all modals are closed
+  }
+
+  return (
+    <>
+      <BrowserRouter>
+        {/* Logo background when modals are active */}
+        {!modalsClosed && (
+          <div className="logo-background">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/munoth_logo.jpeg"
+              alt="Munoth Capital Logo"
+              className="centered-logo"
+            />
+          </div>
+        )}
+
+        <ReloadModelsfirst onClose={handleFirstModalClose} />
+        <ReloadModelsSecond isOpen={showSecondModal} onClose={handleSecondModalClose} />
+
+        {/* Only render main components after modals are closed */}
+        {modalsClosed && (
+          <Routes>
+            <Route path="/" element={<HomeRoute />} />
+          </Routes>
+        )}
+      </BrowserRouter>
+    </>
+  )
+}
+
+export default App

@@ -1,0 +1,121 @@
+.AboutHomeContainer {
+    position: relative;
+    /* background-color: ; */
+    background-image: url("https://cdn.prod.website-files.com/66f7e75deaee2c0e17b0887d/670d54d26bda66dca6c8c77d_Background%203.svg");
+    background-size: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+}
+
+/* .BackgroundAttachImageContainer{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+} */
+
+.BackgroundAttachImageContainer img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.MarqueeTagContainer {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    padding: 15px 0;
+    /* border-top: 2px solid #e9ecef;
+    border-bottom: 2px solid #e9ecef; */
+    position: relative;
+}
+
+/* Left side fade effect */
+.MarqueeTagContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Right side fade effect */
+.MarqueeTagContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, #FAFAF9 0%, #FAFAF9 50%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-content {
+    display: flex;
+    width: max-content;
+    animation: marquee 90s linear infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.marquee-text {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #6c757d;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+}
+
+.marquee-text span {
+    margin-right: 20px;
+}
+
+/* Pause animation on hover */
+.marquee-content:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.FlexContainer{
+    display: flex;
+    gap: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .MarqueeTagContainer {
+        padding: 10px 0;
+    }
+
+    .marquee-text {
+        font-size: 12px;
+    }
+
+    .marquee-text span {
+        margin-right: 15px;
+    }
+
+    .marquee-content {
+        animation-duration: 45s;
+        /* Faster on mobile */
+    }
+}

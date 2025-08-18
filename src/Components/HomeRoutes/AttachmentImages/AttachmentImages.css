@@ -1,0 +1,61 @@
+.AttachmentBackgroundImagesParallax {
+    position: relative;
+}
+
+.AttachmentBackgroundImagesParallax img {
+    width: 100%;
+}
+
+.TextLeftSidetop {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    z-index: 5;
+}
+
+.TextLeftSidetop h2 span {
+    color: rgba(255, 255, 255, 0.759);
+    padding: 10px;
+}
+
+.AttachmentBackgroundImagesParallax::before {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.271);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+.AttachmentBackgroundImagesParallax img {
+    margin-top: -200px;
+    min-height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media (min-width:1200px) and (max-width:1500px) {
+    .AttachmentBackgroundImagesParallax {
+        min-height: 700px;
+        max-height: 700px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        position: relative;
+    }
+}
+
+@media (min-width:1550px) and (max-width:3000px) {
+    .AttachmentBackgroundImagesParallax {
+        min-height: 800px;
+        max-height: 800px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        position: relative;
+    }
+}
