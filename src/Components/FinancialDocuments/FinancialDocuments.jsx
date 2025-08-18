@@ -134,10 +134,10 @@ const FinancialDocuments = () => {
             try {
                 const pdfUrl = process.env.PUBLIC_URL + document.filePath;
                 console.log(`Opening PDF: ${pdfUrl}`);
-                
+
                 // Try to open in new tab first
                 const newWindow = window.open(pdfUrl, '_blank');
-                
+
                 // If that fails, show in modal
                 if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
                     setPdfViewer({
@@ -168,12 +168,12 @@ const FinancialDocuments = () => {
                 link.href = process.env.PUBLIC_URL + document.filePath;
                 link.download = document.title + '.pdf';
                 link.target = '_blank';
-                
+
                 // Append to body, click, and remove
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-                
+
                 console.log(`Downloading: ${document.title} from ${link.href}`);
             } catch (error) {
                 console.error('Download error:', error);
