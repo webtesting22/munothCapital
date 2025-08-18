@@ -7,13 +7,13 @@ const ReloadModelsfirst = ({ onClose }) => {
 
     useEffect(() => {
         console.log("ReloadModelsfirst component mounted");
-        
+
         // Show modal after 2 seconds
         const timer = setTimeout(() => {
             console.log("2 seconds passed, showing modal");
             setIsModalOpen(true);
         }, 2000);
-        
+
         // Cleanup timer
         return () => clearTimeout(timer);
     }, []);
@@ -80,7 +80,7 @@ const ReloadModelsfirst = ({ onClose }) => {
             </div>
 
             <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                <button 
+                <button
                     onClick={handleClose}
                     style={{
                         background: 'linear-gradient(135deg, #059669, #047857)',

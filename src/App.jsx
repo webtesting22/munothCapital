@@ -7,6 +7,8 @@ import { Modal } from 'antd'
 import HomeRoute from './Components/HomeRoutes/HomeRoute'
 import ReloadModelsfirst from './Components/ReloadModels/ReloadModelsfirst'
 import ReloadModelsSecond from './Components/ReloadModels/ReloadModelsSecond'
+import WhatsAppBtn from './Components/WhatsAppBtn/WhatsAppBtn'
+import FinancialDocuments from './Components/FinancialDocuments/FinancialDocuments'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,11 +44,15 @@ function App() {
         <ReloadModelsSecond isOpen={showSecondModal} onClose={handleSecondModalClose} />
 
         {/* Only render main components after modals are closed */}
-        {modalsClosed && (
+        {/* {modalsClosed && ( */}
           <Routes>
             <Route path="/" element={<HomeRoute />} />
+            <Route path="/financial-documents" element={<FinancialDocuments />} />
           </Routes>
-        )}
+        {/* )} */}
+
+        {/* WhatsApp Button - Always visible */}
+        <WhatsAppBtn />
       </BrowserRouter>
     </>
   )
