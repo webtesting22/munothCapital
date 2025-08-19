@@ -12,6 +12,7 @@ import FinancialDocuments from './Components/FinancialDocuments/FinancialDocumen
 import NavigationBar from './Components/OtherRoutes/NavigationBar/NavigationBar'
 import Services from './Components/OtherRoutes/Services/Services'
 import About from './Components/OtherRoutes/About/About'
+import Footer from './Components/OtherRoutes/Footer/Footer'
 
 // ScrollToTop component to scroll to top on route change
 function ScrollToTop() {
@@ -76,6 +77,7 @@ function App() {
 
         {/* WhatsApp Button - Always visible */}
         <WhatsAppBtn />
+        <Footer />
       </BrowserRouter>
     </>
   )

@@ -1,0 +1,44 @@
+.footer-content {
+    min-height: 300px;
+    padding: 50px;
+}
+
+.AdressboxContainer {
+    display: flex;
+    justify-content: end;
+}
+
+.AdressboxContainer>div {
+  max-width: 800px;
+}
+
+.ContactFormContainer .ant-form-item {
+    margin-bottom: 10px !important;
+}
+
+.ContactFormContainer .ant-form-item .ant-row .ant-col {
+    padding-bottom: 0px !important;
+}
+
+
+.ContactInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.ContactInfoContainer p {
+    color: black !important;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 0px 10px;
+    }
+
+    .AdressboxContainer {
+        display: flex;
+        justify-content: start;
+    }
+}
