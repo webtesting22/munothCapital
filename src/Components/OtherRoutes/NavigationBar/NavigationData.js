@@ -6,17 +6,24 @@ export const navigationData = [
         description: 'Learn more about Munoth Capital'
     },
     {
+        id: 'services',
+        title: 'Services',
+        path: '/services',
+        description: 'Our services'
+    },
+    {
         id: 'financial-documents',
         title: 'Financial Documents',
         path: '/financial-documents',
         description: 'Our financial documents'
     },
     {
-        id: 'services',
-        title: 'Services',
-        path: '/services',
-        description: 'Our services'
+        id: 'Compliance',
+        title: 'Compliance',
+        path: '/compliance',
+        description: 'Contact us'
     },
+    
     
 ];
 
