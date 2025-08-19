@@ -5,7 +5,7 @@ import "./WhatsAppBtn.css";
 const WhatsAppBtn = () => {
     const handleWhatsAppClick = () => {
         // Replace with your actual WhatsApp number
-        const phoneNumber = "919974017401"; // Added country code +91 for India
+        const phoneNumber = "919033003188"; // Added country code +91 for India
         const message = "Hello! I'd like to know more about Munoth Capital.";
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
