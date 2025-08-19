@@ -39,14 +39,11 @@ const FinancialDocuments = () => {
             "2015"
         ],
         "Annual Results": [
-            "2023-24",
-            "2022-23",
-            "2021-22"
+            "Audited Financial Results",
+            "Annual Reports"
         ],
         "Documents and Others": [
-            "Policies",
-            "Corporate Documents",
-            "Other Documents"
+            "Policies"
         ]
     };
 
@@ -152,31 +149,45 @@ const FinancialDocuments = () => {
         "2016": [
             {
                 date: "31 Dec, 2016",
-                title: "Share holding pattern for quarter ending 31st December 2016",
-                size: "438 KB",
+                title: "Notice for Annual General Meeting",
+                size: "396 KB",
                 type: "PDF",
-                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 31st December 2016.pdf"
-            },
-            {
-                date: "30 Sep, 2016",
-                title: "Shareholding Pattern for the Quarter ended on 30th Sep 2016",
-                size: "483 KB",
-                type: "PDF",
-                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th Sep 2016.pdf"
+                filePath: "/Documents/Announcements/2016/Notice for Annual General Meeting.pdf"
             },
             {
                 date: "30 Jun, 2016",
-                title: "Shareholding Pattern for the Quarter ended on 30th June 2016",
-                size: "189 KB",
+                title: "Board Meeting to consider unaudited Financial results for Q1 ending 30th June 2016",
+                size: "815 KB",
                 type: "PDF",
-                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th June 2016.pdf"
+                filePath: "/Documents/Announcements/2016/Board Meeting to consider unaudited Financial results for Q1 ending 30th June 2016.pdf"
             },
             {
                 date: "31 Mar, 2016",
-                title: "Shareholding Pattern for the Quarter ended on 31st Mar 2016",
-                size: "183 KB",
+                title: "Board Meeting to consider audited Financial results for Q4 ending 31st March 2016",
+                size: "360 KB",
                 type: "PDF",
-                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 31st Mar 2016.pdf"
+                filePath: "/Documents/Announcements/2016/Board Meeting to consider audited Financial results for Q4 ending 31st March 2016 .pdf"
+            },
+            {
+                date: "31 Dec, 2015",
+                title: "Board meeting to consider unaudited financial results for Q3 ending 30th Dec 2015",
+                size: "360 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2016/Board meeting to consider unaudited financial results for Q3 ending 30th Dec 2015.docx .pdf"
+            },
+            {
+                date: "30 Sep, 2016",
+                title: "Board Meeting to consider unaudited Financial results for Q2 ending 30th Sep 2016",
+                size: "70 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2016/Board Meeting to consider unaudited Financial results for Q2 ending 30th Sep 2016 .pdf"
+            },
+            {
+                date: "15 Sep, 2016",
+                title: "Proceedings of AGM",
+                size: "723 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2016/Proceedings of AGM.pdf"
             }
         ],
         "2015": [
@@ -203,22 +214,83 @@ const FinancialDocuments = () => {
             }
         ],
         // Policies
-        "Corporate Social Responsibility": [
+        "Policies": [
             {
                 date: "01 Jan, 2024",
-                title: "Corporate Social Responsibility Policy",
-                size: "456.2 KB",
+                title: "Nomination and Remuneration Policy",
+                size: "318 KB",
                 type: "PDF",
-                filePath: "#"
-            }
-        ],
-        "Whistle Blower": [
+                filePath: "/Documents/DocumentsAndOthers/Nomination and Remuneration Policy.pdf"
+            },
             {
-                date: "15 Dec, 2023",
-                title: "Whistle Blower Policy",
-                size: "389.7 KB",
+                date: "01 Jan, 2024",
+                title: "Dividend Distribution Policy",
+                size: "320 KB",
                 type: "PDF",
-                filePath: "#"
+                filePath: "/Documents/DocumentsAndOthers/Dividend Distribution Policy.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Code of Practices and Procedures for Fair Disclosure",
+                size: "489 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Code of Practices and Procedures for Fair Disclosure.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Investors Grievances",
+                size: "408 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Investors Grievances.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Policy on Familiarisation of Independent Directors",
+                size: "311 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Policy on Familiarisation of Independent Directors.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Materiality on Subsidiaries",
+                size: "420 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Materiality on Subsidiaries.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Related Party Policy",
+                size: "658 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Related Party Policy.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Policy on Remuneration",
+                size: "351 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Policy on Remuneration.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Vigil Mechanism Policy",
+                size: "367 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Vigil Mechanism Policy.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Code of Conduct for Board of Directors and Senior Management",
+                size: "332 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Code of Conduct for Board of Directors and Senior Management.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Director and Senior Personnel Appointment Policies",
+                size: "320 KB",
+                type: "PDF",
+                filePath: "/Documents/DocumentsAndOthers/Director and Senior Personnel Appointment Policies .pdf"
             }
         ],
 
@@ -364,24 +436,17 @@ const FinancialDocuments = () => {
         "2015": [
             {
                 date: "30 Dec, 2015",
-                title: "Annual Corporate Announcement 2015",
-                size: "256 KB",
+                title: "Board meeting to consider unaudited financial results for Q2 ending 30th Sep 2015",
+                size: "361 KB",
                 type: "PDF",
-                filePath: "#"
+                filePath: "/Documents/Announcements/2015/Board meeting to consider unaudited financial results for Q2 ending 30th Sep 2015.pdf"
             },
             {
-                date: "25 Sep, 2015",
-                title: "Q2 Results Board Meeting Announcement",
-                size: "234 KB",
+                date: "30 Jun, 2015",
+                title: "Board meeting to consider unaudited financial results for Q1 ending 30th June 2015",
+                size: "360 KB",
                 type: "PDF",
-                filePath: "#"
-            },
-            {
-                date: "20 Jun, 2015",
-                title: "Corporate Strategy Announcement",
-                size: "189 KB",
-                type: "PDF",
-                filePath: "#"
+                filePath: "/Documents/Announcements/2015/Board meeting to consider unaudited financial results for Q1 ending 30th June 2015.pdf"
             }
         ],
         // Quarterly Reports - Financial Results
@@ -577,6 +642,136 @@ const FinancialDocuments = () => {
                 filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q1 of 2015-16.pdf"
             }
         ],
+
+        // Audited Financial Results from AnnualResults folder
+        "Audited Financial Results 2017-18": [
+            {
+                date: "31 Mar, 2018",
+                title: "Audited Financial Results for year ending 2017-18",
+                size: "81 KB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/Audited Financial Results/Audited Financial Results for year ending 2017-18.pdf"
+            }
+        ],
+        "Audited Financial Results 2016-17": [
+            {
+                date: "31 Mar, 2017",
+                title: "Audited Financial Results for year ending 2016-17",
+                size: "81 KB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/Audited Financial Results/Audited Financial Results for year ending 2016-17.pdf"
+            }
+        ],
+        "Audited Financial Results 2015-16": [
+            {
+                date: "31 Mar, 2016",
+                title: "Audited Financial Results for the year ending 2015-16",
+                size: "252 KB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/Audited Financial Results/Audited Financial Results for the year ending 2015-16.pdf"
+            }
+        ],
+        "Audited Financial Results 2014-15": [
+            {
+                date: "31 Mar, 2015",
+                title: "Audited Financial Results for year ending 2014-15",
+                size: "298 KB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/Audited Financial Results/Audited Financial Results for year ending 2014-15.pdf"
+            }
+        ],
+
+        // Annual Reports from AnnualResults folder
+        "Annual Report 2023-24": [
+            {
+                date: "31 Mar, 2024",
+                title: "Annual Report for 2023-24",
+                size: "1.2 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2023-24.pdf"
+            }
+        ],
+        "Annual Report 2022-23": [
+            {
+                date: "31 Mar, 2023",
+                title: "Annual Report for 2022-23",
+                size: "1.8 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2022-23.pdf"
+            }
+        ],
+        "Annual Report 2021-22": [
+            {
+                date: "31 Mar, 2022",
+                title: "Annual Report for 2021-22",
+                size: "764 KB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2021-22.pdf"
+            }
+        ],
+        "Annual Report 2020-21": [
+            {
+                date: "31 Mar, 2021",
+                title: "Annual Report for 2020-21",
+                size: "1.2 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2020-21.pdf"
+            }
+        ],
+        "Annual Report 2019-20": [
+            {
+                date: "31 Mar, 2020",
+                title: "Annual Report for 2019-20",
+                size: "1.6 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2019-20.pdf"
+            }
+        ],
+        "Annual Report 2018-19": [
+            {
+                date: "31 Mar, 2019",
+                title: "Annual Report for F.y. 2018-19",
+                size: "1.6 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for F.y. 2018-19.pdf"
+            }
+        ],
+        "Annual Report 2017-18": [
+            {
+                date: "31 Mar, 2018",
+                title: "Annual Report for 2017-18",
+                size: "1.4 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2017-18 .pdf"
+            }
+        ],
+        "Annual Report 2016-17": [
+            {
+                date: "31 Mar, 2017",
+                title: "Annual Report for 2016-17",
+                size: "1.5 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2016-17.pdf"
+            }
+        ],
+        "Annual Report 2015-16": [
+            {
+                date: "31 Mar, 2016",
+                title: "Annual Report for 2015-16",
+                size: "574 KB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2015-16.pdf"
+            }
+        ],
+        "Annual Report 2014-15": [
+            {
+                date: "31 Mar, 2015",
+                title: "Annual Report for 2014-15",
+                size: "1.6 MB",
+                type: "PDF",
+                filePath: "/Documents/AnnualResults/AnnualReports/Annual Report for 2014-15.pdf"
+            }
+        ]
     };
 
     const handleView = (document) => {
@@ -665,6 +860,74 @@ const FinancialDocuments = () => {
 
     // Function to get file count for a folder
     const getFileCount = (folderName) => {
+        if (selectedCategory === "Annual Return") {
+            // For Annual Return, count total documents across all years
+            let totalCount = 0;
+            if (documents["2022-23"]) totalCount += documents["2022-23"].length;
+            if (documents["2021-22"]) totalCount += documents["2021-22"].length;
+            if (documents["2020-21"]) totalCount += documents["2020-21"].length;
+            if (documents["2019-20"]) totalCount += documents["2019-20"].length;
+            if (documents["2018-19"]) totalCount += documents["2018-19"].length;
+            return totalCount;
+        } else if (selectedCategory === "Quarterly Reports") {
+            // For Quarterly Reports, count documents in specific child folders
+            if (folderName === "Shareholding Pattern") {
+                let totalCount = 0;
+                if (documents["2018"]) totalCount += documents["2018"].length;
+                if (documents["2017"]) totalCount += documents["2017"].length;
+                if (documents["2016"]) totalCount += documents["2016"].length;
+                if (documents["2015"]) totalCount += documents["2015"].length;
+                return totalCount;
+            } else if (folderName === "Financial Results") {
+                let totalCount = 0;
+                // Count all the year keys that are actually displayed in Financial Results
+                if (documents["2021-22"]) totalCount += documents["2021-22"].length;
+                if (documents["2020-21"]) totalCount += documents["2020-21"].length;
+                if (documents["2019-20"]) totalCount += documents["2019-20"].length;
+                if (documents["2018-19"]) totalCount += documents["2018-19"].length;
+                if (documents["2017-18"]) totalCount += documents["2017-18"].length;
+                if (documents["2016-17"]) totalCount += documents["2016-17"].length;
+                if (documents["2015-16"]) totalCount += documents["2015-16"].length;
+                return totalCount;
+            }
+        } else if (selectedCategory === "Announcements") {
+            // For Announcements, count documents in specific year folders
+            if (documents[folderName]) {
+                return documents[folderName].length;
+            }
+        } else if (selectedCategory === "Annual Results") {
+            // For Annual Results, count documents in specific child folders
+            if (folderName === "Audited Financial Results") {
+                let totalCount = 0;
+                if (documents["Audited Financial Results 2017-18"]) totalCount += documents["Audited Financial Results 2017-18"].length;
+                if (documents["Audited Financial Results 2016-17"]) totalCount += documents["Audited Financial Results 2016-17"].length;
+                if (documents["Audited Financial Results 2015-16"]) totalCount += documents["Audited Financial Results 2015-16"].length;
+                if (documents["Audited Financial Results 2014-15"]) totalCount += documents["Audited Financial Results 2014-15"].length;
+                return totalCount;
+            } else if (folderName === "Annual Reports") {
+                let totalCount = 0;
+                if (documents["Annual Report 2023-24"]) totalCount += documents["Annual Report 2023-24"].length;
+                if (documents["Annual Report 2022-23"]) totalCount += documents["Annual Report 2022-23"].length;
+                if (documents["Annual Report 2021-22"]) totalCount += documents["Annual Report 2021-22"].length;
+                if (documents["Annual Report 2020-21"]) totalCount += documents["Annual Report 2020-21"].length;
+                if (documents["Annual Report 2019-20"]) totalCount += documents["Annual Report 2019-20"].length;
+                if (documents["Annual Report 2018-19"]) totalCount += documents["Annual Report 2018-19"].length;
+                if (documents["Annual Report 2017-18"]) totalCount += documents["Annual Report 2017-18"].length;
+                if (documents["Annual Report 2016-17"]) totalCount += documents["Annual Report 2016-17"].length;
+                if (documents["Annual Report 2015-16"]) totalCount += documents["Annual Report 2015-16"].length;
+                if (documents["Annual Report 2014-15"]) totalCount += documents["Annual Report 2014-15"].length;
+                return totalCount;
+            }
+        } else if (selectedCategory === "Documents and Others") {
+            // For Documents and Others, count documents in specific folders
+            if (folderName === "Policies") {
+                if (documents["Policies"]) {
+                    return documents["Policies"].length;
+                }
+            }
+        }
+
+        // Default fallback
         return documents[folderName] ? documents[folderName].length : 0;
     };
 
@@ -865,7 +1128,7 @@ const FinancialDocuments = () => {
                                                 <FaFolder className="folder-icon-large" />
                                                 <h4>Shareholding Pattern</h4>
                                                 <p className="document-description">Click to view shareholding documents</p>
-                                                <span className="file-count">16 files</span>
+                                                <span className="file-count">{getFileCount("Shareholding Pattern")} files</span>
                                             </div>
                                             <div
                                                 className="folder-card"
@@ -874,7 +1137,7 @@ const FinancialDocuments = () => {
                                                 <FaFolder className="folder-icon-large" />
                                                 <h4>Financial Results</h4>
                                                 <p className="document-description">Click to view financial results</p>
-                                                <span className="file-count">4 files</span>
+                                                <span className="file-count">{getFileCount("Financial Results")} files</span>
                                             </div>
                                         </div>
                                     </>
@@ -1215,39 +1478,477 @@ const FinancialDocuments = () => {
                                             </div>
                                         ) : null}
                                     </>
-                                ) : !selectedFolder ? (
-                                    // Show Folders View for other categories
+                                ) : selectedCategory === "Annual Results" && !selectedFolder ? (
+                                    // Show Child Folders for Annual Results
                                     <>
-                                        <h3>{selectedCategory} Folders</h3>
-
-                                        {folderStructure[selectedCategory] ? (
-                                            <div className="folders-grid">
-                                                {folderStructure[selectedCategory].map((folderName) => (
-                                                    <div
-                                                        key={folderName}
-                                                        className="folder-card"
-                                                        onClick={() => handleFolderClick(folderName)}
-                                                    >
-                                                        <FaFolder className="folder-icon-large" />
-                                                        <h4>{folderName}</h4>
-                                                        <p className="document-description">Click to view documents</p>
-                                                        <span className="file-count">{getFileCount(folderName)} files</span>
-                                                    </div>
-                                                ))}
+                                        <h3>Annual Results - Select Category</h3>
+                                        <div className="folders-grid">
+                                            <div
+                                                className="folder-card"
+                                                onClick={() => handleFolderClick("Audited Financial Results")}
+                                            >
+                                                <FaFolder className="folder-icon-large" />
+                                                <h4>Audited Financial Results</h4>
+                                                <p className="document-description">Click to view audited financial results</p>
+                                                <span className="file-count">3 files</span>
                                             </div>
-                                        ) : (
-                                            <div className="no-folders">
-                                                <FaFolder className="empty-folder" />
-                                                <p>No folders available for this category</p>
+                                            <div
+                                                className="folder-card"
+                                                onClick={() => handleFolderClick("Annual Reports")}
+                                            >
+                                                <FaFolder className="folder-icon-large" />
+                                                <h4>Annual Reports</h4>
+                                                <p className="document-description">Click to view annual reports</p>
+                                                <span className="file-count">2 files</span>
                                             </div>
-                                        )}
+                                        </div>
                                     </>
-                                ) : (
-                                    // Show Documents View for other categories
+                                ) : selectedCategory === "Annual Results" && selectedFolder ? (
+                                    // Show Documents for Annual Results child folders
                                     <>
                                         <div className="documents-header">
                                             <button className="back-btn" onClick={handleBackToFolders}>
-                                                <FaArrowLeft /> Back to Folders
+                                                <FaArrowLeft /> Back to Annual Results
+                                            </button>
+                                            <h3>Documents in {selectedFolder}</h3>
+                                        </div>
+
+                                        {selectedFolder === "Audited Financial Results" ? (
+                                            <div className="documents-grid">
+                                                {documents["Audited Financial Results 2017-18"] && documents["Audited Financial Results 2017-18"].map((doc, index) => (
+                                                    <div key={`Audited Financial Results 2017-18-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Audited Financial Results 2016-17"] && documents["Audited Financial Results 2016-17"].map((doc, index) => (
+                                                    <div key={`Audited Financial Results 2016-17-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Audited Financial Results 2015-16"] && documents["Audited Financial Results 2015-16"].map((doc, index) => (
+                                                    <div key={`Audited Financial Results 2015-16-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Audited Financial Results 2014-15"] && documents["Audited Financial Results 2014-15"].map((doc, index) => (
+                                                    <div key={`Audited Financial Results 2014-15-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : selectedFolder === "Annual Reports" ? (
+                                            <div className="documents-grid">
+                                                {documents["Annual Report 2023-24"] && documents["Annual Report 2023-24"].map((doc, index) => (
+                                                    <div key={`Annual Report 2023-24-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2022-23"] && documents["Annual Report 2022-23"].map((doc, index) => (
+                                                    <div key={`Annual Report 2022-23-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2021-22"] && documents["Annual Report 2021-22"].map((doc, index) => (
+                                                    <div key={`Annual Report 2021-22-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2020-21"] && documents["Annual Report 2020-21"].map((doc, index) => (
+                                                    <div key={`Annual Report 2020-21-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2019-20"] && documents["Annual Report 2019-20"].map((doc, index) => (
+                                                    <div key={`Annual Report 2019-20-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2018-19"] && documents["Annual Report 2018-19"].map((doc, index) => (
+                                                    <div key={`Annual Report 2018-19-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2017-18"] && documents["Annual Report 2017-18"].map((doc, index) => (
+                                                    <div key={`Annual Report 2017-18-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2016-17"] && documents["Annual Report 2016-17"].map((doc, index) => (
+                                                    <div key={`Annual Report 2016-17-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2015-16"] && documents["Annual Report 2015-16"].map((doc, index) => (
+                                                    <div key={`Annual Report 2015-16-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Annual Report 2014-15"] && documents["Annual Report 2014-15"].map((doc, index) => (
+                                                    <div key={`Annual Report 2014-15-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : null}
+                                    </>
+                                ) : selectedCategory === "Documents and Others" && !selectedFolder ? (
+                                    // Show Child Folders for Documents and Others
+                                    <>
+                                        <h3>Documents and Others - Select Category</h3>
+                                        <div className="folders-grid">
+                                            <div
+                                                className="folder-card"
+                                                onClick={() => handleFolderClick("Policies")}
+                                            >
+                                                <FaFolder className="folder-icon-large" />
+                                                <h4>Policies</h4>
+                                                <p className="document-description">Click to view policies</p>
+                                                <span className="file-count">11 files</span>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : selectedCategory === "Announcements" && selectedFolder ? (
+                                    // Show Documents for Announcements year folders
+                                    <>
+                                        <div className="documents-header">
+                                            <button className="back-btn" onClick={handleBackToFolders}>
+                                                <FaArrowLeft /> Back to Announcements
                                             </button>
                                             <h3>Documents in {selectedFolder}</h3>
                                         </div>
@@ -1255,7 +1956,7 @@ const FinancialDocuments = () => {
                                         {documents[selectedFolder] ? (
                                             <div className="documents-grid">
                                                 {documents[selectedFolder].map((doc, index) => (
-                                                    <div key={index} className="document-card">
+                                                    <div key={`${selectedFolder}-${index}`} className="document-card">
                                                         <div className="document-header">
                                                             <FaFilePdf className="pdf-icon" />
                                                             <div className="document-actions">
@@ -1288,6 +1989,77 @@ const FinancialDocuments = () => {
                                             <div className="no-documents">
                                                 <FaFolder className="empty-folder" />
                                                 <p>No documents available in this folder</p>
+                                            </div>
+                                        )}
+                                    </>
+                                ) : selectedCategory === "Documents and Others" && selectedFolder ? (
+                                    // Show Documents for Documents and Others child folders
+                                    <>
+                                        <div className="documents-header">
+                                            <button className="back-btn" onClick={handleBackToFolders}>
+                                                <FaArrowLeft /> Back to Documents and Others
+                                            </button>
+                                            <h3>Documents in {selectedFolder}</h3>
+                                        </div>
+
+                                        {selectedFolder === "Policies" ? (
+                                            <div className="documents-grid">
+                                                {documents["Policies"] && documents["Policies"].map((doc, index) => (
+                                                    <div key={`Policies-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : null}
+                                    </>
+                                ) : (
+                                    // Show Folders View for other categories
+                                    <>
+                                        <h3>{selectedCategory} Folders</h3>
+
+                                        {folderStructure[selectedCategory] ? (
+                                            <div className="folders-grid">
+                                                {folderStructure[selectedCategory].map((folderName) => (
+                                                    <div
+                                                        key={folderName}
+                                                        className="folder-card"
+                                                        onClick={() => handleFolderClick(folderName)}
+                                                    >
+                                                        <FaFolder className="folder-icon-large" />
+                                                        <h4>{folderName}</h4>
+                                                        <p className="document-description">Click to view documents</p>
+                                                        <span className="file-count">{getFileCount(folderName)} files</span>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <div className="no-folders">
+                                                <FaFolder className="empty-folder" />
+                                                <p>No folders available for this category</p>
                                             </div>
                                         )}
                                     </>
