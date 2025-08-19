@@ -963,7 +963,7 @@ const FinancialDocuments = () => {
     };
 
     return (
-        <div className="financial-documents-container paddingTop300px">
+        <div className="financial-documents-container paddingTop200px">
             {/* Mobile Floating Button */}
             {isMobile && (
                 <motion.button 

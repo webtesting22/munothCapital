@@ -291,7 +291,7 @@ const Compliance = () => {
     };
 
     return (
-        <div className="ComplianceContainer paddingTop300px">
+        <div className="ComplianceContainer paddingTop200px">
             {/* Mobile Floating Folder Button */}
             {isMobile && (
                 <motion.button

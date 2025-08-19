@@ -80,7 +80,7 @@ const OurServicesHome = () => {
         console.log(key);
     };
     return (
-        <div className="OurServicesHomeContainer paddingTop300px">
+        <div className="OurServicesHomeContainer paddingTop200px">
             <div className="Container">
                 <Row>
                     <Col lg={8}>
