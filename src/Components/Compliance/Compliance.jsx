@@ -30,218 +30,103 @@ const Compliance = () => {
 
     const folderStructure = {
         "Investor Charters": [
-            "2024",
-            "2023",
-            "2022",
-            "2021"
+            "Investor Charters"
         ],
         "Investor Complaints Data": [
-            "2024",
-            "2023",
-            "2022",
-            "2021"
+            "Investor Complaints Data"
         ],
         "Documents": [
-            "Policies",
-            "Guidelines",
-            "Reports"
+            "Documents"
         ]
     };
 
     const documents = {
-        // Investor Charters
-        "2024": [
+        // Investor Charters - Direct Documents
+        "Investor Charters": [
             {
                 date: "01 Jan, 2024",
-                title: "Investor Charter 2024",
-                size: "245 KB",
+                title: "Investor Charter for Stock Brokers",
+                size: "176 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/InvestorCharters/Investor Charter 2024.pdf"
-            }
-        ],
-        "2023": [
+                filePath: "/Documents/Compliance/Investor Charters/Investor Charter for Stock Brokers.pdf"
+            },
             {
-                date: "01 Jan, 2023",
-                title: "Investor Charter 2023",
-                size: "238 KB",
+                date: "01 Jan, 2024",
+                title: "Investor Charter for Depositories and Depository Participants",
+                size: "207 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/InvestorCharters/Investor Charter 2023.pdf"
-            }
-        ],
-        "2022": [
-            {
-                date: "01 Jan, 2022",
-                title: "Investor Charter 2022",
-                size: "241 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/InvestorCharters/Investor Charter 2022.pdf"
-            }
-        ],
-        "2021": [
-            {
-                date: "01 Jan, 2021",
-                title: "Investor Charter 2021",
-                size: "239 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/InvestorCharters/Investor Charter 2021.pdf"
+                filePath: "/Documents/Compliance/Investor Charters/Investor Charter for Depositories and Depository Participants.pdf"
             }
         ],
 
-        // Investor Complaints Data
-        "Complaints 2024": [
+        // Investor Complaints Data - Only the main document
+        "Investor Complaints Data": [
             {
-                date: "31 Mar, 2024",
-                title: "Investor Complaints Data Q1 2024",
-                size: "156 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q1 2024.pdf"
-            }
-        ],
-        "Complaints 2023": [
-            {
-                date: "31 Dec, 2023",
-                title: "Investor Complaints Data Q4 2023",
-                size: "152 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q4 2023.pdf"
-            },
-            {
-                date: "30 Sep, 2023",
-                title: "Investor Complaints Data Q3 2023",
-                size: "148 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q3 2023.pdf"
-            },
-            {
-                date: "30 Jun, 2023",
-                title: "Investor Complaints Data Q2 2023",
-                size: "151 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q2 2023.pdf"
-            },
-            {
-                date: "31 Mar, 2023",
-                title: "Investor Complaints Data Q1 2023",
-                size: "149 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q1 2023.pdf"
-            }
-        ],
-        "Complaints 2022": [
-            {
-                date: "31 Dec, 2022",
-                title: "Investor Complaints Data Q4 2022",
-                size: "147 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q4 2022.pdf"
-            },
-            {
-                date: "30 Sep, 2022",
-                title: "Investor Complaints Data Q3 2022",
-                size: "145 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q3 2022.pdf"
-            },
-            {
-                date: "30 Jun, 2022",
-                title: "Investor Complaints Data Q2 2022",
-                size: "146 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q2 2022.pdf"
-            },
-            {
-                date: "31 Mar, 2022",
-                title: "Investor Complaints Data Q1 2022",
-                size: "144 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q1 2022.pdf"
-            }
-        ],
-        "Complaints 2021": [
-            {
-                date: "31 Dec, 2021",
-                title: "Investor Complaints Data Q4 2021",
-                size: "143 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q4 2021.pdf"
-            },
-            {
-                date: "30 Sep, 2021",
-                title: "Investor Complaints Data Q3 2021",
-                size: "141 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q3 2021.pdf"
-            },
-            {
-                date: "30 Jun, 2021",
-                title: "Investor Complaints Data Q2 2021",
-                size: "142 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q2 2021.pdf"
-            },
-            {
-                date: "31 Mar, 2021",
-                title: "Investor Complaints Data Q1 2021",
-                size: "140 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/ComplaintsData/Investor Complaints Data Q1 2021.pdf"
+                date: "01 Jan, 2024",
+                title: "Investor Complaints Data",
+                size: "35 KB",
+                type: "XLSX",
+                filePath: "/Documents/Compliance/Investor Complaints Data/Investor Complaints Data.xlsx"
             }
         ],
 
-        // Documents
-        "Policies": [
+        // Documents - Actual files from Documents folder
+        "Documents": [
             {
                 date: "01 Jan, 2024",
-                title: "Compliance Policy",
-                size: "325 KB",
+                title: "DP Rights & Obligation",
+                size: "100 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Compliance Policy.pdf"
+                filePath: "/Documents/Documents/DP Rights & Obligation.pdf"
             },
             {
                 date: "01 Jan, 2024",
-                title: "Regulatory Compliance Framework",
-                size: "298 KB",
+                title: "Account Opening Step by Step Guide",
+                size: "160 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Regulatory Compliance Framework.pdf"
+                filePath: "/Documents/Documents/Account Opening Step by Step Guide.pdf"
             },
             {
                 date: "01 Jan, 2024",
-                title: "Risk Management Policy",
-                size: "312 KB",
+                title: "Annexure A - Details of Mandatory Display",
+                size: "250 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Risk Management Policy.pdf"
-            }
-        ],
-        "Guidelines": [
-            {
-                date: "01 Jan, 2024",
-                title: "Compliance Guidelines",
-                size: "287 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Compliance Guidelines.pdf"
+                filePath: "/Documents/Documents/Annexure A - Details of Mandatory Display.pdf"
             },
             {
                 date: "01 Jan, 2024",
-                title: "Regulatory Reporting Guidelines",
-                size: "301 KB",
+                title: "Filing of Compliant Step by Step Guide",
+                size: "102 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Regulatory Reporting Guidelines.pdf"
-            }
-        ],
-        "Reports": [
-            {
-                date: "31 Mar, 2024",
-                title: "Compliance Report Q1 2024",
-                size: "445 KB",
-                type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Compliance Report Q1 2024.pdf"
+                filePath: "/Documents/Documents/Filing of Compliant Step by Step Guide.pdf"
             },
             {
-                date: "31 Dec, 2023",
-                title: "Annual Compliance Report 2023",
-                size: "1.2 MB",
+                date: "01 Jan, 2024",
+                title: "Guidance Note - Do's and Don'ts for Trading on the Stock Exchange(s) for Investors",
+                size: "108 KB",
                 type: "PDF",
-                filePath: "/Documents/Compliance/Documents/Annual Compliance Report 2023.pdf"
+                filePath: "/Documents/Documents/Guidance Note - Do's and Don'ts for Trading on the Stock Exchange(s) for Investors.pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Mandatory Document dealing with Policy and Procedures",
+                size: "102 KB",
+                type: "PDF",
+                filePath: "/Documents/Documents/Mandatory Document dealing with Policy and Procedures .pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Rights and Obligations of Stock Brokers, Sub-Brokers and Clients",
+                size: "165 KB",
+                type: "PDF",
+                filePath: "/Documents/Documents/Rights and Obligations of Stock Brokers, Sub-Brokers and Clients .pdf"
+            },
+            {
+                date: "01 Jan, 2024",
+                title: "Risk Disclosure Document for Capital Market and Derivatives Segments",
+                size: "106 KB",
+                type: "PDF",
+                filePath: "/Documents/Documents/Risk Disclosure Document for Capital Market and Derivatives Segments.pdf"
             }
         ]
     };
@@ -340,8 +225,9 @@ const Compliance = () => {
     // Function to get file count for a folder
     const getFileCount = (folderName) => {
         if (selectedCategory === "Investor Charters") {
-            if (documents[folderName]) {
-                return documents[folderName].length;
+            // For Investor Charters, return the total count of all documents
+            if (documents["Investor Charters"]) {
+                return documents["Investor Charters"].length;
             }
         } else if (selectedCategory === "Investor Complaints Data") {
             if (documents[`Complaints ${folderName}`]) {
@@ -480,95 +366,8 @@ const Compliance = () => {
                                             viewport={{ once: true }}
                                             transition={{ duration: 0.6, ease: "easeOut" }}
                                         >
-                                            {documents["2024"] && documents["2024"].map((doc, index) => (
-                                                <div key={`2024-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["2023"] && documents["2023"].map((doc, index) => (
-                                                <div key={`2023-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["2022"] && documents["2022"].map((doc, index) => (
-                                                <div key={`2022-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["2021"] && documents["2021"].map((doc, index) => (
-                                                <div key={`2021-${index}`} className="document-card">
+                                            {documents["Investor Charters"] && documents["Investor Charters"].map((doc, index) => (
+                                                <div key={`investor-charter-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
                                                             <h4>{doc.title}</h4>
@@ -601,7 +400,7 @@ const Compliance = () => {
                                 ) : selectedCategory === "Investor Complaints Data" ? (
                                     // Show Documents directly for Investor Complaints Data
                                     <>
-                                        <h3 style={{ marginBottom: "20px" }}>Investor Complaints Data Documents</h3>
+                                        <h3 style={{ marginBottom: "20px" }}>Investor Complaints Data Document</h3>
                                         <motion.div
                                             className="documents-grid"
                                             initial={{ opacity: 0, y: 20 }}
@@ -609,8 +408,8 @@ const Compliance = () => {
                                             viewport={{ once: true }}
                                             transition={{ duration: 0.6, ease: "easeOut" }}
                                         >
-                                            {documents["Complaints 2024"] && documents["Complaints 2024"].map((doc, index) => (
-                                                <div key={`complaints-2024-${index}`} className="document-card">
+                                            {documents["Investor Complaints Data"] && documents["Investor Complaints Data"].map((doc, index) => (
+                                                <div key={`investor-complaints-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
                                                             <h4>{doc.title}</h4>
@@ -623,101 +422,14 @@ const Compliance = () => {
                                                             <button
                                                                 className="action-btn view-btn"
                                                                 onClick={() => handleView(doc)}
-                                                                title="View PDF"
+                                                                title="View XLSX"
                                                             >
                                                                 View
                                                             </button>
                                                             <button
                                                                 className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["Complaints 2023"] && documents["Complaints 2023"].map((doc, index) => (
-                                                <div key={`complaints-2023-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["Complaints 2022"] && documents["Complaints 2022"].map((doc, index) => (
-                                                <div key={`complaints-2022-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["Complaints 2021"] && documents["Complaints 2021"].map((doc, index) => (
-                                                <div key={`complaints-2021-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
+                                                                title="Download XLSX"
                                                             >
                                                                 Download
                                                             </button>
@@ -739,66 +451,8 @@ const Compliance = () => {
                                             viewport={{ once: true }}
                                             transition={{ duration: 0.6, ease: "easeOut" }}
                                         >
-                                            {documents["Policies"] && documents["Policies"].map((doc, index) => (
-                                                <div key={`policies-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["Guidelines"] && documents["Guidelines"].map((doc, index) => (
-                                                <div key={`guidelines-${index}`} className="document-card">
-                                                    <div className="document-content">
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-actions">
-                                                            <button
-                                                                className="action-btn view-btn"
-                                                                onClick={() => handleView(doc)}
-                                                                title="View PDF"
-                                                            >
-                                                                View
-                                                            </button>
-                                                            <button
-                                                                className="action-btn download-btn"
-                                                                onClick={() => handleDownload(doc)}
-                                                                title="Download PDF"
-                                                            >
-                                                                Download
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                            {documents["Reports"] && documents["Reports"].map((doc, index) => (
-                                                <div key={`reports-${index}`} className="document-card">
+                                            {documents["Documents"] && documents["Documents"].map((doc, index) => (
+                                                <div key={`documents-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
                                                             <h4>{doc.title}</h4>

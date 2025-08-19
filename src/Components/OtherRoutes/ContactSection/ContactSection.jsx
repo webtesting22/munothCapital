@@ -44,7 +44,7 @@ const ContactSection = () => {
                                     borderRadius: '20px',
                                     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
                                     border: '1px solid rgba(0, 0, 0, 0.05)',
-                                    maxWidth: '500px',
+                                    // maxWidth: '500px',
                                     margin: '0 auto'
                                 }}>
                                     <h3 style={{

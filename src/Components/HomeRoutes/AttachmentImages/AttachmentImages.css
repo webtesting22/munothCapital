@@ -1,3 +1,7 @@
+.AttachmentImagesContainer{
+    overflow: hidden;
+}
+
 .AttachmentBackgroundImagesParallax {
     position: relative;
 }

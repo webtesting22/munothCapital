@@ -2,7 +2,7 @@
 .ComplianceContainer {
     min-height: 100vh;
     background: #ffffff;
-    padding: 20px 0;
+    /* padding: 20px 0; */
 }
 
 .ComplianceContainer .compliance-wrapper {

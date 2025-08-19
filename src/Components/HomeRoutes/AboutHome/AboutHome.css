@@ -5,6 +5,7 @@
     background-size: cover;
     /* background-position: center; */
     background-repeat: no-repeat;
+    padding-bottom: 50px;
 }
 
 /* .BackgroundAttachImageContainer{
@@ -95,7 +96,7 @@
     }
 }
 
-.FlexContainer{
+.FlexContainer {
     display: flex;
     gap: 50px;
 }
@@ -118,9 +119,12 @@
         animation-duration: 45s;
         /* Faster on mobile */
     }
-    .MarqueeTagContainer::before , .MarqueeTagContainer::after{
+
+    .MarqueeTagContainer::before,
+    .MarqueeTagContainer::after {
         background: none !important;
     }
+
     .marquee-content {
         animation: marquee 100s linear infinite;
     }

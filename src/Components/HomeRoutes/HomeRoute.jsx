@@ -4,6 +4,7 @@ import HeroHomeVideoContainer from "./HeroHomeVideoContainer/HeroHomeVideoContai
 import AboutHome from "./AboutHome/AboutHome";
 import OurServicesHome from "./OurServicesHome/OurServicesHome";
 import AttachmentImages from "./AttachmentImages/AttachmentImages";
+import ContactSection from "../OtherRoutes/ContactSection/ContactSection";
 const HomeRoute = () => {
     return (
         <div>
@@ -12,6 +13,7 @@ const HomeRoute = () => {
             <AboutHome />
             <OurServicesHome />
             <AttachmentImages />
+            <ContactSection/>
             {/* <About /> */}
         </div>
     )
