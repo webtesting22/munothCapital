@@ -49,11 +49,11 @@ const ReloadModelsfirst = ({ onClose }) => {
                     borderBottom: 'none'
                 },
                 body: {
-                    padding: '30px'
+                    padding: '10px 0px'
                 }
             }}
         >
-            <motion.div 
+            <motion.div
                 style={{ marginBottom: '25px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 style={{ marginBottom: '25px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -76,7 +76,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 style={{ marginBottom: '25px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 style={{ marginBottom: '25px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 </p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 style={{ textAlign: 'center', marginTop: '30px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -109,7 +109,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 <motion.button
                     onClick={handleClose}
                     style={{
-                        background:'black',
+                        background: 'black',
                         color: 'white',
                         border: 'none',
                         padding: '15px 40px',
@@ -118,7 +118,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                         borderRadius: '10px',
                         cursor: 'pointer'
                     }}
-                    whileHover={{ 
+                    whileHover={{
                         y: -5,
                         scale: 1.05,
                         boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)'

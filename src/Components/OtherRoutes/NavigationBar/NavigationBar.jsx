@@ -108,6 +108,7 @@ const NavigationBar = () => {
                     whileTap={{ scale: 0.95 }}
                 >
                     <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}></span>
+                    <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}></span>
                 </motion.button>
             </div>
 

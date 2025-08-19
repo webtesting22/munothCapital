@@ -26,7 +26,7 @@ const ReloadModelsSecond = ({ isOpen, onClose }) => {
                     borderBottom: 'none'
                 },
                 body: {
-                    padding: '30px'
+                  padding: '10px 0px'
                 }
             }}
         >
