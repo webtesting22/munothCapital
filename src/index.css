@@ -224,19 +224,21 @@ h3::before {
     font-size: 50px !important;
   }
 
-.paddingSide {
-  padding: 0px 10px;
-}
+  .paddingSide {
+    padding: 0px 10px;
+  }
 
-h2{
-  font-size: 30px !important;
-}
-h3{
-  font-size: 20px !important;
-  margin-bottom: 20px;
-}
-.paddingTop300px {
-  padding-top: 150px;
-}
+  h2 {
+    font-size: 30px !important;
+  }
+
+  h3 {
+    font-size: 20px !important;
+    margin-bottom: 20px;
+  }
+
+  .paddingTop300px {
+    padding-top: 150px;
+  }
 
 }

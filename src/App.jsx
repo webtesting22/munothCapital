@@ -13,7 +13,8 @@ import NavigationBar from './Components/OtherRoutes/NavigationBar/NavigationBar'
 import Services from './Components/OtherRoutes/Services/Services'
 import About from './Components/OtherRoutes/About/About'
 import Footer from './Components/OtherRoutes/Footer/Footer'
-
+import Compliance from './Components/Compliance/Compliance'
+import ContactSection from './Components/OtherRoutes/ContactSection/ContactSection'
 // ScrollToTop component to scroll to top on route change
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -72,12 +73,13 @@ function App() {
             <Route path="/financial-documents" element={<FinancialDocuments />} />
             <Route path="/services" element={<Services />} />
             <Route path="/about" element={<About />} />
+            <Route path="/compliance" element={<Compliance />} />
           </Routes>
         )}
 
         {/* WhatsApp Button - Always visible */}
         <WhatsAppBtn />
-        <Footer />
+  
       </BrowserRouter>
     </>
   )

@@ -9,31 +9,31 @@ const OurServicesHome = () => {
             key: '1',
             label: <div className="flex items-center gap-2">
                 <div className="serviceImageContainer">
-                    <img src="http://munoth.com/images/advise-based-banner.jpg" alt="" />
+                    <img src="/ServicesImages/Advisory Desk.jpg" alt="Advisory Desk" />
                 </div>
                 <GoPlus />
                 <h2>Advisory Desk</h2>
             </div>,
-            children: <p>We know time is money; 'more than money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research.</p>,
+            children: <p>We know time is money; 'more t/han money' when you are high networth individual. The reason why we have set up an Advice Based Broking Desk. This premium service helps monitor your portfolio very closely. Simultaneously, we workout the best solution for you, based upon our thorough equity research.</p>,
             icon: <GoPlus />,
         },
         {
             key: '2',
             label: <div className="flex items-center gap-2">
                 <div className="serviceImageContainer">
-                    <img src="http://munoth.com/images/depository-banner.jpg" alt="" />
+                    <img src="/ServicesImages/ Depository.jpg" alt="Depository" />
                 </div>
                 <GoPlus />
                 <h2>Depository</h2>
             </div>,
-            children: <p>Transacting in securities is not easy, especially when you have segmented or scattered investments. That’s why we provide you with a full-fledged Depository Service, to handle your securities’ transactions absolutely hassle free. We are a CDSL Depository Participant.</p>,
+            children: <p>Transacting in securities is not easy, especially when you have segmented or scattered investments. That's why we provide you with a full-fledged Depository Service, to handle your securities' transactions absolutely hassle free. We are a CDSL Depository Participant.</p>,
             icon: <GoPlus />,
         },
         {
             key: '3',
             label: <div className="flex items-center gap-2">
                 <div className="serviceImageContainer">
-                    <img src="http://munoth.com/images/hedge-fund-banner.jpg" alt="" />
+                    <img src="/ServicesImages/ Hedge Fund.jpg" alt="Hedge Fund" />
                 </div>
                 <GoPlus />
                 <h2>Hedge Fund</h2>
@@ -66,12 +66,12 @@ const OurServicesHome = () => {
             key: '4',
             label: <div className="flex items-center gap-2">
                 <div className="serviceImageContainer">
-                    <img src="http://munoth.com/images/margin-funding-banner.jpg" alt="" />
+                    <img src="/ServicesImages/Margin Funding.jpg" alt="Margin Funding" />
                 </div>
                 <GoPlus />
                 <h2>Margin Funding</h2>
             </div>,
-            children: <p>When there is a sudden availability of the opportunity of your choice, shortterm funding need might come up. That’s why at Munoth, we leverage your investments, not just with our expertise, but also by contributing our resources to meet your investment needs. For this purpose, we provide organize comprehensive Margin Funding that bridges the financial gap between you and your investments, so your expectations never have to fall short of reality.</p>,
+            children: <p>When there is a sudden availability of the opportunity of your choice, shortterm funding need might come up. That's why at Munoth, we leverage your investments, not just with our expertise, but also by contributing our resources to meet your investment needs. For this purpose, we provide organize comprehensive Margin Funding that bridges the financial gap between you and your investments, so your expectations never have to fall short of reality.</p>,
             icon: <GoPlus />,
         },
 

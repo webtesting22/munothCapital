@@ -1,0 +1,148 @@
+/* Contact Section Container */
+.contact-section-container {
+    min-height: 100vh;
+    background: #f8f9fa;
+}
+
+.contact-section-content {
+    min-height: 300px;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-container {
+    display: flex;
+    justify-content: end;
+}
+
+.contact-info-container > div {
+    max-width: 800px;
+}
+
+.contact-form-container .ant-form-item {
+    margin-bottom: 10px !important;
+}
+
+.contact-form-container .ant-form-item .ant-row .ant-col {
+    padding-bottom: 0px !important;
+}
+
+.contact-details-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-details-container p {
+    color: black !important;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.contact-section-content h3 {
+    color: #333;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-section-content h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.contact-section-content h4 {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.contact-form-container {
+    margin-top: 40px;
+}
+
+.contact-form-container .ant-form-item-label > label {
+    font-weight: 600 !important;
+}
+
+.contact-form-container .ant-input,
+.contact-form-container .ant-input-textarea {
+    border: none !important;
+    border-bottom: 2px solid #e0e0e0 !important;
+    border-radius: 0 !important;
+    padding: 12px 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.contact-form-container .ant-input:focus,
+.contact-form-container .ant-input-textarea:focus {
+    border-bottom-color: #000 !important;
+    border-bottom-width: 3px !important;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.contact-form-container .ant-btn-primary {
+    background: #000 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    height: 50px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+    width: 100% !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+.contact-form-container .ant-btn-primary:hover {
+    background: #333 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section-content {
+        padding: 20px;
+    }
+
+    .contact-info-container {
+        display: flex;
+        justify-content: start;
+    }
+
+    .contact-section-content h3 {
+        font-size: 28px;
+    }
+
+    .contact-section-content h2 {
+        font-size: 20px;
+    }
+
+    .contact-form-container {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section-content {
+        padding: 15px;
+    }
+
+    .contact-section-content h3 {
+        font-size: 24px;
+    }
+
+    .contact-section-content h2 {
+        font-size: 18px;
+    }
+}

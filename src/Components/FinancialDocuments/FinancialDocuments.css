@@ -1,817 +1,495 @@
 /* Financial Documents Container */
-.FinancialDocumentsContainer {
-    /* background: #f8f9fa; */
+.financial-documents-container {
     min-height: 100vh;
-    /* padding: 40px 0; */
+    background: #ffffff;
+    /* padding: 20px 0; */
 }
 
-.Container {
+.financial-documents-container .financial-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 /* Header Section */
-.financial-header {
+.financial-documents-container .financial-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.logo-section {
+.financial-documents-container .header-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+.financial-documents-container .title-section h2 {
+    color: #000;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
 }
 
-.financial-btn {
-    background: #cfb53b;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 25px;
+.financial-documents-container .title-section p {
+    color: #666;
     font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(207, 181, 59, 0.3);
-}
-
-.financial-btn:hover {
-    background: #b8a032;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(207, 181, 59, 0.4);
+    margin: 0;
+    font-weight: 400;
 }
 
 /* Main Content Layout */
-.financial-content {
+.financial-documents-container .financial-content {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 20px;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
     background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
     overflow: hidden;
-    min-height: 800px;
+    min-height: 600px;
 }
 
 /* Categories Sidebar */
-.categories-sidebar {
-    background: #f8f9fa;
-    padding: 20px;
-    border-right: 1px solid #e9ecef;
+.financial-documents-container .categories-sidebar {
+    background: #fafafa;
+    padding: 25px 20px;
+    border-right: 1px solid #f0f0f0;
 }
 
-.categories-sidebar h3 {
+.financial-documents-container .categories-sidebar h3 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.financial-documents-container .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.financial-documents-container .category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: white;
+    border: 1px solid #f0f0f0;
+}
+
+.financial-documents-container .category-item:hover {
+    background: #f8f8f8;
+    border-color: #e0e0e0;
+    transform: translateX(3px);
+}
+
+.financial-documents-container .category-item.active {
+    background: #000;
+    color: white;
+    border-color: #000;
+}
+
+.financial-documents-container .category-item span {
+    color: inherit;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.financial-documents-container .category-item .arrow {
+    color: #999;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.financial-documents-container .category-item.active .arrow {
+    color: white;
+}
+
+/* Content Section */
+.financial-documents-container .content-section {
+    padding: 25px;
+}
+
+/* Mobile Category Header */
+.financial-documents-container .mobile-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid #f0f0f0;
+}
+
+.financial-documents-container .mobile-category-header h3 {
     color: #333;
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #cfb53b;
+    margin: 0;
 }
 
-.category-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.category-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.category-item:hover {
-    background: #f8f9fa;
-    border-color: #cfb53b;
-}
-
-.category-item.active {
-    background: #cfb53b;
-    color: white;
-    border-color: #cfb53b;
-}
-
-.category-item.active .folder-icon,
-.category-item.active .arrow-icon {
-    color: white;
-}
-
-.folder-icon {
-    color: #cfb53b;
-    font-size: 18px;
-}
-
-.arrow-icon {
-    color: #666;
-    font-size: 14px;
-    /* margin-left: auto; */
-}
-
-.category-item span {
-    font-weight: 500;
-    flex: 1;
-}
-
-/* Folders Content */
-.folders-content {
-    padding: 20px;
-}
-
-.folders-content h3 {
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #cfb53b;
-}
-
-/* Folders Grid */
-.folders-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-/* Folder Card */
-.folder-card {
-    background: white;
-    border: 2px solid #e9ecef;
-    border-radius: 15px;
-    padding: 25px 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.folder-card:hover {
-    border-color: #cfb53b;
-    box-shadow: 0 8px 25px rgba(207, 181, 59, 0.15);
-    transform: translateY(-3px);
-}
-
-.folder-icon-large {
-    color: #cfb53b;
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.folder-card h4 {
-    color: #333;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.folder-description {
-    color: #666;
-    font-size: 14px;
-    margin: 0 0 12px 0;
-}
-
-.file-count {
-    display: inline-block;
-    background: #f8f9fa;
-    color: #cfb53b;
-    font-size: 12px;
-    font-weight: 500;
-    padding: 4px 8px;
-    border-radius: 12px;
-    border: 1px solid #cfb53b;
-    margin-top: 10px;
-}
-
-/* Documents Header with Back Button */
-.documents-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #e9ecef;
-}
-
-.back-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #6c757d;
+.financial-documents-container .mobile-change-category-btn {
+    background: #000;
     color: white;
     border: none;
     padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
-.back-btn:hover {
-    background: #5a6268;
-    transform: translateX(-2px);
+.financial-documents-container .mobile-change-category-btn:hover {
+    background: #333;
 }
 
-.documents-header h3 {
-    margin: 0;
-    padding: 0;
-    border: none;
+/* Content Header */
+.financial-documents-container .content-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.financial-documents-container .content-header h3 {
     color: #333;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
+    margin: 0;
+}
+
+/* Back Button */
+.financial-documents-container .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f5f5f5;
+    color: #666;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.financial-documents-container .back-btn:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+/* Folders Grid */
+.financial-documents-container .folders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.financial-documents-container .folder-card {
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.financial-documents-container .folder-card:hover {
+    border-color: #000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.financial-documents-container .folder-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.financial-documents-container .folder-info h4 {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+}
+
+.financial-documents-container .folder-info p {
+    color: #999;
+    font-size: 13px;
+    margin: 0;
 }
 
 /* Documents Grid */
-.documents-grid {
+.financial-documents-container .documents-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
 }
 
-/* Document Card */
-.document-card {
+.financial-documents-container .document-card {
     background: white;
-    border: 2px solid #e9ecef;
-    border-radius: 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.financial-documents-container .document-card:hover {
+    border-color: #000;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.financial-documents-container .document-content {
     padding: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
 }
 
-.document-card:hover {
-    border-color: #cfb53b;
-    box-shadow: 0 8px 25px rgba(207, 181, 59, 0.15);
-    transform: translateY(-3px);
+.financial-documents-container .document-info h4 {
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
 }
 
-.document-header {
+.financial-documents-container .document-meta {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
-.pdf-icon {
-    color: #e74c3c;
-    font-size: 24px;
+.financial-documents-container .document-meta .date,
+.financial-documents-container .document-meta .size {
+    color: #999;
+    font-size: 12px;
+    font-weight: 500;
 }
 
-/* Document Actions - View and Download Buttons */
-.document-actions {
+.financial-documents-container .document-actions {
     display: flex;
     gap: 8px;
 }
 
-.view-btn,
-.download-btn {
-    background: none;
+.financial-documents-container .action-btn {
+    padding: 8px 16px;
     border: none;
-    cursor: pointer;
-    padding: 8px;
     border-radius: 6px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.view-btn {
-    color: #cfb53b !important;
-}
-
-.view-btn:hover {
-    background: #e3f2fd;
-    color: #cfb53b !important;
-    transform: scale(1.1);
-}
-
-.download-btn {
-    color: #cfb53b;
-}
-
-.download-btn:hover {
-    background: #f8f9fa;
-    color: #b8a032;
-    transform: scale(1.1);
-}
-
-.document-info h4 {
-    color: #333;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.document-date,
-.document-size,
-.document-type {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.document-type {
-    color: #cfb53b;
+    cursor: pointer;
+    font-size: 12px;
     font-weight: 500;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-/* No Folders State */
-.no-folders {
-    text-align: center;
-    padding: 60px 20px;
+.financial-documents-container .view-btn {
+    background: #f0f0f0;
     color: #666;
 }
 
-.empty-folder {
-    font-size: 48px;
-    color: #ccc;
-    margin-bottom: 20px;
-}
-
-.no-folders p {
-    font-size: 16px;
-    margin: 0;
-}
-
-/* No Documents State */
-.no-documents {
-    text-align: center;
-    padding: 60px 20px;
-    color: #666;
-}
-
-/* PDF Viewer Modal */
-.pdf-viewer-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.pdf-viewer-content {
-    background: white;
-    border-radius: 15px;
-    width: 100%;
-    max-width: 90vw;
-    max-height: 90vh;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-}
-
-.pdf-viewer-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #e9ecef;
-    background: #f8f9fa;
-}
-
-.pdf-viewer-header h3 {
-    margin: 0;
+.financial-documents-container .view-btn:hover {
+    background: #e0e0e0;
     color: #333;
-    font-size: 18px;
-    font-weight: 600;
 }
 
-.close-btn {
-    background: #dc3545;
+.financial-documents-container .download-btn {
+    background: #000;
+    color: white;
+}
+
+.financial-documents-container .download-btn:hover {
+    background: #333;
+}
+
+/* Mobile Menu Button */
+.financial-documents-container .mobile-menu-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    background: #000;
     color: white;
     border: none;
-    width: 32px;
-    height: 32px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    font-size: 12px;
+    font-weight: 500;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: all 0.2s ease;
 }
 
-.close-btn:hover {
-    background: #c82333;
-    transform: scale(1.1);
+.financial-documents-container .mobile-menu-btn:hover {
+    background: #333;
+    transform: scale(1.05);
 }
 
-.pdf-viewer-body {
-    padding: 20px;
-    text-align: center;
+/* Mobile Categories Modal */
+.financial-documents-container .mobile-categories-modal .ant-modal-content {
+    border-radius: 16px;
 }
 
-.pdf-iframe {
-    width: 100%;
-    height: 70vh;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* PDF Info Section */
-.pdf-info {
+.financial-documents-container .mobile-categories-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 8px;
 }
 
-.pdf-icon-large {
-    color: #e74c3c;
-    font-size: 64px;
-    margin-bottom: 10px;
-}
-
-.pdf-info h4 {
-    color: #333;
-    font-size: 24px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.pdf-info p {
-    color: #666;
-    font-size: 16px;
-    margin: 0;
-    line-height: 1.5;
-}
-
-/* PDF Actions */
-.pdf-actions {
+.financial-documents-container .mobile-category-item {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    width: 100%;
-    justify-content: center;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-.open-pdf-btn,
-.download-pdf-btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
+.financial-documents-container .mobile-category-item:hover {
+    background: #fafafa;
+    border-color: #e0e0e0;
+}
+
+.financial-documents-container .mobile-category-item span {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.financial-documents-container .mobile-category-item .arrow {
+    color: #999;
+    font-size: 18px;
+}
+
+/* PDF Viewer Modal */
+.financial-documents-container .pdf-viewer-modal .ant-modal-content {
+    border-radius: 16px;
+}
+
+.financial-documents-container .pdf-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.financial-documents-container .pdf-modal-header span {
     font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 150px;
+    font-weight: 600;
+    color: #333;
 }
 
-.open-pdf-btn {
-    background: #cfb53b;
-    color: white;
-}
-
-.open-pdf-btn:hover {
-    background: #b8a032;
-    transform: translateY(-2px);
-}
-
-.download-pdf-btn {
-    background: #6c757d;
-    color: white;
-}
-
-.download-pdf-btn:hover {
-    background: #5a6268;
-    transform: translateY(-2px);
-}
-
-/* PDF Link Section */
-.pdf-link {
-    margin-top: 20px;
-    width: 100%;
-}
-
-.pdf-link p {
+.financial-documents-container .close-btn {
+    background: #f0f0f0;
     color: #666;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.pdf-url-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 12px;
-    color: #666;
-    background: #f8f9fa;
-    cursor: text;
-}
-
-.pdf-url-input:focus {
-    outline: none;
-    border-color: #cfb53b;
-    box-shadow: 0 0 0 2px rgba(207, 181, 59, 0.2);
-}
-
-/* PDF Fallback Section */
-.pdf-fallback {
-    margin-top: 20px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #e9ecef;
-}
-
-.pdf-fallback p {
-    margin: 0 0 15px 0;
-    color: #666;
-    font-size: 14px;
-}
-
-.fallback-btn {
-    background: #cfb53b;
-    color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 18px;
+    font-weight: 300;
 }
 
-.fallback-btn:hover {
-    background: #b8a032;
-    transform: translateY(-1px);
+.financial-documents-container .close-btn:hover {
+    background: #e0e0e0;
+    color: #333;
 }
 
-/* Responsive Design */
+.financial-documents-container .pdf-viewer-content {
+    padding: 20px 0;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-    .financial-content {
+    .financial-documents-container .financial-content {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .categories-sidebar {
-        border-right: none;
-        border-bottom: 1px solid #e9ecef;
+    .financial-documents-container .categories-sidebar {
+        display: none;
     }
 
-    .folders-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .financial-documents-container .content-section {
+        padding: 20px;
     }
 
-    .documents-grid {
+    .financial-documents-container .folders-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 12px;
+    }
+
+    .financial-documents-container .documents-grid {
         grid-template-columns: 1fr;
-    }
-
-    .Container {
-        padding: 0 15px;
-    }
-
-    .logo-section {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .documents-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .pdf-viewer-content {
-        max-width: 95vw;
-        max-height: 95vh;
-    }
-
-    .pdf-viewer-body {
-        height: calc(95vh - 100px);
+        gap: 12px;
     }
 }
 
 @media (max-width: 480px) {
-    .financial-content {
-        border-radius: 15px;
+    .financial-documents-container .financial-wrapper {
+        padding: 0 15px;
     }
 
-    .categories-sidebar,
-    .folders-content {
-        padding: 20px;
-    }
-
-    .category-item {
-        padding: 12px 15px;
-    }
-
-    .folders-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .pdf-viewer-modal {
-        padding: 10px;
-    }
-
-    .pdf-viewer-header {
+    .financial-documents-container .content-section {
         padding: 15px;
     }
 
-    .pdf-viewer-body {
-        padding: 15px;
-    }
-}
-
-/* Mobile Floating Folder Button */
-.mobile-folder-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    font-weight: 600;
-    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
-    z-index: 1000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.mobile-folder-btn:hover {
-    background: #0056b3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
-}
-
-.mobile-folder-btn:active {
-    transform: translateY(0);
-}
-
-/* Mobile Categories Modal */
-.mobile-categories-modal .ant-modal-content {
-    border-radius: 15px;
-    overflow: hidden;
-
-}
-
-.mobile-categories-modal .ant-modal-header {
-    background: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
-    padding: 20px 24px;
-}
-
-.mobile-categories-modal .ant-modal-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-}
-
-.mobile-categories-list {
-    padding: 20px 0;
-}
-
-.mobile-category-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px 24px;
-    border-bottom: 1px solid #f0f0f0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.mobile-category-item:hover {
-    background: #f8f9fa;
-    transform: translateX(5px);
-}
-
-.mobile-category-item:last-child {
-    border-bottom: none;
-}
-
-.mobile-category-item .folder-icon {
-    color: #007bff;
-    font-size: 20px;
-    min-width: 20px;
-}
-
-.mobile-category-item span {
-    flex: 1;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-}
-
-.mobile-category-item .arrow-icon {
-    color: #999;
-    font-size: 14px;
-}
-
-/* Mobile Category Header */
-.mobile-category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #e9ecef;
-}
-
-.mobile-category-header h3 {
-    margin: 0;
-    color: #333;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.mobile-change-category-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.mobile-change-category-btn:hover {
-    background: #0056b3;
-    transform: translateY(-1px);
-}
-
-/* Enhanced Mobile Responsive Adjustments */
-@media (max-width: 768px) {
-    .categories-sidebar {
-        display: none !important;
+    .financial-documents-container .mobile-menu-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
     }
 
-    .folders-content {
-        width: 100% !important;
-        margin-left: 0 !important;
+    .financial-documents-container .title-section h2 {
+        font-size: 24px;
     }
 
-    .financial-content {
-        flex-direction: column;
-    }
-
-    .mobile-folder-btn {
-        bottom: 30px;
-        right: 30px;
-        padding: 18px 25px;
+    .financial-documents-container .content-header h3 {
         font-size: 18px;
     }
 }
 
-@media (max-width: 480px) {
-    .mobile-folder-btn {
-        bottom: 20px;
-        right: 20px;
-        padding: 15px 20px;
-        font-size: 16px;
-    }
+/* Hover Effects */
+.financial-documents-container .folder-card:hover .arrow,
+.financial-documents-container .document-card:hover .arrow {
+    color: #000;
+}
 
-    .mobile-categories-modal .ant-modal-content {
-        margin: 20px;
-        width: calc(100% - 40px);
-    }
+/* Smooth transitions */
+.financial-documents-container * {
+    transition: all 0.2s ease;
+}
+
+/* Focus states for accessibility */
+.financial-documents-container .action-btn:focus,
+.financial-documents-container .category-item:focus,
+.financial-documents-container .folder-card:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
 }

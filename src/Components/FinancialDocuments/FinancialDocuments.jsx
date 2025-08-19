@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
 import { motion } from "framer-motion";
 import "./FinancialDocuments.css";
-import { FaDownload, FaFolder, FaPlus, FaFilePdf, FaChevronRight, FaArrowLeft, FaEye, FaTimes, FaBars } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 
 const FinancialDocuments = () => {
     const [selectedCategory, setSelectedCategory] = useState("Annual Return");
@@ -963,21 +963,19 @@ const FinancialDocuments = () => {
     };
 
     return (
-        <div className="FinancialDocumentsContainer paddingTop300px">
-            {/* Mobile Floating Folder Button */}
+        <div className="financial-documents-container paddingTop300px">
+            {/* Mobile Floating Button */}
             {isMobile && (
                 <motion.button 
-                    className="mobile-folder-btn"
+                    className="mobile-menu-btn"
                     onClick={handleMobileModalOpen}
-                    title="Open Categories"
                     initial={{ opacity: 0, scale: 0, y: 50 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
                     whileHover={{ scale: 1.1, y: -5 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <FaBars />
-                    <span>Categories</span>
+                    <span>Menu</span>
                 </motion.button>
             )}
 
@@ -997,15 +995,14 @@ const FinancialDocuments = () => {
                             className="mobile-category-item"
                             onClick={() => handleMobileCategoryClick(category)}
                         >
-                            <FaFolder className="folder-icon" />
                             <span>{category}</span>
-                            <FaChevronRight className="arrow-icon" />
+                            <div className="arrow">→</div>
                         </div>
                     ))}
                 </div>
             </Modal>
 
-            <div className="Container ">
+            <div className="financial-wrapper">
                 <motion.div 
                     className="financial-header"
                     initial={{ opacity: 0, y: -30 }}
@@ -1013,29 +1010,15 @@ const FinancialDocuments = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <div className="logo-section">
-                        <motion.div 
-                            className="logo"
-                            initial={{ scale: 0 }}
-                            whileInView={{ scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                        >
-                            M
-                        </motion.div>
-                        <motion.button 
-                            className="financial-btn"
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-                        >
-                            Financial
-                        </motion.button>
+                    <div className="header-content">
+                        <div className="title-section">
+                            <h2>Financial Documents</h2>
+                            <p>Annual reports, quarterly results, and corporate announcements</p>
+                        </div>
                     </div>
                 </motion.div>
 
-                <div className="financial-content ">
+                <div className="financial-content">
                     {/* Mobile Category Header */}
                     {isMobile && selectedCategory && (
                         <motion.div 
@@ -1044,24 +1027,13 @@ const FinancialDocuments = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
                         >
-                            <motion.h3
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-                            >
-                                📁 {selectedCategory}
-                            </motion.h3>
-                            <motion.button 
+                            <h3>{selectedCategory}</h3>
+                            <button 
                                 className="mobile-change-category-btn"
                                 onClick={handleMobileModalOpen}
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
                             >
-                                <FaBars /> Change Category
-                            </motion.button>
+                                Change Category
+                            </button>
                         </motion.div>
                     )}
 
@@ -1074,14 +1046,7 @@ const FinancialDocuments = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, ease: "easeOut" }}
                         >
-                            <motion.h3
-                                initial={{ opacity: 0, y: -20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-                            >
-                                Main Categories
-                            </motion.h3>
+                            <h3>Categories</h3>
                             <div className="category-list">
                                 {categories.map((category, index) => (
                                     <motion.div
@@ -1099,9 +1064,8 @@ const FinancialDocuments = () => {
                                         whileHover={{ x: 5, scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
                                     >
-                                        <FaFolder className="folder-icon" />
                                         <span>{category}</span>
-                                        <FaChevronRight className="arrow-icon" />
+                                        <div className="arrow">→</div>
                                     </motion.div>
                                 ))}
                             </div>
@@ -1109,7 +1073,7 @@ const FinancialDocuments = () => {
                     )}
 
                     {/* Right Content - Folders or Documents */}
-                    <div className="folders-content">
+                    <div className="content-section">
                         {selectedCategory && (
                             <>
                                 {selectedCategory === "Annual Return" ? (
@@ -1125,146 +1089,146 @@ const FinancialDocuments = () => {
                                         >
                                             {documents["2022-23"] && documents["2022-23"].map((doc, index) => (
                                                 <div key={`2022-23-${index}`} className="document-card">
-                                                    <div className="document-header">
-                                                        <FaFilePdf className="pdf-icon" />
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="date">{doc.date}</span>
+                                                                <span className="size">{doc.size}</span>
+                                                            </div>
+                                                        </div>
                                                         <div className="document-actions">
                                                             <button
-                                                                className="view-btn"
+                                                                className="action-btn view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
-                                                                <FaEye />
+                                                                View
                                                             </button>
                                                             <button
-                                                                className="download-btn"
+                                                                className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
-                                                                <FaDownload />
+                                                                Download
                                                             </button>
                                                         </div>
-                                                    </div>
-                                                    <div className="document-info">
-                                                        <h4>{doc.title}</h4>
-                                                        <p className="document-date">{doc.date}</p>
-                                                        <p className="document-size">{doc.size}</p>
-                                                        <p className="document-type">{doc.type}</p>
                                                     </div>
                                                 </div>
                                             ))}
                                             {documents["2021-22"] && documents["2021-22"].map((doc, index) => (
                                                 <div key={`2021-22-${index}`} className="document-card">
-                                                    <div className="document-header">
-                                                        <FaFilePdf className="pdf-icon" />
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="date">{doc.date}</span>
+                                                                <span className="size">{doc.size}</span>
+                                                            </div>
+                                                        </div>
                                                         <div className="document-actions">
                                                             <button
-                                                                className="view-btn"
+                                                                className="action-btn view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
-                                                                <FaEye />
+                                                                View
                                                             </button>
                                                             <button
-                                                                className="download-btn"
+                                                                className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
-                                                                <FaDownload />
+                                                                Download
                                                             </button>
                                                         </div>
-                                                    </div>
-                                                    <div className="document-info">
-                                                        <h4>{doc.title}</h4>
-                                                        <p className="document-date">{doc.date}</p>
-                                                        <p className="document-size">{doc.size}</p>
-                                                        <p className="document-type">{doc.type}</p>
                                                     </div>
                                                 </div>
                                             ))}
                                             {documents["2020-21"] && documents["2020-21"].map((doc, index) => (
                                                 <div key={`2020-21-${index}`} className="document-card">
-                                                    <div className="document-header">
-                                                        <FaFilePdf className="pdf-icon" />
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="date">{doc.date}</span>
+                                                                <span className="size">{doc.size}</span>
+                                                            </div>
+                                                        </div>
                                                         <div className="document-actions">
                                                             <button
-                                                                className="view-btn"
+                                                                className="action-btn view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
-                                                                <FaEye />
+                                                                View
                                                             </button>
                                                             <button
-                                                                className="download-btn"
+                                                                className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
-                                                                <FaDownload />
+                                                                Download
                                                             </button>
                                                         </div>
-                                                    </div>
-                                                    <div className="document-info">
-                                                        <h4>{doc.title}</h4>
-                                                        <p className="document-date">{doc.date}</p>
-                                                        <p className="document-size">{doc.size}</p>
-                                                        <p className="document-type">{doc.type}</p>
                                                     </div>
                                                 </div>
                                             ))}
                                             {documents["2019-20"] && documents["2019-20"].map((doc, index) => (
                                                 <div key={`2019-20-${index}`} className="document-card">
-                                                    <div className="document-header">
-                                                        <FaFilePdf className="pdf-icon" />
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="date">{doc.date}</span>
+                                                                <span className="size">{doc.size}</span>
+                                                            </div>
+                                                        </div>
                                                         <div className="document-actions">
                                                             <button
-                                                                className="view-btn"
+                                                                className="action-btn view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
-                                                                <FaEye />
+                                                                View
                                                             </button>
                                                             <button
-                                                                className="download-btn"
+                                                                className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
-                                                                <FaDownload />
+                                                                Download
                                                             </button>
                                                         </div>
-                                                    </div>
-                                                    <div className="document-info">
-                                                        <h4>{doc.title}</h4>
-                                                        <p className="document-date">{doc.date}</p>
-                                                        <p className="document-size">{doc.size}</p>
-                                                        <p className="document-type">{doc.type}</p>
                                                     </div>
                                                 </div>
                                             ))}
                                             {documents["2018-19"] && documents["2018-19"].map((doc, index) => (
                                                 <div key={`2018-19-${index}`} className="document-card">
-                                                    <div className="document-header">
-                                                        <FaFilePdf className="pdf-icon" />
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="date">{doc.date}</span>
+                                                                <span className="size">{doc.size}</span>
+                                                            </div>
+                                                        </div>
                                                         <div className="document-actions">
                                                             <button
-                                                                className="view-btn"
+                                                                className="action-btn view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
-                                                                <FaEye />
+                                                                View
                                                             </button>
                                                             <button
-                                                                className="download-btn"
+                                                                className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
-                                                                <FaDownload />
+                                                                Download
                                                             </button>
                                                         </div>
-                                                    </div>
-                                                    <div className="document-info">
-                                                        <h4>{doc.title}</h4>
-                                                        <p className="document-date">{doc.date}</p>
-                                                        <p className="document-size">{doc.size}</p>
-                                                        <p className="document-type">{doc.type}</p>
                                                     </div>
                                                 </div>
                                             ))}
@@ -1279,19 +1243,25 @@ const FinancialDocuments = () => {
                                                 className="folder-card"
                                                 onClick={() => handleFolderClick("Shareholding Pattern")}
                                             >
-                                                <FaFolder className="folder-icon-large" />
-                                                <h4>Shareholding Pattern</h4>
-                                                <p className="document-description">Click to view shareholding documents</p>
-                                                <span className="file-count">{getFileCount("Shareholding Pattern")} files</span>
+                                                <div className="folder-content">
+                                                    <div className="folder-info">
+                                                        <h4>Shareholding Pattern</h4>
+                                                        <p>{getFileCount("Shareholding Pattern")} files</p>
+                                                    </div>
+                                                    <div className="arrow">→</div>
+                                                </div>
                                             </div>
                                             <div
                                                 className="folder-card"
                                                 onClick={() => handleFolderClick("Financial Results")}
                                             >
-                                                <FaFolder className="folder-icon-large" />
-                                                <h4>Financial Results</h4>
-                                                <p className="document-description">Click to view financial results</p>
-                                                <span className="file-count">{getFileCount("Financial Results")} files</span>
+                                                <div className="folder-content">
+                                                    <div className="folder-info">
+                                                        <h4>Financial Results</h4>
+                                                        <p>{getFileCount("Financial Results")} files</p>
+                                                    </div>
+                                                    <div className="arrow">→</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </>
@@ -1641,19 +1611,25 @@ const FinancialDocuments = () => {
                                                 className="folder-card"
                                                 onClick={() => handleFolderClick("Audited Financial Results")}
                                             >
-                                                <FaFolder className="folder-icon-large" />
-                                                <h4>Audited Financial Results</h4>
-                                                <p className="document-description">Click to view audited financial results</p>
-                                                <span className="file-count">3 files</span>
+                                                <div className="folder-content">
+                                                    <div className="folder-info">
+                                                        <h4>Audited Financial Results</h4>
+                                                        <p>{getFileCount("Audited Financial Results")} files</p>
+                                                    </div>
+                                                    <div className="arrow">→</div>
+                                                </div>
                                             </div>
                                             <div
                                                 className="folder-card"
                                                 onClick={() => handleFolderClick("Annual Reports")}
                                             >
-                                                <FaFolder className="folder-icon-large" />
-                                                <h4>Annual Reports</h4>
-                                                <p className="document-description">Click to view annual reports</p>
-                                                <span className="file-count">2 files</span>
+                                                <div className="folder-content">
+                                                    <div className="folder-info">
+                                                        <h4>Annual Reports</h4>
+                                                        <p>{getFileCount("Annual Reports")} files</p>
+                                                    </div>
+                                                    <div className="arrow">→</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </>
@@ -2090,10 +2066,13 @@ const FinancialDocuments = () => {
                                                 className="folder-card"
                                                 onClick={() => handleFolderClick("Policies")}
                                             >
-                                                <FaFolder className="folder-icon-large" />
-                                                <h4>Policies</h4>
-                                                <p className="document-description">Click to view policies</p>
-                                                <span className="file-count">11 files</span>
+                                                <div className="folder-content">
+                                                    <div className="folder-info">
+                                                        <h4>Policies</h4>
+                                                        <p>{getFileCount("Policies")} files</p>
+                                                    </div>
+                                                    <div className="arrow">→</div>
+                                                </div>
                                             </div>
                                         </div>
                                     </>
@@ -2197,17 +2176,30 @@ const FinancialDocuments = () => {
 
                                         {folderStructure[selectedCategory] ? (
                                             <div className="folders-grid">
-                                                {folderStructure[selectedCategory].map((folderName) => (
-                                                    <div
+                                                {folderStructure[selectedCategory].map((folderName, index) => (
+                                                    <motion.div
                                                         key={folderName}
                                                         className="folder-card"
                                                         onClick={() => handleFolderClick(folderName)}
+                                                        initial={{ opacity: 0, y: 20 }}
+                                                        whileInView={{ opacity: 1, y: 0 }}
+                                                        viewport={{ once: true }}
+                                                        transition={{
+                                                            duration: 0.5,
+                                                            delay: index * 0.1,
+                                                            ease: "easeOut"
+                                                        }}
+                                                        whileHover={{ y: -5, scale: 1.02 }}
+                                                        whileTap={{ scale: 0.98 }}
                                                     >
-                                                        <FaFolder className="folder-icon-large" />
-                                                        <h4>{folderName}</h4>
-                                                        <p className="document-description">Click to view documents</p>
-                                                        <span className="file-count">{getFileCount(folderName)} files</span>
-                                                    </div>
+                                                        <div className="folder-content">
+                                                            <div className="folder-info">
+                                                                <h4>{folderName}</h4>
+                                                                <p>{getFileCount(folderName)} files</p>
+                                                            </div>
+                                                            <div className="arrow">→</div>
+                                                        </div>
+                                                    </motion.div>
                                                 ))}
                                             </div>
                                         ) : (
@@ -2225,51 +2217,34 @@ const FinancialDocuments = () => {
             </div>
 
             {/* PDF Viewer Modal */}
-            {pdfViewer.isOpen && (
-                <div className="pdf-viewer-modal">
-                    <div className="pdf-viewer-content">
-                        <div className="pdf-viewer-header">
-                            <h3>{pdfViewer.title}</h3>
-                            <button className="close-btn" onClick={closePdfViewer}>
-                                <FaTimes />
-                            </button>
-                        </div>
-                        <div className="pdf-viewer-body">
-                            <iframe
-                                src={pdfViewer.url}
-                                title={pdfViewer.title}
-                                className="pdf-iframe"
-                                width="100%"
-                                height="600px"
-                                frameBorder="0"
-                            />
-
-                            <div className="pdf-actions">
-                                <button
-                                    className="open-pdf-btn"
-                                    onClick={() => window.open(pdfViewer.url, '_blank')}
-                                >
-                                    Open in New Tab
-                                </button>
-
-                                <button
-                                    className="download-pdf-btn"
-                                    onClick={() => {
-                                        const link = document.createElement('a');
-                                        link.href = pdfViewer.url;
-                                        link.download = pdfViewer.title + '.pdf';
-                                        document.body.appendChild(link);
-                                        link.click();
-                                        document.body.removeChild(link);
-                                    }}
-                                >
-                                    Download PDF
-                                </button>
-                            </div>
-                        </div>
+            <Modal
+                title={
+                    <div className="pdf-modal-header">
+                        <span>{pdfViewer.title}</span>
+                        <button
+                            className="close-btn"
+                            onClick={closePdfViewer}
+                        >
+                            ×
+                        </button>
                     </div>
+                }
+                open={pdfViewer.isOpen}
+                onCancel={closePdfViewer}
+                footer={null}
+                width="90%"
+                className="pdf-viewer-modal"
+            >
+                <div className="pdf-viewer-content">
+                    <iframe
+                        src={pdfViewer.url}
+                        title={pdfViewer.title}
+                        width="100%"
+                        height="600px"
+                        style={{ border: 'none' }}
+                    />
                 </div>
-            )}
+            </Modal>
         </div>
     );
 };
