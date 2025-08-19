@@ -23,8 +23,8 @@ const HeroHome = () => {
                     <div className="HeroHomeContent">
                         <Row>
                             <Col lg={16}>
-                                <h1><span>Your&nbsp;Message.</span> <br />
-                                    Crystal Clear.
+                                <h1><span>Munoth Capital.</span> <br />
+                                    Your Trusted <br />Investment Partner.
                                 </h1>
                             </Col>
                             <Col lg={8}>
@@ -34,7 +34,7 @@ const HeroHome = () => {
                                             spaceBetween={30}
                                             centeredSlides={true}
                                             autoplay={{
-                                                delay: 2500,
+                                                delay: 3000,
                                                 disableOnInteraction: false,
                                             }}
                                             speed={800}
@@ -50,7 +50,7 @@ const HeroHome = () => {
                                                 CarousalContentData.map((item) => (
                                                     <SwiperSlide key={item.id}>
                                                         <div>
-                                                            {/* <h3>{item.title}</h3> */}
+                                                            <h3>{item.title}</h3>
                                                             <p>{item.description}</p>
                                                         </div>
                                                     </SwiperSlide>

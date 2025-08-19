@@ -57,9 +57,9 @@ const AttachmentImages = () => {
                 <div className="AttachmentBackgroundImagesParallax">
                     <div className="TextLeftSidetop">
                         <h2>
-                            <span>Connect.</span> <br />
-                            <span>Clarify.</span>
-                            <span>Inspire.</span>
+                            <span>Invest.</span> <br />
+                            <span>Grow.</span>
+                            <span>Prosper.</span>
                         </h2>
                     </div>
                     <img
