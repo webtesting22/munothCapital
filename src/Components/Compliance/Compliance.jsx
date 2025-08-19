@@ -185,23 +185,72 @@ const Compliance = () => {
     const handleDownload = (document) => {
         if (document.filePath && document.filePath !== "#") {
             try {
-                const link = document.createElement('a');
-                link.href = process.env.PUBLIC_URL + document.filePath;
-                link.download = document.title + '.pdf';
-                link.target = '_blank';
-
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-
-                console.log(`Downloading: ${document.title} from ${link.href}`);
+                // Force download using fetch and blob for better browser compatibility
+                fetch(document.filePath)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.blob();
+                    })
+                    .then(blob => {
+                        // Create object URL from blob
+                        const url = window.URL.createObjectURL(blob);
+                        
+                        // Create temporary link element
+                        const link = document.createElement('a');
+                        link.href = url;
+                        
+                        // Set proper filename with extension
+                        const fileExtension = document.type ? document.type.toLowerCase() : 'pdf';
+                        link.download = `${document.title}.${fileExtension}`;
+                        
+                        // Set other attributes
+                        link.style.display = 'none';
+                        
+                        // Append to body, click, and remove
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        // Clean up object URL
+                        window.URL.revokeObjectURL(url);
+                        
+                        console.log(`Download completed: ${document.title} (${fileExtension})`);
+                    })
+                    .catch(error => {
+                        console.error('Fetch download error:', error);
+                        
+                        // Fallback: use simple link download
+                        const link = document.createElement('a');
+                        link.href = document.filePath;
+                        const fileExtension = document.type ? document.type.toLowerCase() : 'pdf';
+                        link.download = `${document.title}.${fileExtension}`;
+                        link.style.display = 'none';
+                        link.target = '_blank';
+                        
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        
+                        console.log(`Fallback download initiated: ${document.title}`);
+                    });
+                
             } catch (error) {
                 console.error('Download error:', error);
-                window.open(process.env.PUBLIC_URL + document.filePath, '_blank');
+                
+                // Final fallback: open in new tab
+                try {
+                    window.open(document.filePath, '_blank');
+                    alert(`Opening ${document.title} in new tab. Use browser's download option to save the file.`);
+                } catch (fallbackError) {
+                    console.error('Final fallback error:', fallbackError);
+                    alert(`Download failed for: ${document.title}. Please check your internet connection and try again.`);
+                }
             }
         } else {
-            console.log(`Downloading: ${document.title}`);
-            alert(`Download started for: ${document.title}`);
+            console.log(`No file path available for: ${document.title}`);
+            alert(`Download not available for: ${document.title}`);
         }
     };
 
