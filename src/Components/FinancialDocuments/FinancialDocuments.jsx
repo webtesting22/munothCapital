@@ -24,10 +24,10 @@ const FinancialDocuments = () => {
             "2018-19"
         ],
         "Quarterly Reports": [
-            "Q4 2023-24",
-            "Q3 2023-24",
-            "Q2 2023-24",
-            "Q1 2023-24"
+            "2018",
+            "2017",
+            "2016",
+            "2015"
         ],
         "Announcements": [
             "2024",
@@ -93,22 +93,110 @@ const FinancialDocuments = () => {
                 filePath: "/Documents/AnnualReturn/Annual Return for 2018-19.pdf"
             }
         ],
-        "Q4 2023-24": [
+        "2018": [
             {
-                date: "15 May, 2024",
-                title: "Q4 Financial Results 2023-24",
-                size: "1.2 MB",
+                date: "30 Sep, 2018",
+                title: "Share holding pattern for quarter ending 30th September 2018",
+                size: "442 KB",
                 type: "PDF",
-                filePath: "#"
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 30th September 2018.pdf"
+            },
+            {
+                date: "30 Jun, 2018",
+                title: "Share holding pattern for quarter ending 30th June 2018",
+                size: "442 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 30th June 2018.pdf"
+            },
+            {
+                date: "31 Mar, 2018",
+                title: "Share holding pattern for quarter ending 31st March 2018",
+                size: "440 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 31st March 2018.pdf"
             }
         ],
-        "Q3 2023-24": [
+        "2017": [
             {
-                date: "20 Feb, 2024",
-                title: "Q3 Financial Results 2023-24",
-                size: "956.7 KB",
+                date: "31 Dec, 2017",
+                title: "Share holding pattern for quarter ending 31st December 2017",
+                size: "436 KB",
                 type: "PDF",
-                filePath: "#"
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 31st December 2017.pdf"
+            },
+            {
+                date: "30 Sep, 2017",
+                title: "Share holding pattern for quarter ending 3oth September 2017",
+                size: "436 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 3oth September 2017.pdf"
+            },
+            {
+                date: "30 Jun, 2017",
+                title: "Share holding pattern for quarter ending 30th June 2017",
+                size: "438 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 30th June 2017.pdf"
+            },
+            {
+                date: "31 Mar, 2017",
+                title: "Share holding pattern for quarter ending 31st March 2017",
+                size: "438 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 31st March 2017.pdf"
+            }
+        ],
+        "2016": [
+            {
+                date: "31 Dec, 2016",
+                title: "Share holding pattern for quarter ending 31st December 2016",
+                size: "438 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Share holding pattern for quarter ending 31st December 2016.pdf"
+            },
+            {
+                date: "30 Sep, 2016",
+                title: "Shareholding Pattern for the Quarter ended on 30th Sep 2016",
+                size: "483 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th Sep 2016.pdf"
+            },
+            {
+                date: "30 Jun, 2016",
+                title: "Shareholding Pattern for the Quarter ended on 30th June 2016",
+                size: "189 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th June 2016.pdf"
+            },
+            {
+                date: "31 Mar, 2016",
+                title: "Shareholding Pattern for the Quarter ended on 31st Mar 2016",
+                size: "183 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 31st Mar 2016.pdf"
+            }
+        ],
+        "2015": [
+            {
+                date: "31 Dec, 2015",
+                title: "Shareholding Pattern for the Quarter ended on 31st Dec 2015",
+                size: "144 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 31st Dec 2015.pdf"
+            },
+            {
+                date: "30 Sep, 2015",
+                title: "Shareholding Pattern for the Quarter ended on 30th Sept 2015",
+                size: "212 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th Sept 2015.pdf"
+            },
+            {
+                date: "30 Jun, 2015",
+                title: "Shareholding Pattern for the Quarter ended on 30th June 2015",
+                size: "207 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th June 2015.pdf"
             }
         ],
         "Policies": [
@@ -132,13 +220,14 @@ const FinancialDocuments = () => {
     const handleView = (document) => {
         if (document.filePath && document.filePath !== "#") {
             try {
-                const pdfUrl = process.env.PUBLIC_URL + document.filePath;
+                // Use relative path since files are in public folder
+                const pdfUrl = document.filePath;
                 console.log(`Opening PDF: ${pdfUrl}`);
 
-                // Try to open in new tab first
+                // Simple approach: always try to open in new tab first
                 const newWindow = window.open(pdfUrl, '_blank');
 
-                // If that fails, show in modal
+                // If window.open fails, show simple modal with direct link
                 if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
                     setPdfViewer({
                         isOpen: true,
@@ -148,16 +237,24 @@ const FinancialDocuments = () => {
                 }
             } catch (error) {
                 console.error('View error:', error);
-                // Fallback to modal
+                // Show modal with direct link as fallback
                 setPdfViewer({
                     isOpen: true,
-                    url: process.env.PUBLIC_URL + document.filePath,
+                    url: document.filePath,
                     title: document.title
                 });
             }
         } else {
             alert(`View option not available for: ${document.title}`);
         }
+    };
+
+    const showPdfModal = (pdfUrl, title) => {
+        setPdfViewer({
+            isOpen: true,
+            url: pdfUrl,
+            title: title
+        });
     };
 
     const handleDownload = (document) => {
@@ -242,8 +339,435 @@ const FinancialDocuments = () => {
                     <div className="folders-content">
                         {selectedCategory && (
                             <>
-                                {!selectedFolder ? (
-                                    // Show Folders View
+                                {selectedCategory === "Annual Return" ? (
+                                    // Show Documents directly for Annual Return
+                                    <>
+                                        <h3>Annual Return Documents</h3>
+                                        <div className="documents-grid">
+                                            {documents["2022-23"] && documents["2022-23"].map((doc, index) => (
+                                                <div key={`2022-23-${index}`} className="document-card">
+                                                    <div className="document-header">
+                                                        <FaFilePdf className="pdf-icon" />
+                                                        <div className="document-actions">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                <FaEye />
+                                                            </button>
+                                                            <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                <FaDownload />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="document-info">
+                                                        <h4>{doc.title}</h4>
+                                                        <p className="document-date">{doc.date}</p>
+                                                        <p className="document-size">{doc.size}</p>
+                                                        <p className="document-type">{doc.type}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2021-22"] && documents["2021-22"].map((doc, index) => (
+                                                <div key={`2021-22-${index}`} className="document-card">
+                                                    <div className="document-header">
+                                                        <FaFilePdf className="pdf-icon" />
+                                                        <div className="document-actions">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                <FaEye />
+                                                            </button>
+                                                            <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                <FaDownload />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="document-info">
+                                                        <h4>{doc.title}</h4>
+                                                        <p className="document-date">{doc.date}</p>
+                                                        <p className="document-size">{doc.size}</p>
+                                                        <p className="document-type">{doc.type}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2020-21"] && documents["2020-21"].map((doc, index) => (
+                                                <div key={`2020-21-${index}`} className="document-card">
+                                                    <div className="document-header">
+                                                        <FaFilePdf className="pdf-icon" />
+                                                        <div className="document-actions">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                <FaEye />
+                                                            </button>
+                                                            <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                <FaDownload />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="document-info">
+                                                        <h4>{doc.title}</h4>
+                                                        <p className="document-date">{doc.date}</p>
+                                                        <p className="document-size">{doc.size}</p>
+                                                        <p className="document-type">{doc.type}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2019-20"] && documents["2019-20"].map((doc, index) => (
+                                                <div key={`2019-20-${index}`} className="document-card">
+                                                    <div className="document-header">
+                                                        <FaFilePdf className="pdf-icon" />
+                                                        <div className="document-actions">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                <FaEye />
+                                                            </button>
+                                                            <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                <FaDownload />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="document-info">
+                                                        <h4>{doc.title}</h4>
+                                                        <p className="document-date">{doc.date}</p>
+                                                        <p className="document-size">{doc.size}</p>
+                                                        <p className="document-type">{doc.type}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2018-19"] && documents["2018-19"].map((doc, index) => (
+                                                <div key={`2018-19-${index}`} className="document-card">
+                                                    <div className="document-header">
+                                                        <FaFilePdf className="pdf-icon" />
+                                                        <div className="document-actions">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                <FaEye />
+                                                            </button>
+                                                            <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                <FaDownload />
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div className="document-info">
+                                                        <h4>{doc.title}</h4>
+                                                        <p className="document-date">{doc.date}</p>
+                                                        <p className="document-size">{doc.size}</p>
+                                                        <p className="document-type">{doc.type}</p>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </>
+                                ) : selectedCategory === "Quarterly Reports" && !selectedFolder ? (
+                                    // Show Child Folders for Quarterly Reports
+                                    <>
+                                        <h3>Quarterly Reports - Select Category</h3>
+                                        <div className="folders-grid">
+                                            <div
+                                                className="folder-card"
+                                                onClick={() => handleFolderClick("Shareholding Pattern")}
+                                            >
+                                                <FaFolder className="folder-icon-large" />
+                                                <h4>Shareholding Pattern</h4>
+                                                <p className="document-description">Click to view shareholding documents</p>
+                                                <span className="file-count">16 files</span>
+                                            </div>
+                                            <div
+                                                className="folder-card"
+                                                onClick={() => handleFolderClick("Financial Results")}
+                                            >
+                                                <FaFolder className="folder-icon-large" />
+                                                <h4>Financial Results</h4>
+                                                <p className="document-description">Click to view financial results</p>
+                                                <span className="file-count">4 files</span>
+                                            </div>
+                                        </div>
+                                    </>
+                                ) : selectedCategory === "Quarterly Reports" && selectedFolder ? (
+                                    // Show Documents for Quarterly Reports child folders
+                                    <>
+                                        <div className="documents-header">
+                                            <button className="back-btn" onClick={handleBackToFolders}>
+                                                <FaArrowLeft /> Back to Quarterly Reports
+                                            </button>
+                                            <h3>Documents in {selectedFolder}</h3>
+                                        </div>
+
+                                        {selectedFolder === "Shareholding Pattern" ? (
+                                            <div className="documents-grid">
+                                                {documents["2018"] && documents["2018"].map((doc, index) => (
+                                                    <div key={`2018-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["2017"] && documents["2017"].map((doc, index) => (
+                                                    <div key={`2017-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["2016"] && documents["2016"].map((doc, index) => (
+                                                    <div key={`2016-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["2015"] && documents["2015"].map((doc, index) => (
+                                                    <div key={`2015-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : selectedFolder === "Financial Results" ? (
+                                            <div className="documents-grid">
+                                                {documents["Q4 2023"] && documents["Q4 2023"].map((doc, index) => (
+                                                    <div key={`Q4-2023-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Q3 2023"] && documents["Q3 2023"].map((doc, index) => (
+                                                    <div key={`Q3-2023-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Q2 2023"] && documents["Q2 2023"].map((doc, index) => (
+                                                    <div key={`Q2-2023-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["Q1 2023"] && documents["Q1 2023"].map((doc, index) => (
+                                                    <div key={`Q1-2023-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        ) : null}
+                                    </>
+                                ) : !selectedFolder ? (
+                                    // Show Folders View for other categories
                                     <>
                                         <h3>{selectedCategory} Folders</h3>
 
@@ -257,7 +781,7 @@ const FinancialDocuments = () => {
                                                     >
                                                         <FaFolder className="folder-icon-large" />
                                                         <h4>{folderName}</h4>
-                                                        <p className="folder-description">Click to view documents</p>
+                                                        <p className="document-description">Click to view documents</p>
                                                         <span className="file-count">{getFileCount(folderName)} files</span>
                                                     </div>
                                                 ))}
@@ -270,7 +794,7 @@ const FinancialDocuments = () => {
                                         )}
                                     </>
                                 ) : (
-                                    // Show Documents View
+                                    // Show Documents View for other categories
                                     <>
                                         <div className="documents-header">
                                             <button className="back-btn" onClick={handleBackToFolders}>
@@ -339,10 +863,34 @@ const FinancialDocuments = () => {
                             <iframe
                                 src={pdfViewer.url}
                                 title={pdfViewer.title}
+                                className="pdf-iframe"
                                 width="100%"
                                 height="600px"
                                 frameBorder="0"
                             />
+
+                            <div className="pdf-actions">
+                                <button
+                                    className="open-pdf-btn"
+                                    onClick={() => window.open(pdfViewer.url, '_blank')}
+                                >
+                                    Open in New Tab
+                                </button>
+
+                                <button
+                                    className="download-pdf-btn"
+                                    onClick={() => {
+                                        const link = document.createElement('a');
+                                        link.href = pdfViewer.url;
+                                        link.download = pdfViewer.title + '.pdf';
+                                        document.body.appendChild(link);
+                                        link.click();
+                                        document.body.removeChild(link);
+                                    }}
+                                >
+                                    Download PDF
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
