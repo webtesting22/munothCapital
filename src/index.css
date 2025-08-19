@@ -220,6 +220,9 @@ h3::before {
 } */
 
 @media (max-width: 768px) {
+  .Container {
+    padding: 0px 10px;
+  }
   h1 {
     font-size: 50px !important;
   }

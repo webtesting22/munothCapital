@@ -121,8 +121,9 @@
 /* Mobile Category Header */
 .ComplianceContainer .mobile-category-header {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 25px;
     padding: 20px;
     background: #fafafa;
@@ -424,8 +425,24 @@
     padding: 20px 0;
 }
 
+.mobile-categories-list .mobile-category-item {
+    display: flex
+;
+    justify-content: space-between;
+    background: black;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .ComplianceContainer .compliance-content{
+        min-height: 100% !important;
+    }
+    .ComplianceContainer .mobile-category-header{
+        gap: 20px;
+    }
     .ComplianceContainer .compliance-content {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -464,6 +481,7 @@
         right: 20px;
         width: 45px;
         height: 45px;
+        display: none;
     }
 
     .ComplianceContainer .title-section h2 {
