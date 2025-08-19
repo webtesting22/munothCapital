@@ -31,9 +31,12 @@ const FinancialDocuments = () => {
         ],
         "Announcements": [
             "2024",
-            "2023",
-            "2022",
-            "2021"
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015"
         ],
         "Annual Results": [
             "2023-24",
@@ -199,14 +202,17 @@ const FinancialDocuments = () => {
                 filePath: "/Documents/QuarterlyReports/Shareholding Pattern for the Quarter ended on 30th June 2015.pdf"
             }
         ],
-        "Policies": [
+        // Policies
+        "Corporate Social Responsibility": [
             {
                 date: "01 Jan, 2024",
                 title: "Corporate Social Responsibility Policy",
                 size: "456.2 KB",
                 type: "PDF",
                 filePath: "#"
-            },
+            }
+        ],
+        "Whistle Blower": [
             {
                 date: "15 Dec, 2023",
                 title: "Whistle Blower Policy",
@@ -214,7 +220,363 @@ const FinancialDocuments = () => {
                 type: "PDF",
                 filePath: "#"
             }
-        ]
+        ],
+
+        // Announcements by Year
+        "2024": [
+            {
+                date: "15 Mar, 2024",
+                title: "Notice of EGM - Munoth Capital",
+                size: "1.2 MB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2024/Notice of EGM_ Munoth Capital .pdf"
+            },
+            {
+                date: "10 Feb, 2024",
+                title: "Valuation Report",
+                size: "1.7 MB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2024/Valuation Report.pdf"
+            }
+        ],
+        "2020": [
+            {
+                date: "20 Dec, 2020",
+                title: "Notice for AGM",
+                size: "405 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2020/Notice for AGM.pdf"
+            }
+        ],
+        "2019": [
+            {
+                date: "25 Dec, 2019",
+                title: "Public Notice - Physical Share Transfer (English News Paper)",
+                size: "1.1 MB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2019/Public Notice_Physical Share transfer_English News paper.pdf"
+            },
+            {
+                date: "20 Sep, 2019",
+                title: "Public Notice - Physical Share Transfer (News Paper)",
+                size: "573 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2019/Public Notice_Physical Share transfer_News paper.pdf"
+            }
+        ],
+        "2018": [
+            {
+                date: "30 Dec, 2018",
+                title: "Board meeting intimation to consider results of Q3 ending December 2017",
+                size: "851 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2018/Board meeting intimation to consider results of Q3 ending December 2017.pdf"
+            },
+            {
+                date: "25 Sep, 2018",
+                title: "Board meeting intimation to consider results of Q2 ending September 2018",
+                size: "359 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2018/Board meeting intimation to consider results of Q2 ending September 2018.pdf"
+            },
+            {
+                date: "20 Jun, 2018",
+                title: "Board meeting intimation to consider results of Q1 ending June 2018",
+                size: "184 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2018/Board meeting intimation to consider results of Q1 ending June 2018.pdf"
+            },
+            {
+                date: "15 Mar, 2018",
+                title: "Board meeting intimation to consider audited results for year ending March 2018",
+                size: "375 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2018/Board meeting intimation to consider audited results for year ending March 2018.pdf"
+            },
+            {
+                date: "10 Jan, 2018",
+                title: "Outcome of AGM",
+                size: "267 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2018/Outcome of AGM.pdf"
+            }
+        ],
+        "2017": [
+            {
+                date: "28 Dec, 2017",
+                title: "Intimation of EGM",
+                size: "317 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2017/Intimation of EGM.pdf"
+            },
+            {
+                date: "22 Sep, 2017",
+                title: "Board meeting intimation to consider results of Q2 ending September 2017",
+                size: "95 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2017/Board meeting intimation to consider results of Q2 ending September 2017.pdf"
+            },
+            {
+                date: "18 Jun, 2017",
+                title: "Summary of the AGM",
+                size: "189 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2017/Summary of the AGM.PDF"
+            },
+            {
+                date: "15 Jun, 2017",
+                title: "Outcome of AGM",
+                size: "267 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2017/Outcome of AGM.pdf"
+            },
+            {
+                date: "10 Jun, 2017",
+                title: "Notice of AGM",
+                size: "410 KB",
+                type: "PDF",
+                filePath: "/Documents/Announcements/2017/Notice of AGM.pdf"
+            }
+        ],
+        "2016": [
+            {
+                date: "31 Dec, 2016",
+                title: "Year End Corporate Announcement 2016",
+                size: "267 KB",
+                type: "PDF",
+                filePath: "#"
+            },
+            {
+                date: "25 Sep, 2016",
+                title: "Q3 Results Announcement",
+                size: "245 KB",
+                type: "PDF",
+                filePath: "#"
+            },
+            {
+                date: "20 Jun, 2016",
+                title: "Corporate Governance Announcement",
+                size: "198 KB",
+                type: "PDF",
+                filePath: "#"
+            }
+        ],
+        "2015": [
+            {
+                date: "30 Dec, 2015",
+                title: "Annual Corporate Announcement 2015",
+                size: "256 KB",
+                type: "PDF",
+                filePath: "#"
+            },
+            {
+                date: "25 Sep, 2015",
+                title: "Q2 Results Board Meeting Announcement",
+                size: "234 KB",
+                type: "PDF",
+                filePath: "#"
+            },
+            {
+                date: "20 Jun, 2015",
+                title: "Corporate Strategy Announcement",
+                size: "189 KB",
+                type: "PDF",
+                filePath: "#"
+            }
+        ],
+        // Quarterly Reports - Financial Results
+        "Q4 2023": [
+            {
+                date: "31 Mar, 2024",
+                title: "Financial Results for Q4 2023-24",
+                size: "512 KB",
+                type: "PDF",
+                filePath: "#"
+            }
+        ],
+        "Q3 2023": [
+            {
+                date: "31 Dec, 2023",
+                title: "Financial Results for Q3 2023-24",
+                size: "498 KB",
+                type: "PDF",
+                filePath: "#"
+            }
+        ],
+        "Q2 2023": [
+            {
+                date: "30 Sep, 2023",
+                title: "Financial Results for Q2 2023-24",
+                size: "487 KB",
+                type: "PDF",
+                filePath: "#"
+            }
+        ],
+        "Q1 2023": [
+            {
+                date: "30 Jun, 2023",
+                title: "Financial Results for Q1 2023-24",
+                size: "476 KB",
+                type: "PDF",
+                filePath: "#"
+            }
+        ],
+
+        // Real Financial Results from FinancialResults folder
+        "2021-22": [
+            {
+                date: "31 Dec, 2021",
+                title: "Unaudited Financial results for Q3 of 2021-22",
+                size: "268 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2021-22.pdf"
+            },
+            {
+                date: "30 Sep, 2021",
+                title: "Unaudited Financial results for Q2 of 2021-22",
+                size: "285 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2021-22.pdf"
+            },
+            {
+                date: "30 Jun, 2021",
+                title: "Unaudited Financial results for Q1 of 2021-22",
+                size: "203 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2021-22.pdf"
+            }
+        ],
+        "2020-21": [
+            {
+                date: "31 Mar, 2021",
+                title: "Audited Financial results for Q4 of 2020-21",
+                size: "393 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Audited Financial results for Q4 of 2020-21.pdf"
+            },
+            {
+                date: "31 Dec, 2020",
+                title: "Unaudited Financial results for Q3 of 2020-21",
+                size: "877 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2020-21.PDF"
+            },
+            {
+                date: "30 Sep, 2020",
+                title: "Unaudited Financial results for Q2 of 2020-21",
+                size: "877 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2020-21 .PDF"
+            },
+            {
+                date: "30 Jun, 2020",
+                title: "Unaudited Financial results for Q1 of 2020-21",
+                size: "1.6 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2020-21 .pdf"
+            }
+        ],
+        "2019-20": [
+            {
+                date: "31 Dec, 2019",
+                title: "Unaudited Financial Results for Q3 of 2019-20",
+                size: "1.5 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial Results for Q3 of 2019-20.pdf"
+            },
+            {
+                date: "30 Sep, 2019",
+                title: "Unaudited Financial Results for Q2 of 2019-20",
+                size: "698 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial Results for Q2 of 2019-20.pdf"
+            },
+            {
+                date: "30 Jun, 2019",
+                title: "Unaudited Financial results for Q1 of 2019-20",
+                size: "1009 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2019-20.pdf"
+            }
+        ],
+        "2018-19": [
+            {
+                date: "31 Dec, 2018",
+                title: "Unaudited Financial results for Q3 of 2018-19",
+                size: "1.1 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2018-19.pdf"
+            },
+            {
+                date: "30 Sep, 2018",
+                title: "Unaudited Financial results for Q2 of 2018-19",
+                size: "1.5 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2018-19.pdf"
+            },
+            {
+                date: "30 Jun, 2018",
+                title: "Unaudited Financial results for Q1 of 2018-19",
+                size: "1.2 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q1 of 2018-19.pdf"
+            }
+        ],
+        "2017-18": [
+            {
+                date: "31 Dec, 2017",
+                title: "Unaudited Financial results for Q3 of 2017-18",
+                size: "748 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q3 of 2017-18.pdf"
+            },
+            {
+                date: "30 Sep, 2017",
+                title: "Unaudited Financial results for Q2 of 2017-18",
+                size: "744 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial results for Q2 of 2017-18.pdf"
+            }
+        ],
+        "2016-17": [
+            {
+                date: "30 Sep, 2016",
+                title: "Unaudited financial results for Q2 of 2016-17",
+                size: "1.4 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited financial results for Q2 of 2016-17.pdf"
+            },
+            {
+                date: "30 Jun, 2016",
+                title: "Unaudited financial results for Q1 of 2016-17",
+                size: "1.1 MB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited financial results for Q1 of 2016-17.pdf"
+            }
+        ],
+        "2015-16": [
+            {
+                date: "31 Dec, 2015",
+                title: "Unaudited Financial Result for Q3 of 2015-16",
+                size: "118 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q3 of 2015-16.pdf"
+            },
+            {
+                date: "30 Sep, 2015",
+                title: "Unaudited Financial Result for Q2 of 2015-16",
+                size: "152 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q2 of 2015-16.pdf"
+            },
+            {
+                date: "30 Jun, 2015",
+                title: "Unaudited Financial Result for Q1 of 2015-16",
+                size: "115 KB",
+                type: "PDF",
+                filePath: "/Documents/QuarterlyReports/FinancialResults/Unaudited Financial Result for Q1 of 2015-16.pdf"
+            }
+        ],
     };
 
     const handleView = (document) => {
@@ -647,8 +1009,8 @@ const FinancialDocuments = () => {
                                             </div>
                                         ) : selectedFolder === "Financial Results" ? (
                                             <div className="documents-grid">
-                                                {documents["Q4 2023"] && documents["Q4 2023"].map((doc, index) => (
-                                                    <div key={`Q4-2023-${index}`} className="document-card">
+                                                {documents["2021-22"] && documents["2021-22"].map((doc, index) => (
+                                                    <div key={`2021-22-${index}`} className="document-card">
                                                         <div className="document-header">
                                                             <FaFilePdf className="pdf-icon" />
                                                             <div className="document-actions">
@@ -676,8 +1038,8 @@ const FinancialDocuments = () => {
                                                         </div>
                                                     </div>
                                                 ))}
-                                                {documents["Q3 2023"] && documents["Q3 2023"].map((doc, index) => (
-                                                    <div key={`Q3-2023-${index}`} className="document-card">
+                                                {documents["2020-21"] && documents["2020-21"].map((doc, index) => (
+                                                    <div key={`2020-21-${index}`} className="document-card">
                                                         <div className="document-header">
                                                             <FaFilePdf className="pdf-icon" />
                                                             <div className="document-actions">
@@ -705,8 +1067,8 @@ const FinancialDocuments = () => {
                                                         </div>
                                                     </div>
                                                 ))}
-                                                {documents["Q2 2023"] && documents["Q2 2023"].map((doc, index) => (
-                                                    <div key={`Q2-2023-${index}`} className="document-card">
+                                                {documents["2019-20"] && documents["2019-20"].map((doc, index) => (
+                                                    <div key={`2019-20-${index}`} className="document-card">
                                                         <div className="document-header">
                                                             <FaFilePdf className="pdf-icon" />
                                                             <div className="document-actions">
@@ -734,8 +1096,95 @@ const FinancialDocuments = () => {
                                                         </div>
                                                     </div>
                                                 ))}
-                                                {documents["Q1 2023"] && documents["Q1 2023"].map((doc, index) => (
-                                                    <div key={`Q1-2023-${index}`} className="document-card">
+                                                {documents["2018-19"] && documents["2018-19"].map((doc, index) => (
+                                                    <div key={`2018-19-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["2017-18"] && documents["2017-18"].map((doc, index) => (
+                                                    <div key={`2017-18-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["2016-17"] && documents["2016-17"].map((doc, index) => (
+                                                    <div key={`2016-17-${index}`} className="document-card">
+                                                        <div className="document-header">
+                                                            <FaFilePdf className="pdf-icon" />
+                                                            <div className="document-actions">
+                                                                <button
+                                                                    className="view-btn"
+                                                                    onClick={() => handleView(doc)}
+                                                                    title="View PDF"
+                                                                >
+                                                                    <FaEye />
+                                                                </button>
+                                                                <button
+                                                                    className="download-btn"
+                                                                    onClick={() => handleDownload(doc)}
+                                                                    title="Download PDF"
+                                                                >
+                                                                    <FaDownload />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div className="document-info">
+                                                            <h4>{doc.title}</h4>
+                                                            <p className="document-date">{doc.date}</p>
+                                                            <p className="document-size">{doc.size}</p>
+                                                            <p className="document-type">{doc.type}</p>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                                {documents["2015-16"] && documents["2015-16"].map((doc, index) => (
+                                                    <div key={`2015-16-${index}`} className="document-card">
                                                         <div className="document-header">
                                                             <FaFilePdf className="pdf-icon" />
                                                             <div className="document-actions">
