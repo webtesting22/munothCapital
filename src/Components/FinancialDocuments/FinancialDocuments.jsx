@@ -1,11 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Modal } from "antd";
 import "./FinancialDocuments.css";
-import { FaDownload, FaFolder, FaPlus, FaFilePdf, FaChevronRight, FaArrowLeft, FaEye, FaTimes } from "react-icons/fa";
+import { FaDownload, FaFolder, FaPlus, FaFilePdf, FaChevronRight, FaArrowLeft, FaEye, FaTimes, FaBars } from "react-icons/fa";
 
 const FinancialDocuments = () => {
     const [selectedCategory, setSelectedCategory] = useState("Annual Return");
     const [selectedFolder, setSelectedFolder] = useState(null);
     const [pdfViewer, setPdfViewer] = useState({ isOpen: false, url: '', title: '' });
+    const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // Detect mobile devices and handle resize
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const categories = [
         "Annual Return",
@@ -774,6 +789,21 @@ const FinancialDocuments = () => {
         ]
     };
 
+    // Mobile modal handlers
+    const handleMobileModalOpen = () => {
+        setIsMobileModalOpen(true);
+    };
+
+    const handleMobileModalClose = () => {
+        setIsMobileModalOpen(false);
+    };
+
+    const handleMobileCategoryClick = (category) => {
+        setSelectedCategory(category);
+        setSelectedFolder(null);
+        setIsMobileModalOpen(false);
+    };
+
     const handleView = (document) => {
         if (document.filePath && document.filePath !== "#") {
             try {
@@ -932,8 +962,44 @@ const FinancialDocuments = () => {
     };
 
     return (
-        <div className="FinancialDocumentsContainer">
-            <div className="Container">
+        <div className="FinancialDocumentsContainer paddingTop300px">
+            {/* Mobile Floating Folder Button */}
+            {isMobile && (
+                <button 
+                    className="mobile-folder-btn"
+                    onClick={handleMobileModalOpen}
+                    title="Open Categories"
+                >
+                    <FaBars />
+                    <span>Categories</span>
+                </button>
+            )}
+
+            {/* Mobile Categories Modal */}
+            <Modal
+                title="Select Category"
+                open={isMobileModalOpen}
+                onCancel={handleMobileModalClose}
+                footer={null}
+                width="90%"
+                className="mobile-categories-modal"
+            >
+                <div className="mobile-categories-list">
+                    {categories.map((category) => (
+                        <div
+                            key={category}
+                            className="mobile-category-item"
+                            onClick={() => handleMobileCategoryClick(category)}
+                        >
+                            <FaFolder className="folder-icon" />
+                            <span>{category}</span>
+                            <FaChevronRight className="arrow-icon" />
+                        </div>
+                    ))}
+                </div>
+            </Modal>
+
+            <div className="Container ">
                 <div className="financial-header">
                     <div className="logo-section">
                         <div className="logo">M</div>
@@ -941,24 +1007,39 @@ const FinancialDocuments = () => {
                     </div>
                 </div>
 
-                <div className="financial-content">
-                    {/* Left Sidebar - Main Categories */}
-                    <div className="categories-sidebar">
-                        <h3>Main Categories</h3>
-                        <div className="category-list">
-                            {categories.map((category) => (
-                                <div
-                                    key={category}
-                                    className={`category-item ${selectedCategory === category ? 'active' : ''}`}
-                                    onClick={() => handleCategoryClick(category)}
-                                >
-                                    <FaFolder className="folder-icon" />
-                                    <span>{category}</span>
-                                    <FaChevronRight className="arrow-icon" />
-                                </div>
-                            ))}
+                <div className="financial-content ">
+                    {/* Mobile Category Header */}
+                    {isMobile && selectedCategory && (
+                        <div className="mobile-category-header">
+                            <h3>📁 {selectedCategory}</h3>
+                            <button 
+                                className="mobile-change-category-btn"
+                                onClick={handleMobileModalOpen}
+                            >
+                                <FaBars /> Change Category
+                            </button>
                         </div>
-                    </div>
+                    )}
+
+                    {/* Left Sidebar - Main Categories */}
+                    {!isMobile && (
+                        <div className="categories-sidebar">
+                            <h3>Main Categories</h3>
+                            <div className="category-list">
+                                {categories.map((category) => (
+                                    <div
+                                        key={category}
+                                        className={`category-item ${selectedCategory === category ? 'active' : ''}`}
+                                        onClick={() => handleCategoryClick(category)}
+                                    >
+                                        <FaFolder className="folder-icon" />
+                                        <span>{category}</span>
+                                        <FaChevronRight className="arrow-icon" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
 
                     {/* Right Content - Folders or Documents */}
                     <div className="folders-content">

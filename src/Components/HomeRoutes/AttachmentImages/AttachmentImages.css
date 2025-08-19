@@ -36,6 +36,16 @@
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+   .AttachmentImagesContainer{
+    overflow: hidden;
+   }
+   .TextLeftSidetop{
+    left: 10px ;
+    top: 10px ;
+   }
+}
+
 @media (min-width:1200px) and (max-width:1500px) {
     .AttachmentBackgroundImagesParallax {
         min-height: 700px;

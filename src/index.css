@@ -145,7 +145,7 @@ ul {
 
 .AnimateBtn span:nth-child(1) {
   font-size: 15px;
-  background-color: #CFB53B;
+  background-color: #ffd700;
   height: 100%;
   width: 50px;
   display: flex;
@@ -172,7 +172,7 @@ ul {
   left: 0;
   width: 0px;
   height: 100%;
-  background-color: #CFB53B;
+  background-color: #ffd700;
   border-radius: 10px;
   z-index: 1;
   transition: all 0.3s ease-in-out;
@@ -208,7 +208,7 @@ h3::before {
   content: "";
   height: 15px;
   width: 15px;
-  background-color: #CFB53B;
+  background-color: #ffd700;
   display: inline-block;
   margin-right: 10px;
   border-radius: 3px;
@@ -218,3 +218,25 @@ h3::before {
   max-width: 1200px;
   margin-left: auto;
 } */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 50px !important;
+  }
+
+.paddingSide {
+  padding: 0px 10px;
+}
+
+h2{
+  font-size: 30px !important;
+}
+h3{
+  font-size: 20px !important;
+  margin-bottom: 20px;
+}
+.paddingTop300px {
+  padding-top: 150px;
+}
+
+}

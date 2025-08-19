@@ -26,16 +26,17 @@
     display: none;
 }
 
-.OurServicesCollapseContainer .ant-collapse .ant-collapse-item-active  .ant-collapse-header-text svg{
+.OurServicesCollapseContainer .ant-collapse .ant-collapse-item-active .ant-collapse-header-text svg {
     rotate: 45deg;
     transition: .5s;
 }
+
 .OurServicesCollapseContainer .ant-collapse .ant-collapse-header-text svg {
     position: absolute;
     right: 20px;
     font-size: 50px;
     transition: .5s;
-    color:#cfb43ba3 ;
+    color: #cfb43ba3;
 }
 
 .OurServicesCollapseContainer .ant-collapse .ant-collapse-header-text .flex {
@@ -65,7 +66,30 @@
 }
 
 
-.serviceImageContainer{
+.serviceImageContainer {
     display: flex;
     align-items: center;
+}
+
+@media (max-width: 768px) {
+    .OurServicesCollapseContainer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .OurServicesCollapseContainer .ant-collapse-header {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+
+    .serviceImageContainer img {
+        width: 70px !important;
+    }
+    .OurServicesCollapseContainer .ant-collapse .ant-collapse-header-text svg{
+        right: 0px !important;
+        font-size: 30px;
+    }
+    .serviceImageContainer img{
+        margin-right: 10px ;
+    }
 }

@@ -1,8 +1,8 @@
 /* Financial Documents Container */
 .FinancialDocumentsContainer {
-    background: #f8f9fa;
+    /* background: #f8f9fa; */
     min-height: 100vh;
-    padding: 40px 0;
+    /* padding: 40px 0; */
 }
 
 .Container {
@@ -127,7 +127,7 @@
 .arrow-icon {
     color: #666;
     font-size: 14px;
-    margin-left: auto;
+    /* margin-left: auto; */
 }
 
 .category-item span {
@@ -300,12 +300,12 @@
 }
 
 .view-btn {
-    color: #cfb53b  !important;
+    color: #cfb53b !important;
 }
 
 .view-btn:hover {
     background: #e3f2fd;
-    color: #cfb53b  !important;
+    color: #cfb53b !important;
     transform: scale(1.1);
 }
 
@@ -577,40 +577,40 @@
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .categories-sidebar {
         border-right: none;
         border-bottom: 1px solid #e9ecef;
     }
-    
+
     .folders-grid {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
-    
+
     .documents-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .Container {
         padding: 0 15px;
     }
-    
+
     .logo-section {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .documents-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
-    
+
     .pdf-viewer-content {
         max-width: 95vw;
         max-height: 95vh;
     }
-    
+
     .pdf-viewer-body {
         height: calc(95vh - 100px);
     }
@@ -620,29 +620,197 @@
     .financial-content {
         border-radius: 15px;
     }
-    
+
     .categories-sidebar,
     .folders-content {
         padding: 20px;
     }
-    
+
     .category-item {
         padding: 12px 15px;
     }
-    
+
     .folders-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .pdf-viewer-modal {
         padding: 10px;
     }
-    
+
     .pdf-viewer-header {
         padding: 15px;
     }
-    
+
     .pdf-viewer-body {
         padding: 15px;
+    }
+}
+
+/* Mobile Floating Folder Button */
+.mobile-folder-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-folder-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 123, 255, 0.4);
+}
+
+.mobile-folder-btn:active {
+    transform: translateY(0);
+}
+
+/* Mobile Categories Modal */
+.mobile-categories-modal .ant-modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.mobile-categories-modal .ant-modal-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 20px 24px;
+}
+
+.mobile-categories-modal .ant-modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.mobile-categories-list {
+    padding: 20px 0;
+}
+
+.mobile-category-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 24px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.mobile-category-item:hover {
+    background: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.mobile-category-item:last-child {
+    border-bottom: none;
+}
+
+.mobile-category-item .folder-icon {
+    color: #007bff;
+    font-size: 20px;
+    min-width: 20px;
+}
+
+.mobile-category-item span {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.mobile-category-item .arrow-icon {
+    color: #999;
+    font-size: 14px;
+}
+
+/* Mobile Category Header */
+.mobile-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.mobile-category-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mobile-change-category-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-change-category-btn:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Enhanced Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .categories-sidebar {
+        display: none !important;
+    }
+    
+    .folders-content {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    
+    .financial-content {
+        flex-direction: column;
+    }
+    
+    .mobile-folder-btn {
+        bottom: 30px;
+        right: 30px;
+        padding: 18px 25px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-folder-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+    
+    .mobile-categories-modal .ant-modal-content {
+        margin: 20px;
+        width: calc(100% - 40px);
     }
 }

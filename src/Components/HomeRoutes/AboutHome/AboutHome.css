@@ -107,7 +107,7 @@
     }
 
     .marquee-text {
-        font-size: 12px;
+        font-size: 20px;
     }
 
     .marquee-text span {
@@ -117,5 +117,11 @@
     .marquee-content {
         animation-duration: 45s;
         /* Faster on mobile */
+    }
+    .MarqueeTagContainer::before , .MarqueeTagContainer::after{
+        background: none !important;
+    }
+    .marquee-content {
+        animation: marquee 100s linear infinite;
     }
 }

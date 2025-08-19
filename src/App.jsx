@@ -1,14 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { Modal } from 'antd'
 import HomeRoute from './Components/HomeRoutes/HomeRoute'
 import ReloadModelsfirst from './Components/ReloadModels/ReloadModelsfirst'
 import ReloadModelsSecond from './Components/ReloadModels/ReloadModelsSecond'
 import WhatsAppBtn from './Components/WhatsAppBtn/WhatsAppBtn'
 import FinancialDocuments from './Components/FinancialDocuments/FinancialDocuments'
+import NavigationBar from './Components/OtherRoutes/NavigationBar/NavigationBar'
+import Services from './Components/OtherRoutes/Services/Services'
+import About from './Components/OtherRoutes/About/About'
+
+// ScrollToTop component to scroll to top on route change
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Smooth scroll to top on route change
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +35,7 @@ function App() {
   const [modalsClosed, setModalsClosed] = useState(false)
 
   const handleFirstModalClose = () => {
-    console.log("First modal closed, showing second modal")
+    // console.log("First modal closed, showing second modal")
     setShowSecondModal(true)
   }
 
@@ -29,6 +48,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
+        <NavigationBar />
         {/* Logo background when modals are active */}
         {!modalsClosed && (
           <div className="logo-background">
@@ -44,12 +65,14 @@ function App() {
         <ReloadModelsSecond isOpen={showSecondModal} onClose={handleSecondModalClose} />
 
         {/* Only render main components after modals are closed */}
-        {/* {modalsClosed && ( */}
+        {modalsClosed && (
           <Routes>
             <Route path="/" element={<HomeRoute />} />
             <Route path="/financial-documents" element={<FinancialDocuments />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
           </Routes>
-        {/* )} */}
+        )}
 
         {/* WhatsApp Button - Always visible */}
         <WhatsAppBtn />
