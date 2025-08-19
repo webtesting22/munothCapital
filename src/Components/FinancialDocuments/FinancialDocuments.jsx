@@ -1080,6 +1080,7 @@ const FinancialDocuments = () => {
                                     // Show Documents directly for Annual Return
                                     <>
                                         <h3>Annual Return Documents</h3>
+                                        <br />
                                         <motion.div 
                                             className="documents-grid"
                                             initial={{ opacity: 0, y: 20 }}
@@ -1238,6 +1239,7 @@ const FinancialDocuments = () => {
                                     // Show Child Folders for Quarterly Reports
                                     <>
                                         <h3>Quarterly Reports - Select Category</h3>
+                                        <br />
                                         <div className="folders-grid">
                                             <div
                                                 className="folder-card"
@@ -1606,6 +1608,7 @@ const FinancialDocuments = () => {
                                     // Show Child Folders for Annual Results
                                     <>
                                         <h3>Annual Results - Select Category</h3>
+                                        <br />
                                         <div className="folders-grid">
                                             <div
                                                 className="folder-card"
@@ -2061,6 +2064,7 @@ const FinancialDocuments = () => {
                                     // Show Child Folders for Documents and Others
                                     <>
                                         <h3>Documents and Others - Select Category</h3>
+                                        <br />
                                         <div className="folders-grid">
                                             <div
                                                 className="folder-card"
@@ -2173,7 +2177,7 @@ const FinancialDocuments = () => {
                                     // Show Folders View for other categories
                                     <>
                                         <h3>{selectedCategory} Folders</h3>
-
+<br />
                                         {folderStructure[selectedCategory] ? (
                                             <div className="folders-grid">
                                                 {folderStructure[selectedCategory].map((folderName, index) => (

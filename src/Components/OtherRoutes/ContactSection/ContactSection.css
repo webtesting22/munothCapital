@@ -16,8 +16,8 @@
     justify-content: end;
 }
 
-.contact-info-container > div {
-    max-width:600px;
+.contact-info-container>div {
+    max-width: 600px;
 }
 
 .contact-form-container .ant-form-item {
@@ -67,7 +67,7 @@
     margin-top: 40px;
 }
 
-.contact-form-container .ant-form-item-label > label {
+.contact-form-container .ant-form-item-label>label {
     font-weight: 600 !important;
 }
 
