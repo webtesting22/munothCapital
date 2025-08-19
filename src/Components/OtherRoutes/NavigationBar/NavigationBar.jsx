@@ -34,6 +34,8 @@ const NavigationBar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const MobileNumber = "919033003188"
+
     return (
         <nav className={`navigation-bar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="nav-container">

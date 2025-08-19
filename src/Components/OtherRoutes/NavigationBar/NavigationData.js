@@ -32,7 +32,7 @@ export const companyInfo = {
     logoIcon: 'https://s3.ap-south-1.amazonaws.com/prepseed/prod/ldoc/media/MunothLogo.png',
     ctaButton: {
         text: 'Get in touch',
-        path: '/contact',
+        path: 'tel:+919033003188',
         description: 'Contact us for inquiries'
     }
 };
