@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "antd";
+import { motion } from "framer-motion";
 import "./FinancialDocuments.css";
 import { FaDownload, FaFolder, FaPlus, FaFilePdf, FaChevronRight, FaArrowLeft, FaEye, FaTimes, FaBars } from "react-icons/fa";
 
@@ -965,14 +966,19 @@ const FinancialDocuments = () => {
         <div className="FinancialDocumentsContainer paddingTop300px">
             {/* Mobile Floating Folder Button */}
             {isMobile && (
-                <button 
+                <motion.button 
                     className="mobile-folder-btn"
                     onClick={handleMobileModalOpen}
                     title="Open Categories"
+                    initial={{ opacity: 0, scale: 0, y: 50 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    whileTap={{ scale: 0.95 }}
                 >
                     <FaBars />
                     <span>Categories</span>
-                </button>
+                </motion.button>
             )}
 
             {/* Mobile Categories Modal */}
@@ -1000,45 +1006,106 @@ const FinancialDocuments = () => {
             </Modal>
 
             <div className="Container ">
-                <div className="financial-header">
+                <motion.div 
+                    className="financial-header"
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
                     <div className="logo-section">
-                        <div className="logo">M</div>
-                        <button className="financial-btn">Financial</button>
+                        <motion.div 
+                            className="logo"
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                        >
+                            M
+                        </motion.div>
+                        <motion.button 
+                            className="financial-btn"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                        >
+                            Financial
+                        </motion.button>
                     </div>
-                </div>
+                </motion.div>
 
                 <div className="financial-content ">
                     {/* Mobile Category Header */}
                     {isMobile && selectedCategory && (
-                        <div className="mobile-category-header">
-                            <h3>📁 {selectedCategory}</h3>
-                            <button 
+                        <motion.div 
+                            className="mobile-category-header"
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                        >
+                            <motion.h3
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                            >
+                                📁 {selectedCategory}
+                            </motion.h3>
+                            <motion.button 
                                 className="mobile-change-category-btn"
                                 onClick={handleMobileModalOpen}
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                             >
                                 <FaBars /> Change Category
-                            </button>
-                        </div>
+                            </motion.button>
+                        </motion.div>
                     )}
 
                     {/* Left Sidebar - Main Categories */}
                     {!isMobile && (
-                        <div className="categories-sidebar">
-                            <h3>Main Categories</h3>
+                        <motion.div 
+                            className="categories-sidebar"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, ease: "easeOut" }}
+                        >
+                            <motion.h3
+                                initial={{ opacity: 0, y: -20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+                            >
+                                Main Categories
+                            </motion.h3>
                             <div className="category-list">
-                                {categories.map((category) => (
-                                    <div
+                                {categories.map((category, index) => (
+                                    <motion.div
                                         key={category}
                                         className={`category-item ${selectedCategory === category ? 'active' : ''}`}
                                         onClick={() => handleCategoryClick(category)}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ 
+                                            duration: 0.5, 
+                                            delay: 0.3 + (index * 0.1), 
+                                            ease: "easeOut" 
+                                        }}
+                                        whileHover={{ x: 5, scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
                                     >
                                         <FaFolder className="folder-icon" />
                                         <span>{category}</span>
                                         <FaChevronRight className="arrow-icon" />
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
-                        </div>
+                        </motion.div>
                     )}
 
                     {/* Right Content - Folders or Documents */}
@@ -1049,7 +1116,13 @@ const FinancialDocuments = () => {
                                     // Show Documents directly for Annual Return
                                     <>
                                         <h3>Annual Return Documents</h3>
-                                        <div className="documents-grid">
+                                        <motion.div 
+                                            className="documents-grid"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            whileInView={{ opacity: 1, y: 0 }}
+                                            viewport={{ once: true }}
+                                            transition={{ duration: 0.6, ease: "easeOut" }}
+                                        >
                                             {documents["2022-23"] && documents["2022-23"].map((doc, index) => (
                                                 <div key={`2022-23-${index}`} className="document-card">
                                                     <div className="document-header">
@@ -1195,7 +1268,7 @@ const FinancialDocuments = () => {
                                                     </div>
                                                 </div>
                                             ))}
-                                        </div>
+                                        </motion.div>
                                     </>
                                 ) : selectedCategory === "Quarterly Reports" && !selectedFolder ? (
                                     // Show Child Folders for Quarterly Reports

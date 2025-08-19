@@ -682,6 +682,7 @@
 .mobile-categories-modal .ant-modal-content {
     border-radius: 15px;
     overflow: hidden;
+
 }
 
 .mobile-categories-modal .ant-modal-header {
@@ -783,16 +784,16 @@
     .categories-sidebar {
         display: none !important;
     }
-    
+
     .folders-content {
         width: 100% !important;
         margin-left: 0 !important;
     }
-    
+
     .financial-content {
         flex-direction: column;
     }
-    
+
     .mobile-folder-btn {
         bottom: 30px;
         right: 30px;
@@ -808,7 +809,7 @@
         padding: 15px 20px;
         font-size: 16px;
     }
-    
+
     .mobile-categories-modal .ant-modal-content {
         margin: 20px;
         width: calc(100% - 40px);

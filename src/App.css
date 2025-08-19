@@ -23,6 +23,10 @@
     /* 2 second fade-in animation */
 }
 
+.ant-modal-content {
+    border: 3px solid black !important;
+}
+
 /* Logo fade-in animation */
 @keyframes logoFadeIn {
     0% {

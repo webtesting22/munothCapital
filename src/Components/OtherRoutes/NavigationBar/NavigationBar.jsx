@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { navigationData, companyInfo } from './NavigationData';
 import './NavigationBar.css';
 
@@ -37,70 +38,137 @@ const NavigationBar = () => {
         <nav className={`navigation-bar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="nav-container">
                 {/* Logo Section */}
-                <div className="nav-logo">
-                   <Link to="/"> <img 
-                        src={companyInfo.logoIcon} 
-                        alt={companyInfo.name} 
+                <motion.div
+                    className="nav-logo"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <Link to="/"> <img
+                        src={companyInfo.logoIcon}
+                        alt={companyInfo.name}
                         className="logo-icon"
                     /></Link>
                     {/* <span className="logo-text">{companyInfo.name}</span> */}
-                </div>
+                </motion.div>
 
                 {/* Desktop Navigation Links */}
-                <div className="nav-links">
-                    {navigationData.map((item) => (
-                        <Link
+                <motion.div
+                    className="nav-links"
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                >
+                    {navigationData.map((item, index) => (
+                        <motion.div
                             key={item.id}
-                            to={item.path}
-                            className="nav-link"
-                            title={item.description}
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.5,
+                                delay: 0.3 + (index * 0.1),
+                                ease: "easeOut"
+                            }}
                         >
-                            {item.title}
-                        </Link>
+                            <Link
+                                to={item.path}
+                                className="nav-link"
+                                title={item.description}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                {item.title}
+                            </Link>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* CTA Button */}
-                <div className="nav-cta">
+                <motion.div
+                    className="nav-cta"
+                    initial={{ opacity: 0, x: 30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                >
                     <Link to={companyInfo.ctaButton.path} className="cta-button">
                         <div className="cta-icon">
                             <span className="arrow-icon">→</span>
                         </div>
                         <span className="cta-text">{companyInfo.ctaButton.text}</span>
                     </Link>
-                </div>
+                </motion.div>
 
                 {/* Mobile Menu Button */}
-                <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+                <motion.button
+                    className="mobile-menu-btn"
+                    onClick={toggleMobileMenu}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                >
                     <span className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`}></span>
-                </button>
+                </motion.button>
             </div>
 
             {/* Mobile Navigation Menu */}
-            <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-                {navigationData.map((item) => (
-                    <Link
+            <motion.div
+                className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{
+                    opacity: isMobileMenuOpen ? 1 : 0,
+                    y: isMobileMenuOpen ? 0 : -20
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+                {navigationData.map((item, index) => (
+                    <motion.div
                         key={`mobile-${item.id}`}
-                        to={item.path}
-                        className="mobile-nav-link"
-                        title={item.description}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{
+                            opacity: isMobileMenuOpen ? 1 : 0,
+                            x: isMobileMenuOpen ? 0 : -20
+                        }}
+                        transition={{
+                            duration: 0.4,
+                            delay: index * 0.1,
+                            ease: "easeOut"
+                        }}
+                    >
+                        <Link
+                            to={item.path}
+                            className="mobile-nav-link"
+                            title={item.description}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                            {item.title}
+                        </Link>
+                    </motion.div>
+                ))}
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{
+                        opacity: isMobileMenuOpen ? 1 : 0,
+                        x: isMobileMenuOpen ? 0 : -20
+                    }}
+                    transition={{
+                        duration: 0.4,
+                        delay: navigationData.length * 0.1,
+                        ease: "easeOut"
+                    }}
+                >
+                    <Link
+                        to={companyInfo.ctaButton.path}
+                        className="mobile-cta-button"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        {item.title}
+                        <div className="cta-icon">
+                            <span className="arrow-icon">→</span>
+                        </div>
+                        <span className="cta-text">{companyInfo.ctaButton.text}</span>
                     </Link>
-                ))}
-                <Link
-                    to={companyInfo.ctaButton.path}
-                    className="mobile-cta-button"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                >
-                    <div className="cta-icon">
-                        <span className="arrow-icon">→</span>
-                    </div>
-                    <span className="cta-text">{companyInfo.ctaButton.text}</span>
-                </Link>
-            </div>
+                </motion.div>
+            </motion.div>
         </nav>
     );
 };
