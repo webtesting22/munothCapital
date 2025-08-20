@@ -3,7 +3,7 @@ import "./AboutHome.css";
 import { Row, Col } from "antd";
 const AboutHome = () => {
     return (
-        <div className="AboutHomeContainer">
+        <div className="AboutHomeContainer paddingTop100px">
             {/* <div className="BackgroundAttachImageContainer">
                 <img src="https://cdn.prod.website-files.com/66f7e75deaee2c0e17b0887d/670d54d26bda66dca6c8c77d_Background%203.svg" alt="" />
             </div> */}
