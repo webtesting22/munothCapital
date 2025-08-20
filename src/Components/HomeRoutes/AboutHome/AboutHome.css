@@ -26,11 +26,12 @@
 .MarqueeTagContainer {
     width: 100%;
     overflow: hidden;
-    background: white;
+    background: #FAFAF9;
     padding: 15px 0;
     /* border-top: 2px solid #e9ecef;
     border-bottom: 2px solid #e9ecef; */
     position: relative;
+    /* border: 1px solid black; */
 }
 
 /* Left side fade effect */
@@ -71,14 +72,16 @@
     display: flex;
     align-items: center;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 16px;
     color: #6c757d;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.5;
+   
 }
 
 .marquee-text span {
     margin-right: 20px;
+    color: #507519;
 }
 
 /* Pause animation on hover */

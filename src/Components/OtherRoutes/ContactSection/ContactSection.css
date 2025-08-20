@@ -9,6 +9,9 @@
     padding: 50px;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
 }
 
 .contact-info-container {
