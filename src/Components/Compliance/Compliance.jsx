@@ -433,13 +433,13 @@ const Compliance = () => {
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
+                                                            {/* <button
                                                                 className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -475,13 +475,13 @@ const Compliance = () => {
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
+                                                            {/* <button
                                                                 className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download XLSX"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -518,13 +518,13 @@ const Compliance = () => {
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
+                                                            {/* <button
                                                                 className="action-btn download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -613,13 +613,13 @@ const Compliance = () => {
                                                                 >
                                                                     View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="action-btn download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
                                                                     Download
-                                                                </button>
+                                                                </button> */}
                                                             </div>
                                                         </div>
                                                     </div>

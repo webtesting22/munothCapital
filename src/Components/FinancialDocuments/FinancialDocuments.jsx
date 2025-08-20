@@ -6,6 +6,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
+import { FaFolder } from "react-icons/fa";
 
 const FinancialDocuments = () => {
     const [selectedCategory, setSelectedCategory] = useState("Annual Return");
@@ -19,10 +20,10 @@ const FinancialDocuments = () => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         };
-        
+
         checkMobile();
         window.addEventListener('resize', checkMobile);
-        
+
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
@@ -969,7 +970,7 @@ const FinancialDocuments = () => {
         <div className="financial-documents-container paddingTop200px">
             {/* Mobile Floating Button */}
             {isMobile && (
-                <motion.button 
+                <motion.button
                     className="mobile-menu-btn"
                     onClick={handleMobileModalOpen}
                     initial={{ opacity: 0, scale: 0, y: 50 }}
@@ -1006,7 +1007,7 @@ const FinancialDocuments = () => {
             </Modal>
 
             <div className="financial-wrapper">
-                <motion.div 
+                <motion.div
                     className="financial-header"
                     initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -1024,14 +1025,14 @@ const FinancialDocuments = () => {
                 <div className="financial-content">
                     {/* Mobile Category Header */}
                     {isMobile && selectedCategory && (
-                        <motion.div 
+                        <motion.div
                             className="mobile-category-header"
                             initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, ease: "easeOut" }}
                         >
                             <h3>{selectedCategory}</h3>
-                            <button 
+                            <button
                                 className="mobile-change-category-btn"
                                 onClick={handleMobileModalOpen}
                             >
@@ -1042,7 +1043,7 @@ const FinancialDocuments = () => {
 
                     {/* Left Sidebar - Main Categories */}
                     {!isMobile && (
-                        <motion.div 
+                        <motion.div
                             className="categories-sidebar"
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -1059,10 +1060,10 @@ const FinancialDocuments = () => {
                                         initial={{ opacity: 0, x: -20 }}
                                         whileInView={{ opacity: 1, x: 0 }}
                                         viewport={{ once: true }}
-                                        transition={{ 
-                                            duration: 0.5, 
-                                            delay: 0.3 + (index * 0.1), 
-                                            ease: "easeOut" 
+                                        transition={{
+                                            duration: 0.5,
+                                            delay: 0.3 + (index * 0.1),
+                                            ease: "easeOut"
                                         }}
                                         whileHover={{ x: 5, scale: 1.02 }}
                                         whileTap={{ scale: 0.98 }}
@@ -1076,46 +1077,41 @@ const FinancialDocuments = () => {
                     )}
 
                     {/* Right Content - Folders or Documents */}
-                    <div className="content-section">
+                    <div className="content-section annual-return-documents">
                         {selectedCategory && (
                             <>
                                 {selectedCategory === "Annual Return" ? (
-                                    // Show Documents directly for Annual Return
+                                    // Show Documents directly for Annual Return with folder-like styling
                                     <>
                                         <h3>Annual Return Documents</h3>
                                         <br />
-                                        <motion.div 
-                                            className="documents-grid"
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.6, ease: "easeOut" }}
-                                        >
+                                        <div className="documents-grid">
                                             {documents["2022-23"] && documents["2022-23"].map((doc, index) => (
                                                 <div key={`2022-23-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
-                                                                className="action-btn download-btn"
+                                                            {/* <button
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1124,27 +1120,28 @@ const FinancialDocuments = () => {
                                                 <div key={`2021-22-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
-                                                                className="action-btn download-btn"
+                                                            {/* <button
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1153,27 +1150,28 @@ const FinancialDocuments = () => {
                                                 <div key={`2020-21-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
-                                                                className="action-btn download-btn"
+                                                            {/* <button
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1182,27 +1180,28 @@ const FinancialDocuments = () => {
                                                 <div key={`2019-20-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
-                                                                className="action-btn download-btn"
+                                                            {/* <button
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1211,32 +1210,33 @@ const FinancialDocuments = () => {
                                                 <div key={`2018-19-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
-                                                            <button
-                                                                className="action-btn download-btn"
+                                                            {/* <button
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
                                                                 Download
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     </div>
                                                 </div>
                                             ))}
-                                        </motion.div>
+                                        </div>
                                     </>
                                 ) : selectedCategory === "Quarterly Reports" && !selectedFolder ? (
                                     // Show Child Folders for Quarterly Reports
@@ -1277,124 +1277,130 @@ const FinancialDocuments = () => {
                                             <button className="back-btn" onClick={handleBackToFolders}>
                                                 <FaArrowLeft /> Back to Quarterly Reports
                                             </button>
+                                            <br />
                                             <h3>Documents in {selectedFolder}</h3>
                                         </div>
+                                        <br />
 
                                         {selectedFolder === "Shareholding Pattern" ? (
                                             <div className="documents-grid">
                                                 {documents["2018"] && documents["2018"].map((doc, index) => (
                                                     <div key={`2018-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2017"] && documents["2017"].map((doc, index) => (
                                                     <div key={`2017-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2016"] && documents["2016"].map((doc, index) => (
                                                     <div key={`2016-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2015"] && documents["2015"].map((doc, index) => (
                                                     <div key={`2015-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -1403,204 +1409,211 @@ const FinancialDocuments = () => {
                                             <div className="documents-grid">
                                                 {documents["2021-22"] && documents["2021-22"].map((doc, index) => (
                                                     <div key={`2021-22-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2020-21"] && documents["2020-21"].map((doc, index) => (
                                                     <div key={`2020-21-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2019-20"] && documents["2019-20"].map((doc, index) => (
                                                     <div key={`2019-20-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2018-19"] && documents["2018-19"].map((doc, index) => (
                                                     <div key={`2018-19-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2017-18"] && documents["2017-18"].map((doc, index) => (
                                                     <div key={`2017-18-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2016-17"] && documents["2016-17"].map((doc, index) => (
                                                     <div key={`2016-17-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["2015-16"] && documents["2015-16"].map((doc, index) => (
                                                     <div key={`2015-16-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -1646,124 +1659,130 @@ const FinancialDocuments = () => {
                                             <button className="back-btn" onClick={handleBackToFolders}>
                                                 <FaArrowLeft /> Back to Annual Results
                                             </button>
+                                            <br />
+
                                             <h3>Documents in {selectedFolder}</h3>
                                         </div>
-
+                                        <br />
                                         {selectedFolder === "Audited Financial Results" ? (
                                             <div className="documents-grid">
                                                 {documents["Audited Financial Results 2017-18"] && documents["Audited Financial Results 2017-18"].map((doc, index) => (
                                                     <div key={`Audited Financial Results 2017-18-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Audited Financial Results 2016-17"] && documents["Audited Financial Results 2016-17"].map((doc, index) => (
                                                     <div key={`Audited Financial Results 2016-17-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Audited Financial Results 2015-16"] && documents["Audited Financial Results 2015-16"].map((doc, index) => (
                                                     <div key={`Audited Financial Results 2015-16-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Audited Financial Results 2014-15"] && documents["Audited Financial Results 2014-15"].map((doc, index) => (
                                                     <div key={`Audited Financial Results 2014-15-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -1772,415 +1791,568 @@ const FinancialDocuments = () => {
                                             <div className="documents-grid">
                                                 {documents["Annual Report 2023-24"] && documents["Annual Report 2023-24"].map((doc, index) => (
                                                     <div key={`Annual Report 2023-24-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2022-23"] && documents["Annual Report 2022-23"].map((doc, index) => (
                                                     <div key={`Annual Report 2022-23-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2021-22"] && documents["Annual Report 2021-22"].map((doc, index) => (
                                                     <div key={`Annual Report 2021-22-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2020-21"] && documents["Annual Report 2020-21"].map((doc, index) => (
                                                     <div key={`Annual Report 2020-21-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2019-20"] && documents["Annual Report 2019-20"].map((doc, index) => (
                                                     <div key={`Annual Report 2019-20-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2018-19"] && documents["Annual Report 2018-19"].map((doc, index) => (
                                                     <div key={`Annual Report 2018-19-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2017-18"] && documents["Annual Report 2017-18"].map((doc, index) => (
                                                     <div key={`Annual Report 2017-18-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2016-17"] && documents["Annual Report 2016-17"].map((doc, index) => (
                                                     <div key={`Annual Report 2016-17-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2015-16"] && documents["Annual Report 2015-16"].map((doc, index) => (
                                                     <div key={`Annual Report 2015-16-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                                 {documents["Annual Report 2014-15"] && documents["Annual Report 2014-15"].map((doc, index) => (
                                                     <div key={`Annual Report 2014-15-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
+                                                        <div className="document-content">
+                                                            <div className="document-info">
+                                                                <h4 className="document-title">{doc.title}</h4>
+                                                                <div className="document-meta">
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    <span className="document-type">{doc.type}</span>
+                                                                </div>
+                                                            </div>
+                                                            <div className="action-btn">
                                                                 <button
                                                                     className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
-                                                                    <FaEye />
+                                                                    View
                                                                 </button>
-                                                                <button
+                                                                {/* <button
                                                                     className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >
-                                                                    <FaDownload />
-                                                                </button>
+                                                                    Download
+                                                                </button> */}
                                                             </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
                                                         </div>
                                                     </div>
                                                 ))}
                                             </div>
                                         ) : null}
+                                    </>
+                                ) : selectedCategory === "Announcements" && !selectedFolder ? (
+                                    // Show Documents directly for Announcements with folder-like styling
+                                    <>
+                                        <h3>Announcements Documents</h3>
+                                        <br />
+                                        <div className="documents-grid">
+                                            {documents["2024"] && documents["2024"].map((doc, index) => (
+                                                <div key={`2024-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2020"] && documents["2020"].map((doc, index) => (
+                                                <div key={`2020-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2019"] && documents["2019"].map((doc, index) => (
+                                                <div key={`2019-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2018"] && documents["2018"].map((doc, index) => (
+                                                <div key={`2018-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2017"] && documents["2017"].map((doc, index) => (
+                                                <div key={`2017-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2016"] && documents["2016"].map((doc, index) => (
+                                                <div key={`2016-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {documents["2015"] && documents["2015"].map((doc, index) => (
+                                                <div key={`2015-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
                                     </>
                                 ) : selectedCategory === "Documents and Others" && !selectedFolder ? (
-                                    // Show Child Folders for Documents and Others
+                                    // Show Documents directly for Documents and Others with folder-like styling
                                     <>
-                                        <h3>Documents and Others - Select Category</h3>
+                                        <h3>Policies Documents</h3>
                                         <br />
-                                        <div className="folders-grid">
-                                            <div
-                                                className="folder-card"
-                                                onClick={() => handleFolderClick("Policies")}
-                                            >
-                                                <div className="folder-content">
-                                                    <div className="folder-info">
-                                                        <h4>Policies</h4>
-                                                        <p>{getFileCount("Policies")} files</p>
+                                        <div className="documents-grid">
+                                            {documents["Policies"] && documents["Policies"].map((doc, index) => (
+                                                <div key={`Policies-${index}`} className="document-card">
+                                                    <div className="document-content">
+                                                        <div className="document-info">
+                                                            <h4 className="document-title">{doc.title}</h4>
+                                                            <div className="document-meta">
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                <span className="document-type">{doc.type}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div className="action-btn">
+                                                            <button
+                                                                className="view-btn"
+                                                                onClick={() => handleView(doc)}
+                                                                title="View PDF"
+                                                            >
+                                                                View
+                                                            </button>
+                                                            {/* <button
+                                                                className="download-btn"
+                                                                onClick={() => handleDownload(doc)}
+                                                                title="Download PDF"
+                                                            >
+                                                                Download
+                                                            </button> */}
+                                                        </div>
                                                     </div>
-                                                    <div className="arrow">→</div>
                                                 </div>
-                                            </div>
+                                            ))}
                                         </div>
-                                    </>
-                                ) : selectedCategory === "Announcements" && selectedFolder ? (
-                                    // Show Documents for Announcements year folders
-                                    <>
-                                        <div className="documents-header">
-                                            <button className="back-btn" onClick={handleBackToFolders}>
-                                                <FaArrowLeft /> Back to Announcements
-                                            </button>
-                                            <h3>Documents in {selectedFolder}</h3>
-                                        </div>
-
-                                        {documents[selectedFolder] ? (
-                                            <div className="documents-grid">
-                                                {documents[selectedFolder].map((doc, index) => (
-                                                    <div key={`${selectedFolder}-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
-                                                                <button
-                                                                    className="view-btn"
-                                                                    onClick={() => handleView(doc)}
-                                                                    title="View PDF"
-                                                                >
-                                                                    <FaEye />
-                                                                </button>
-                                                                <button
-                                                                    className="download-btn"
-                                                                    onClick={() => handleDownload(doc)}
-                                                                    title="Download PDF"
-                                                                >
-                                                                    <FaDownload />
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        ) : (
-                                            <div className="no-documents">
-                                                <FaFolder className="empty-folder" />
-                                                <p>No documents available in this folder</p>
-                                            </div>
-                                        )}
-                                    </>
-                                ) : selectedCategory === "Documents and Others" && selectedFolder ? (
-                                    // Show Documents for Documents and Others child folders
-                                    <>
-                                        <div className="documents-header">
-                                            <button className="back-btn" onClick={handleBackToFolders}>
-                                                <FaArrowLeft /> Back to Documents and Others
-                                            </button>
-                                            <h3>Documents in {selectedFolder}</h3>
-                                        </div>
-
-                                        {selectedFolder === "Policies" ? (
-                                            <div className="documents-grid">
-                                                {documents["Policies"] && documents["Policies"].map((doc, index) => (
-                                                    <div key={`Policies-${index}`} className="document-card">
-                                                        <div className="document-header">
-                                                            <FaFilePdf className="pdf-icon" />
-                                                            <div className="document-actions">
-                                                                <button
-                                                                    className="view-btn"
-                                                                    onClick={() => handleView(doc)}
-                                                                    title="View PDF"
-                                                                >
-                                                                    <FaEye />
-                                                                </button>
-                                                                <button
-                                                                    className="download-btn"
-                                                                    onClick={() => handleDownload(doc)}
-                                                                    title="Download PDF"
-                                                                >
-                                                                    <FaDownload />
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                        <div className="document-info">
-                                                            <h4>{doc.title}</h4>
-                                                            <p className="document-date">{doc.date}</p>
-                                                            <p className="document-size">{doc.size}</p>
-                                                            <p className="document-type">{doc.type}</p>
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        ) : null}
                                     </>
                                 ) : (
                                     // Show Folders View for other categories
                                     <>
                                         <h3>{selectedCategory} Folders</h3>
-<br />
+                                        <br />
                                         {folderStructure[selectedCategory] ? (
                                             <div className="folders-grid">
                                                 {folderStructure[selectedCategory].map((folderName, index) => (
