@@ -29,7 +29,7 @@
 /* Navigation Container */
 .nav-container {
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     padding: 0 20px;
     display: flex;
     align-items: center;

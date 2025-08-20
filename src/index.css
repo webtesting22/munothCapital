@@ -134,7 +134,7 @@ ul {
 
 @media (min-width:1401px) and (max-width:2000px) {
   .Container {
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
   }
 }
@@ -223,6 +223,7 @@ h3::before {
   .Container {
     padding: 0px 10px;
   }
+
   h1 {
     font-size: 50px !important;
   }

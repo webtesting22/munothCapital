@@ -38,7 +38,7 @@ const NavigationBar = () => {
 
     return (
         <nav className={`navigation-bar ${isScrolled ? 'scrolled' : ''}`}>
-            <div className="nav-container">
+            <div className="nav-container Container">
                 {/* Logo Section */}
                 <motion.div
                     className="nav-logo"
