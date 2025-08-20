@@ -6,39 +6,32 @@ import { FaUser, FaEnvelope, FaPhone, FaComment, FaMapMarkerAlt, FaGlobe } from 
 const ContactSection = () => {
     const [form] = Form.useForm();
     const [loading, setLoading] = React.useState(false);
+    const [message, setMessage] = React.useState({ type: '', text: '', description: '' });
 
     const onFinish = async (values) => {
         setLoading(true);
+        setMessage({ type: '', text: '', description: '' });
+        
         try {
             // Simulate API call - replace with actual API endpoint
             await new Promise(resolve => setTimeout(resolve, 1000));
-
-            // Show success notification
-            notification.success({
-                message: 'Message Sent Successfully!',
-                description: 'Thank you for contacting Munoth Capital. We will get back to you soon.',
-                placement: 'topRight',
-                duration: 5,
-                style: {
-                    borderRadius: '8px',
-                    border: '2px solid #52c41a',
-                },
+            
+            // Show success message below button
+            setMessage({
+                type: 'success',
+                text: 'Message Sent Successfully!',
+                description: 'Thank you for contacting Munoth Capital. We will get back to you soon.'
             });
-
+            
             // Reset form after successful submission
             form.resetFields();
-
+            
         } catch (error) {
-            // Show error notification
-            notification.error({
-                message: 'Message Failed to Send',
-                description: 'Please try again later or contact us directly.',
-                placement: 'topRight',
-                duration: 5,
-                style: {
-                    borderRadius: '8px',
-                    border: '2px solid #ff4d4f',
-                },
+            // Show error message below button
+            setMessage({
+                type: 'error',
+                text: 'Message Failed to Send',
+                description: 'Please try again later or contact us directly.'
             });
         } finally {
             setLoading(false);
@@ -46,15 +39,10 @@ const ContactSection = () => {
     };
 
     const onFinishFailed = (errorInfo) => {
-        notification.warning({
-            message: 'Please Check Your Input',
-            description: 'Please fill in all required fields correctly.',
-            placement: 'topRight',
-            duration: 4,
-            style: {
-                borderRadius: '8px',
-                border: '2px solid #faad14',
-            },
+        setMessage({
+            type: 'warning',
+            text: 'Please Check Your Input',
+            description: 'Please fill in all required fields correctly.'
         });
     };
 
@@ -114,12 +102,46 @@ const ContactSection = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className="tableContainer">
+                            <div className="regulatory-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Details</th>
+                                            <th>NSE Cash Segment</th>
+                                            <th>NSE F&O Segment</th>
+                                            <th>BSE Cash</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>SEBI Reg.No.</td>
+                                            <td>-</td>
+                                            <td>INZ000302337</td>
+                                            <td>-</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Member Code</td>
+                                            <td>-</td>
+                                            <td>12480</td>
+                                            <td>3205</td>
+                                        </tr>
+                                        <tr>
+                                            <td>CDSL Reg.No.</td>
+                                            <td>-</td>
+                                            <td>IN-DP-CDSL437-2008</td>
+                                            <td>-</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="contact-info-container">
                         <div>
                             <h2>Corporate office & Registered Office</h2>
-                            <br />
+                            {/* <br /> */}
                             <h4>
                                 <FaMapMarkerAlt style={{ marginRight: '8px', color: '#666' }} />
                                 Shanti Nivas - Office Building
@@ -127,7 +149,7 @@ const ContactSection = () => {
                                 Near Karnavati Club
                                 S G Road, Ahmedabad - 380058
                             </h4>
-                            <br />
+                            {/* <br /> */}
                             <div className="contact-details-container">
                                 <p>
                                     <FaPhone style={{ marginRight: '8px', color: '#666' }} />
@@ -139,25 +161,8 @@ const ContactSection = () => {
                                 </p>
                             </div>
                             <div className="contact-form-container marginTop80px">
-                                <div style={{
-                                    background: 'rgba(255, 255, 255, 0.98)',
-                                    padding: '20px',
-                                    borderRadius: '20px',
-                                    boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
-                                    border: '1px solid rgba(0, 0, 0, 0.05)',
-                                    // maxWidth: '500px',
-                                    margin: '0 auto'
-                                }}>
-                                    <h3 style={{
-                                        color: '#000',
-                                        marginBottom: '30px',
-                                        textAlign: 'center',
-                                        fontSize: '28px',
-                                        fontWeight: '300',
-                                        letterSpacing: '1px',
-                                        borderBottom: '2px solid #000',
-                                        paddingBottom: '15px'
-                                    }}>
+                                <div className="form-container-box">
+                                    <h3 className="form-title">
                                         Get In Touch
                                     </h3>
                                     <Form
@@ -171,33 +176,29 @@ const ContactSection = () => {
                                         <Form.Item
                                             name="name"
                                             label={
-                                                <span style={{
-                                                    color: '#000',
-                                                    fontWeight: '500',
-                                                    fontSize: '14px',
-                                                    textTransform: 'uppercase',
-                                                    letterSpacing: '0.5px',
-                                                    display: 'flex',
-                                                    alignItems: 'center'
-                                                }}>
+                                                <span className="form-label">
                                                     <FaUser style={{ marginRight: '8px', fontSize: '16px' }} />
                                                     Name *
                                                 </span>
                                             }
-                                            rules={[{ required: true, message: 'Please enter your name!' }]}
+                                            rules={[
+                                                { required: true, message: 'Please enter your name!' },
+                                                { 
+                                                    validator: (_, value) => {
+                                                        if (value && value.trim() === '') {
+                                                            return Promise.reject(new Error('Name cannot be only blank spaces!'));
+                                                        }
+                                                        if (value && value.trim().length < 2) {
+                                                            return Promise.reject(new Error('Name must be at least 2 characters!'));
+                                                        }
+                                                        return Promise.resolve();
+                                                    }
+                                                }
+                                            ]}
                                         >
                                             <Input
                                                 placeholder="Enter your name"
-                                                style={{
-                                                    border: 'none',
-                                                    borderBottom: '2px solid #e0e0e0',
-                                                    borderRadius: '0',
-                                                    padding: '12px 0',
-                                                    fontSize: '16px',
-                                                    background: 'transparent',
-                                                    transition: 'all 0.3s ease',
-                                                    boxShadow: 'none'
-                                                }}
+                                                className="form-input"
                                                 onFocus={(e) => {
                                                     e.target.style.borderBottomColor = '#000';
                                                     e.target.style.borderBottomWidth = '3px';
@@ -205,6 +206,10 @@ const ContactSection = () => {
                                                 onBlur={(e) => {
                                                     e.target.style.borderBottomColor = '#e0e0e0';
                                                     e.target.style.borderBottomWidth = '2px';
+                                                }}
+                                                onChange={(e) => {
+                                                    // Remove leading/trailing spaces
+                                                    e.target.value = e.target.value.trim();
                                                 }}
                                             />
                                         </Form.Item>
@@ -212,36 +217,30 @@ const ContactSection = () => {
                                         <Form.Item
                                             name="email"
                                             label={
-                                                <span style={{
-                                                    color: '#000',
-                                                    fontWeight: '500',
-                                                    fontSize: '14px',
-                                                    textTransform: 'uppercase',
-                                                    letterSpacing: '0.5px',
-                                                    display: 'flex',
-                                                    alignItems: 'center'
-                                                }}>
+                                                <span className="form-label">
                                                     <FaEnvelope style={{ marginRight: '8px', fontSize: '16px' }} />
                                                     Email *
                                                 </span>
                                             }
                                             rules={[
                                                 { required: true, message: 'Please enter your email!' },
-                                                { type: 'email', message: 'Please enter a valid email!' }
+                                                { type: 'email', message: 'Please enter a valid email!' },
+                                                { 
+                                                    validator: (_, value) => {
+                                                        if (value && value.trim() === '') {
+                                                            return Promise.reject(new Error('Email cannot be only blank spaces!'));
+                                                        }
+                                                        if (value && value.includes(' ')) {
+                                                            return Promise.reject(new Error('Email cannot contain spaces!'));
+                                                        }
+                                                        return Promise.resolve();
+                                                    }
+                                                }
                                             ]}
                                         >
                                             <Input
                                                 placeholder="Enter your email"
-                                                style={{
-                                                    border: 'none',
-                                                    borderBottom: '2px solid #e0e0e0',
-                                                    borderRadius: '0',
-                                                    padding: '12px 0',
-                                                    fontSize: '16px',
-                                                    background: 'transparent',
-                                                    transition: 'all 0.3s ease',
-                                                    boxShadow: 'none'
-                                                }}
+                                                className="form-input"
                                                 onFocus={(e) => {
                                                     e.target.style.borderBottomColor = '#000';
                                                     e.target.style.borderBottomWidth = '3px';
@@ -249,6 +248,10 @@ const ContactSection = () => {
                                                 onBlur={(e) => {
                                                     e.target.style.borderBottomColor = '#e0e0e0';
                                                     e.target.style.borderBottomWidth = '2px';
+                                                }}
+                                                onChange={(e) => {
+                                                    // Remove spaces from email
+                                                    e.target.value = e.target.value.replace(/\s/g, '');
                                                 }}
                                             />
                                         </Form.Item>
@@ -256,32 +259,34 @@ const ContactSection = () => {
                                         <Form.Item
                                             name="mobile"
                                             label={
-                                                <span style={{
-                                                    color: '#000',
-                                                    fontWeight: '500',
-                                                    fontSize: '14px',
-                                                    textTransform: 'uppercase',
-                                                    letterSpacing: '0.5px',
-                                                    display: 'flex',
-                                                    alignItems: 'center'
-                                                }}>
+                                                <span className="form-label">
                                                     <FaPhone style={{ marginRight: '8px', fontSize: '16px' }} />
                                                     Mobile
                                                 </span>
                                             }
+                                            rules={[
+                                                { 
+                                                    validator: (_, value) => {
+                                                        if (value && value.trim() === '') {
+                                                            return Promise.reject(new Error('Mobile number cannot be only blank spaces!'));
+                                                        }
+                                                        if (value && value.trim() !== '' && !/^[0-9+\-\s()]+$/.test(value)) {
+                                                            return Promise.reject(new Error('Mobile number can only contain numbers, +, -, (, ), and spaces!'));
+                                                        }
+                                                        if (value && value.trim() !== '' && value.replace(/[\s+\-()]/g, '').length < 10) {
+                                                            return Promise.reject(new Error('Mobile number must be at least 10 digits!'));
+                                                        }
+                                                        if (value && value.trim() !== '' && value.replace(/[\s+\-()]/g, '').length > 15) {
+                                                            return Promise.reject(new Error('Mobile number cannot exceed 15 digits!'));
+                                                        }
+                                                        return Promise.resolve();
+                                                    }
+                                                }
+                                            ]}
                                         >
                                             <Input
                                                 placeholder="Enter your mobile number"
-                                                style={{
-                                                    border: 'none',
-                                                    borderBottom: '2px solid #e0e0e0',
-                                                    borderRadius: '0',
-                                                    padding: '12px 0',
-                                                    fontSize: '16px',
-                                                    background: 'transparent',
-                                                    transition: 'all 0.3s ease',
-                                                    boxShadow: 'none'
-                                                }}
+                                                className="form-input"
                                                 onFocus={(e) => {
                                                     e.target.style.borderBottomColor = '#000';
                                                     e.target.style.borderBottomWidth = '3px';
@@ -289,6 +294,10 @@ const ContactSection = () => {
                                                 onBlur={(e) => {
                                                     e.target.style.borderBottomColor = '#e0e0e0';
                                                     e.target.style.borderBottomWidth = '2px';
+                                                }}
+                                                onChange={(e) => {
+                                                    // Allow only numbers, +, -, (, ), and spaces
+                                                    e.target.value = e.target.value.replace(/[^0-9+\-\s()]/g, '');
                                                 }}
                                             />
                                         </Form.Item>
@@ -296,35 +305,33 @@ const ContactSection = () => {
                                         <Form.Item
                                             name="comments"
                                             label={
-                                                <span style={{
-                                                    color: '#000',
-                                                    fontWeight: '500',
-                                                    fontSize: '14px',
-                                                    textTransform: 'uppercase',
-                                                    letterSpacing: '0.5px',
-                                                    display: 'flex',
-                                                    alignItems: 'center'
-                                                }}>
+                                                <span className="form-label">
                                                     <FaComment style={{ marginRight: '8px', fontSize: '16px' }} />
                                                     Comments *
                                                 </span>
                                             }
-                                            rules={[{ required: true, message: 'Please enter your comments!' }]}
+                                            rules={[
+                                                { required: true, message: 'Please enter your comments!' },
+                                                { 
+                                                    validator: (_, value) => {
+                                                        if (value && value.trim() === '') {
+                                                            return Promise.reject(new Error('Comments cannot be only blank spaces!'));
+                                                        }
+                                                        if (value && value.trim().length < 10) {
+                                                            return Promise.reject(new Error('Comments must be at least 10 characters!'));
+                                                        }
+                                                        if (value && value.trim().length > 500) {
+                                                            return Promise.reject(new Error('Comments cannot exceed 500 characters!'));
+                                                        }
+                                                        return Promise.resolve();
+                                                    }
+                                                }
+                                            ]}
                                         >
                                             <Input.TextArea
-                                                placeholder="Enter your comments"
+                                                placeholder="Enter your comments (minimum 10 characters)"
                                                 rows={4}
-                                                style={{
-                                                    border: 'none',
-                                                    borderBottom: '2px solid #e0e0e0',
-                                                    borderRadius: '0',
-                                                    padding: '12px 0',
-                                                    fontSize: '16px',
-                                                    background: 'transparent',
-                                                    transition: 'all 0.3s ease',
-                                                    boxShadow: 'none',
-                                                    resize: 'none'
-                                                }}
+                                                className="form-textarea"
                                                 onFocus={(e) => {
                                                     e.target.style.borderBottomColor = '#000';
                                                     e.target.style.borderBottomWidth = '3px';
@@ -333,6 +340,12 @@ const ContactSection = () => {
                                                     e.target.style.borderBottomColor = '#e0e0e0';
                                                     e.target.style.borderBottomWidth = '2px';
                                                 }}
+                                                onChange={(e) => {
+                                                    // Remove leading/trailing spaces
+                                                    e.target.value = e.target.value.trim();
+                                                }}
+                                                maxLength={500}
+                                                showCount
                                             />
                                         </Form.Item>
 
@@ -341,23 +354,7 @@ const ContactSection = () => {
                                                 type="primary"
                                                 htmlType="submit"
                                                 loading={loading}
-                                                style={{
-                                                    background: '#000',
-                                                    border: 'none',
-                                                    borderRadius: '0',
-                                                    height: '50px',
-                                                    fontSize: '14px',
-                                                    fontWeight: '500',
-                                                    color: '#fff',
-                                                    width: '100%',
-                                                    textTransform: 'uppercase',
-                                                    letterSpacing: '1px',
-                                                    transition: 'all 0.3s ease',
-                                                    boxShadow: 'none',
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center'
-                                                }}
+                                                className="submit-button"
                                                 onMouseEnter={(e) => {
                                                     if (!loading) {
                                                         e.target.style.background = '#333';
@@ -374,6 +371,16 @@ const ContactSection = () => {
                                                 {!loading && <FaEnvelope style={{ marginRight: '8px', fontSize: '16px' }} />}
                                                 {loading ? 'Sending...' : 'Send Message'}
                                             </Button>
+                                            
+                                            {/* Message Display */}
+                                            {message.type && (
+                                                <div className={`message-display ${message.type}`}>
+                                                    <div className="message-content">
+                                                        <h4 className="message-title">{message.text}</h4>
+                                                        <p className="message-description">{message.description}</p>
+                                                    </div>
+                                                </div>
+                                            )}
                                         </Form.Item>
                                     </Form>
                                 </div>

@@ -12,6 +12,7 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
+    gap: 50px;
 }
 
 .contact-info-container {
@@ -117,7 +118,7 @@
     background: #ffffff;
     padding: 40px;
     border-radius: 8px;
-    margin: 40px 0;
+    margin: 20px 0;
     border: 1px solid #e0e0e0;
     /* width: 100%; */
 }
@@ -125,7 +126,7 @@
 .contact-section-container .info-grid {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
     align-items: stretch;
     width: 100%;
 }
@@ -245,6 +246,139 @@
     text-decoration: none;
 }
 
+/* Form Container Styles */
+.contact-section-container .form-container-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    background: white;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.contact-section-container .form-title {
+    color: #000000;
+    margin-bottom: 30px;
+    text-align: left;
+    fontSize: 24px;
+    fontWeight: 600;
+    letterSpacing: 0.5px;
+    borderBottom: 2px solid #e0e0e0;
+    paddingBottom: 15px;
+}
+
+.contact-section-container .form-label {
+    color: #000000;
+    fontWeight: 500;
+    fontSize: 14px;
+    textTransform: uppercase;
+    letterSpacing: 0.5px;
+    display: flex;
+    alignItems: center;
+}
+
+.contact-section-container .form-input {
+    border: none !important;
+    borderBottom: 2px solid #e0e0e0 !important;
+    borderRadius: 0 !important;
+    padding: 12px 0 !important;
+    fontSize: 16px !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+    boxShadow: none !important;
+}
+
+.contact-section-container .form-textarea {
+    border: none !important;
+    borderBottom: 2px solid #e0e0e0 !important;
+    borderRadius: 0 !important;
+    padding: 12px 0 !important;
+    fontSize: 16px !important;
+    background: transparent !important;
+    transition: all 0.3s ease !important;
+    boxShadow: none !important;
+    resize: none !important;
+}
+
+.contact-section-container .submit-button {
+    background: #000000 !important;
+    border: none !important;
+    borderRadius: 0 !important;
+    height: 50px !important;
+    fontSize: 14px !important;
+    fontWeight: 500 !important;
+    color: #ffffff !important;
+    width: 100% !important;
+    textTransform: uppercase !important;
+    letterSpacing: 1px !important;
+    transition: all 0.3s ease !important;
+    boxShadow: none !important;
+    display: flex !important;
+    alignItems: center !important;
+    justifyContent: center !important;
+}
+
+.contact-section-container .submit-button:hover {
+    background: #333333 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Message Display Styles */
+.contact-section-container .message-display {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid;
+    animation: slideIn 0.3s ease;
+}
+
+.contact-section-container .message-display.success {
+    background: #f6ffed;
+    border-color: #b7eb8f;
+    color: #52c41a;
+}
+
+.contact-section-container .message-display.error {
+    background: #fff2f0;
+    border-color: #ffccc7;
+    color: #ff4d4f;
+}
+
+.contact-section-container .message-display.warning {
+    background: #fffbe6;
+    border-color: #ffe58f;
+    color: #faad14;
+}
+
+.contact-section-container .message-content {
+    text-align: left;
+}
+
+.contact-section-container .message-title {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.contact-section-container .message-description {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-section-content {
@@ -280,6 +414,9 @@
 
     .contact-section-content h2 {
         font-size: 18px;
+    }
+    .contact-section-content{
+        flex-direction: column;
     }
 }
 
@@ -334,5 +471,103 @@
     .contact-section-container .download-icon {
         width: 45px;
         height: 45px;
+    }
+}
+
+/* Regulatory Table Styles */
+.contact-section-container .tableContainer {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-section-container .regulatory-table {
+    width: 100%;
+    max-width: 900px;
+    overflow-x: auto;
+}
+
+.contact-section-container .regulatory-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #1e3a8a;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+}
+
+.contact-section-container .regulatory-table thead th {
+    background: #e2e8f0;
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 18px 15px;
+    text-align: center;
+    border: 1px solid #1e3a8a;
+    position: relative;
+}
+
+.contact-section-container .regulatory-table thead th:first-child {
+    text-align: left;
+    font-weight: 800;
+}
+
+.contact-section-container .regulatory-table tbody td {
+    background: #f8fafc;
+    color: #1e3a8a;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 16px 15px;
+    text-align: center;
+    border: 1px solid #60a5fa;
+    transition: background-color 0.2s ease;
+}
+
+.contact-section-container .regulatory-table tbody td:first-child {
+    background: #e2e8f0;
+    font-weight: 600;
+    text-align: left;
+    color: #1e3a8a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.contact-section-container .regulatory-table tbody tr:hover td {
+    background: #e0f2fe;
+}
+
+.contact-section-container .regulatory-table tbody tr:hover td:first-child {
+    background: #cbd5e1;
+}
+
+/* Responsive Table Design */
+@media (max-width: 768px) {
+    .contact-section-container .regulatory-table {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .contact-section-container .regulatory-table table {
+        font-size: 12px;
+    }
+    
+    .contact-section-container .regulatory-table thead th,
+    .contact-section-container .regulatory-table tbody td {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section-container .regulatory-table thead th,
+    .contact-section-container .regulatory-table tbody td {
+        padding: 10px 6px;
+        font-size: 11px;
+    }
+    
+    .contact-section-container .regulatory-table {
+        margin: 0 5px;
     }
 }
