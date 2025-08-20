@@ -1,20 +1,121 @@
 import React from "react";
 import "./ContactSection.css";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, notification } from "antd";
 import { FaUser, FaEnvelope, FaPhone, FaComment, FaMapMarkerAlt, FaGlobe } from "react-icons/fa";
+
 const ContactSection = () => {
     const [form] = Form.useForm();
+    const [loading, setLoading] = React.useState(false);
 
-    const onFinish = (values) => {
-        console.log('Form values:', values);
-        // Handle form submission here
+    const onFinish = async (values) => {
+        setLoading(true);
+        try {
+            // Simulate API call - replace with actual API endpoint
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // Show success notification
+            notification.success({
+                message: 'Message Sent Successfully!',
+                description: 'Thank you for contacting Munoth Capital. We will get back to you soon.',
+                placement: 'topRight',
+                duration: 5,
+                style: {
+                    borderRadius: '8px',
+                    border: '2px solid #52c41a',
+                },
+            });
+
+            // Reset form after successful submission
+            form.resetFields();
+
+        } catch (error) {
+            // Show error notification
+            notification.error({
+                message: 'Message Failed to Send',
+                description: 'Please try again later or contact us directly.',
+                placement: 'topRight',
+                duration: 5,
+                style: {
+                    borderRadius: '8px',
+                    border: '2px solid #ff4d4f',
+                },
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const onFinishFailed = (errorInfo) => {
+        notification.warning({
+            message: 'Please Check Your Input',
+            description: 'Please fill in all required fields correctly.',
+            placement: 'topRight',
+            duration: 4,
+            style: {
+                borderRadius: '8px',
+                border: '2px solid #faad14',
+            },
+        });
     };
 
     return (
-       <>
-       <div className="contact-section-container paddingTop100px">
+        <>
+            <div className="contact-section-container paddingTop100px">
                 <div className="contact-section-content paddingSide">
-                    <h3>Munoth Capital</h3>
+                    <div>
+                        <h3>Munoth Capital</h3>
+                        <div className="InfoContactContainer">
+                            <div className="info-grid">
+                                {/* Column 1: Compliance Officer */}
+                                <div className="info-column">
+                                    <h4>Compliance Officer</h4>
+                                    <div className="info-details">
+                                        <p>Siddharth S. Jain</p>
+                                        <p>Phone: 079-26937954</p>
+                                        <p>Email: <a href="mailto:sjain@munoth.com">sjain@munoth.com</a></p>
+                                    </div>
+                                </div>
+
+                                {/* Column 2: Investor Grievance */}
+                                <div className="info-column">
+                                    <h4>Investor Grievance</h4>
+                                    <div className="info-details">
+                                        <p><a href="mailto:grievances@munoth.com">grievances@munoth.com</a></p>
+                                        <p><a href="#" className="escalation-link">Escalation Matrix</a></p>
+                                    </div>
+                                </div>
+
+                                {/* Column 3: Standard Set of Client Registration Form */}
+                                <div className="info-column">
+                                    <h4>Standard Set of Client Registration Form</h4>
+                                    <div className="download-section">
+                                        {/* <div className="download-icon">
+                                            <div className="pdf-icon">
+                                                <span>PDF</span>
+                                                <span className="download-arrow">↓</span>
+                                            </div>
+                                        </div> */}
+                                        <a href="#" className="download-link">Download</a>
+                                    </div>
+                                </div>
+
+                                {/* Column 4: Saral Account Opening Form */}
+                                <div className="info-column">
+                                    <h4>Saral Account Opening Form</h4>
+                                    <div className="download-section">
+                                        {/* <div className="download-icon">
+                                            <div className="pdf-icon">
+                                                <span>PDF</span>
+                                                <span className="download-arrow">↓</span>
+                                            </div>
+                                        </div> */}
+                                        <a href="#" className="download-link">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="contact-info-container">
                         <div>
                             <h2>Corporate office & Registered Office</h2>
@@ -40,7 +141,7 @@ const ContactSection = () => {
                             <div className="contact-form-container marginTop80px">
                                 <div style={{
                                     background: 'rgba(255, 255, 255, 0.98)',
-                                    padding: '40px',
+                                    padding: '20px',
                                     borderRadius: '20px',
                                     boxShadow: '0 20px 60px rgba(0, 0, 0, 0.08)',
                                     border: '1px solid rgba(0, 0, 0, 0.05)',
@@ -62,8 +163,10 @@ const ContactSection = () => {
                                     <Form
                                         form={form}
                                         onFinish={onFinish}
+                                        onFinishFailed={onFinishFailed}
                                         layout="vertical"
                                         size="large"
+                                        loading={loading}
                                     >
                                         <Form.Item
                                             name="name"
@@ -237,6 +340,7 @@ const ContactSection = () => {
                                             <Button
                                                 type="primary"
                                                 htmlType="submit"
+                                                loading={loading}
                                                 style={{
                                                     background: '#000',
                                                     border: 'none',
@@ -255,16 +359,20 @@ const ContactSection = () => {
                                                     justifyContent: 'center'
                                                 }}
                                                 onMouseEnter={(e) => {
-                                                    e.target.style.background = '#333';
-                                                    e.target.style.transform = 'translateY(-2px)';
+                                                    if (!loading) {
+                                                        e.target.style.background = '#333';
+                                                        e.target.style.transform = 'translateY(-2px)';
+                                                    }
                                                 }}
                                                 onMouseLeave={(e) => {
-                                                    e.target.style.background = '#000';
-                                                    e.target.style.transform = 'translateY(0)';
+                                                    if (!loading) {
+                                                        e.target.style.background = '#000';
+                                                        e.target.style.transform = 'translateY(0)';
+                                                    }
                                                 }}
                                             >
-                                                <FaEnvelope style={{ marginRight: '8px', fontSize: '16px' }} />
-                                                Send Message
+                                                {!loading && <FaEnvelope style={{ marginRight: '8px', fontSize: '16px' }} />}
+                                                {loading ? 'Sending...' : 'Send Message'}
                                             </Button>
                                         </Form.Item>
                                     </Form>
@@ -274,7 +382,7 @@ const ContactSection = () => {
                     </div>
                 </div>
             </div>
-       </>
+        </>
     )
 }
 
