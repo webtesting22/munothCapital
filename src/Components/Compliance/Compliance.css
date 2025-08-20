@@ -263,14 +263,13 @@
     background: #ffffff;
 }
 
-.mobile-categories-list {
+.ComplianceContainer .mobile-categories-list {
     display: flex;
     flex-direction: column;
     background: #ffffff;
-    gap: 10px;
 }
 
-.mobile-category-item {
+.ComplianceContainer .mobile-category-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -283,11 +282,11 @@
     overflow: hidden;
 }
 
-.mobile-category-item:last-child {
+.ComplianceContainer .mobile-category-item:last-child {
     border-bottom: none;
 }
 
-.mobile-category-item::before {
+.ComplianceContainer .mobile-category-item::before {
     content: '';
     position: absolute;
     left: 0;
@@ -299,22 +298,22 @@
     z-index: 1;
 }
 
- .mobile-category-item:hover::before {
+.ComplianceContainer .mobile-category-item:hover::before {
     width: 4px;
 }
 
-.mobile-category-item:hover {
+.ComplianceContainer .mobile-category-item:hover {
     background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
     padding-left: 32px;
     transform: translateX(4px);
 }
 
-.mobile-category-item:active {
+.ComplianceContainer .mobile-category-item:active {
     background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
     transform: translateX(2px) scale(0.98);
 }
 
-.mobile-category-item .category-content {
+.ComplianceContainer .mobile-category-item .category-content {
     display: flex;
     align-items: center;
     gap: 16px;
@@ -322,7 +321,7 @@
     position: relative;
 }
 
-.mobile-category-item .category-icon {
+.ComplianceContainer .mobile-category-item .category-icon {
     width: 40px;
     height: 40px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -336,14 +335,14 @@
     border: 2px solid #e9ecef;
 }
 
- .mobile-category-item:hover .category-icon {
+.ComplianceContainer .mobile-category-item:hover .category-icon {
     background: linear-gradient(135deg, #000 0%, #333 100%);
     color: #ffffff;
     border-color: #000;
     transform: scale(1.1) rotate(5deg);
 }
 
- .mobile-category-item .category-text {
+.ComplianceContainer .mobile-category-item .category-text {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -703,7 +702,14 @@
         padding: 10px 16px;
     }
 
-   
+    .ComplianceContainer .mobile-menu-btn {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+    }
+
     .ComplianceContainer .mobile-category-header {
         padding: 14px;
         margin-bottom: 16px;
@@ -721,6 +727,22 @@
         padding: 10px 16px;
         font-size: 14px;
     }
+
+    .ComplianceContainer .mobile-categories-modal .ant-modal-header {
+        padding: 16px 20px;
+    }
+
+    .ComplianceContainer .mobile-categories-modal .ant-modal-title {
+        font-size: 18px;
+    }
+
+    .ComplianceContainer .mobile-category-item {
+        padding: 16px 20px;
+    }
+
+    .ComplianceContainer .mobile-category-item span {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -736,6 +758,13 @@
         padding: 12px;
     }
 
+    .ComplianceContainer .mobile-menu-btn {
+        bottom: 15px;
+        left: 15px;
+        width: 45px;
+        height: 45px;
+        font-size: 11px;
+    }
 }
 
 /* Hover Effects */
@@ -819,4 +848,36 @@
 
 .ComplianceContainer .mobile-categories-modal .mobile-category-item.active:hover .category-description {
     color: #e0e0e0 !important;
+}
+
+/* Mobile Menu Button */
+.ComplianceContainer .mobile-menu-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.ComplianceContainer .mobile-menu-btn:hover {
+    background: #333;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.ComplianceContainer .mobile-menu-btn:active {
+    transform: scale(0.95);
 }
