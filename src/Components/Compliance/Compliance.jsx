@@ -77,56 +77,56 @@ const Compliance = () => {
                 title: "DP Rights & Obligation",
                 size: "100 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/DP Rights & Obligation.pdf"
+                filePath: "/Documents/Compliance/Documents/DP Rights & Obligation.pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Account Opening Step by Step Guide",
                 size: "160 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Account Opening Step by Step Guide.pdf"
+                filePath: "/Documents/Compliance/Documents/Account Opening Step by Step Guide.pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Annexure A - Details of Mandatory Display",
                 size: "250 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Annexure A - Details of Mandatory Display.pdf"
+                filePath: "/Documents/Compliance/Documents/Annexure A - Details of Mandatory Display.pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Filing of Compliant Step by Step Guide",
                 size: "102 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Filing of Compliant Step by Step Guide.pdf"
+                filePath: "/Documents/Compliance/Documents/Filing of Compliant Step by Step Guide.pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Guidance Note - Do's and Don'ts for Trading on the Stock Exchange(s) for Investors",
                 size: "108 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Guidance Note - Do's and Don'ts for Trading on the Stock Exchange(s) for Investors.pdf"
+                filePath: "/Documents/Compliance/Documents/Guidance Note - Do's and Don'ts for Trading on the Stock Exchange(s) for Investors.pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Mandatory Document dealing with Policy and Procedures",
                 size: "102 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Mandatory Document dealing with Policy and Procedures .pdf"
+                filePath: "/Documents/Compliance/Documents/Mandatory Document dealing with Policy and Procedures .pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Rights and Obligations of Stock Brokers, Sub-Brokers and Clients",
                 size: "165 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Rights and Obligations of Stock Brokers, Sub-Brokers and Clients .pdf"
+                filePath: "/Documents/Compliance/Documents/Rights and Obligations of Stock Brokers, Sub-Brokers and Clients .pdf"
             },
             {
                 date: "01 Jan, 2024",
                 title: "Risk Disclosure Document for Capital Market and Derivatives Segments",
                 size: "106 KB",
                 type: "PDF",
-                filePath: "/Documents/Documents/Risk Disclosure Document for Capital Market and Derivatives Segments.pdf"
+                filePath: "/Documents/Compliance/Documents/Risk Disclosure Document for Capital Market and Derivatives Segments.pdf"
             }
         ]
     };
@@ -196,31 +196,31 @@ const Compliance = () => {
                     .then(blob => {
                         // Create object URL from blob
                         const url = window.URL.createObjectURL(blob);
-                        
+
                         // Create temporary link element
                         const link = document.createElement('a');
                         link.href = url;
-                        
+
                         // Set proper filename with extension
                         const fileExtension = document.type ? document.type.toLowerCase() : 'pdf';
                         link.download = `${document.title}.${fileExtension}`;
-                        
+
                         // Set other attributes
                         link.style.display = 'none';
-                        
+
                         // Append to body, click, and remove
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
-                        
+
                         // Clean up object URL
                         window.URL.revokeObjectURL(url);
-                        
+
                         console.log(`Download completed: ${document.title} (${fileExtension})`);
                     })
                     .catch(error => {
                         console.error('Fetch download error:', error);
-                        
+
                         // Fallback: use simple link download
                         const link = document.createElement('a');
                         link.href = document.filePath;
@@ -228,17 +228,17 @@ const Compliance = () => {
                         link.download = `${document.title}.${fileExtension}`;
                         link.style.display = 'none';
                         link.target = '_blank';
-                        
+
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
-                        
+
                         console.log(`Fallback download initiated: ${document.title}`);
                     });
-                
+
             } catch (error) {
                 console.error('Download error:', error);
-                
+
                 // Final fallback: open in new tab
                 try {
                     window.open(document.filePath, '_blank');
@@ -407,34 +407,30 @@ const Compliance = () => {
                                 {selectedCategory === "Investor Charters" ? (
                                     // Show Documents directly for Investor Charters
                                     <>
-                                        <h3 style={{ marginBottom: "20px" }}>Investor Charter Documents</h3>
-                                        <motion.div
-                                            className="documents-grid"
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.6, ease: "easeOut" }}
-                                        >
+                                        <h3>Investor Charter Documents</h3>
+                                        {/* <br /> */}
+                                        <div className="documents-grid">
                                             {documents["Investor Charters"] && documents["Investor Charters"].map((doc, index) => (
                                                 <div key={`investor-charter-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
                                                             {/* <button
-                                                                className="action-btn download-btn"
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
@@ -444,39 +440,35 @@ const Compliance = () => {
                                                     </div>
                                                 </div>
                                             ))}
-                                        </motion.div>
+                                        </div>
                                     </>
                                 ) : selectedCategory === "Investor Complaints Data" ? (
                                     // Show Documents directly for Investor Complaints Data
                                     <>
-                                        <h3 style={{ marginBottom: "20px" }}>Investor Complaints Data Document</h3>
-                                        <motion.div
-                                            className="documents-grid"
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.6, ease: "easeOut" }}
-                                        >
+                                        <h3>Investor Complaints Data Document</h3>
+                                        {/* <br /> */}
+                                        <div className="documents-grid">
                                             {documents["Investor Complaints Data"] && documents["Investor Complaints Data"].map((doc, index) => (
                                                 <div key={`investor-complaints-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View XLSX"
                                                             >
                                                                 View
                                                             </button>
                                                             {/* <button
-                                                                className="action-btn download-btn"
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download XLSX"
                                                             >
@@ -486,40 +478,35 @@ const Compliance = () => {
                                                     </div>
                                                 </div>
                                             ))}
-                                        </motion.div>
+                                        </div>
                                     </>
                                 ) : selectedCategory === "Documents" ? (
                                     // Show Documents directly for Documents
                                     <>
-                                        <h3 style={{ marginBottom: "20px" }}>Compliance Documents</h3>
-
-                                        <motion.div
-                                            className="documents-grid"
-                                            initial={{ opacity: 0, y: 20 }}
-                                            whileInView={{ opacity: 1, y: 0 }}
-                                            viewport={{ once: true }}
-                                            transition={{ duration: 0.6, ease: "easeOut" }}
-                                        >
+                                        <h3>Compliance Documents</h3>
+                                        {/* <br /> */}
+                                        <div className="documents-grid">
                                             {documents["Documents"] && documents["Documents"].map((doc, index) => (
                                                 <div key={`documents-${index}`} className="document-card">
                                                     <div className="document-content">
                                                         <div className="document-info">
-                                                            <h4>{doc.title}</h4>
+                                                            <h4 className="document-title">{doc.title}</h4>
                                                             <div className="document-meta">
-                                                                <span className="date">{doc.date}</span>
-                                                                <span className="size">{doc.size}</span>
+                                                                <span className="document-date">{doc.date}</span>
+                                                                <span className="document-size">{doc.size}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
-                                                        <div className="document-actions">
+                                                        <div className="action-btn">
                                                             <button
-                                                                className="action-btn view-btn"
+                                                                className="view-btn"
                                                                 onClick={() => handleView(doc)}
                                                                 title="View PDF"
                                                             >
                                                                 View
                                                             </button>
                                                             {/* <button
-                                                                className="action-btn download-btn"
+                                                                className="download-btn"
                                                                 onClick={() => handleDownload(doc)}
                                                                 title="Download PDF"
                                                             >
@@ -529,7 +516,7 @@ const Compliance = () => {
                                                     </div>
                                                 </div>
                                             ))}
-                                        </motion.div>
+                                        </div>
                                     </>
                                 ) : (
                                     // Show folders for other categories
@@ -599,22 +586,23 @@ const Compliance = () => {
                                                     <div key={`${selectedFolder}-${index}`} className="document-card">
                                                         <div className="document-content">
                                                             <div className="document-info">
-                                                                <h4>{doc.title}</h4>
+                                                                <h4 className="document-title">{doc.title}</h4>
                                                                 <div className="document-meta">
-                                                                    <span className="date">{doc.date}</span>
-                                                                    <span className="size">{doc.size}</span>
+                                                                    <span className="document-date">{doc.date}</span>
+                                                                    <span className="document-size">{doc.size}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
-                                                            <div className="document-actions">
+                                                            <div className="action-btn">
                                                                 <button
-                                                                    className="action-btn view-btn"
+                                                                    className="view-btn"
                                                                     onClick={() => handleView(doc)}
                                                                     title="View PDF"
                                                                 >
                                                                     View
                                                                 </button>
                                                                 {/* <button
-                                                                    className="action-btn download-btn"
+                                                                    className="download-btn"
                                                                     onClick={() => handleDownload(doc)}
                                                                     title="Download PDF"
                                                                 >

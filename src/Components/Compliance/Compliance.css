@@ -93,20 +93,23 @@
 
 .ComplianceContainer .category-item.active {
     background: #000;
-    color: white;
+    color: white !important;
     border-color: #000;
 }
 
-.ComplianceContainer .category-item span {
-    color: inherit;
-    font-size: 14px;
+.ComplianceContainer .category-item.active span {
     font-weight: 500;
+    color: white !important;
 }
 
 .ComplianceContainer .category-item .arrow {
     color: #999;
-    font-size: 18px;
-    transition: all 0.2s ease;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.ComplianceContainer .category-item:hover .arrow {
+    transform: translateX(3px);
 }
 
 .ComplianceContainer .category-item.active .arrow {
@@ -115,399 +118,143 @@
 
 /* Content Section */
 .ComplianceContainer .content-section {
-    padding: 25px;
-}
-
-/* Mobile Category Header */
-.ComplianceContainer .mobile-category-header {
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-    flex-direction: column;
-    margin-bottom: 25px;
-    padding: 20px;
-    background: #fafafa;
-    border-radius: 12px;
-    border: 1px solid #f0f0f0;
-}
-
-.ComplianceContainer .mobile-category-header h3 {
-    color: #333;
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-}
-
-.ComplianceContainer .mobile-change-category-btn {
-    background: #000;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-}
-
-.ComplianceContainer .mobile-change-category-btn:hover {
-    background: #333;
-}
-
-/* Content Header */
-.ComplianceContainer .content-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.ComplianceContainer .content-header h3 {
-    color: #333;
-    font-size: 22px;
-    font-weight: 600;
-    margin: 0;
-}
-
-/* Back Button */
-.ComplianceContainer .back-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: #f5f5f5;
-    color: #666;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 13px;
-    font-weight: 500;
-}
-
-.ComplianceContainer .back-btn:hover {
-    background: #e8e8e8;
-    color: #333;
-}
-
-/* Folders Grid */
-.ComplianceContainer .folders-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 16px;
-}
-
-.ComplianceContainer .folder-card {
+    padding: 30px;
     background: white;
-    border: 1px solid #f0f0f0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    overflow: hidden;
 }
 
-.ComplianceContainer .folder-card:hover {
-    border-color: #000;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-}
-
-.ComplianceContainer .folder-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.ComplianceContainer .folder-info h4 {
+.ComplianceContainer .content-section h3 {
     color: #333;
-    font-size: 16px;
+    font-size: 24px;
     font-weight: 600;
-    margin: 0 0 4px 0;
-}
-
-.ComplianceContainer .folder-info p {
-    color: #999;
-    font-size: 13px;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 /* Documents Grid */
 .ComplianceContainer .documents-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
+/* Document Cards */
 .ComplianceContainer .document-card {
     background: white;
-    border: 1px solid #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.2s ease;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .ComplianceContainer .document-card:hover {
-    border-color: #000;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: #d0d0d0;
 }
 
 .ComplianceContainer .document-content {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .ComplianceContainer .document-info h4 {
     color: #333;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
-    margin: 0 0 12px 0;
+    margin: 0 0 10px 0;
     line-height: 1.4;
 }
 
 .ComplianceContainer .document-meta {
     display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.ComplianceContainer .document-meta .date,
-.ComplianceContainer .document-meta .size {
-    color: #999;
+.ComplianceContainer .document-meta span {
+    background: #f5f5f5;
+    color: #666;
+    padding: 4px 8px;
+    border-radius: 6px;
     font-size: 12px;
     font-weight: 500;
 }
 
-.ComplianceContainer .document-actions {
+/* Action Buttons */
+.ComplianceContainer .action-btn {
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.ComplianceContainer .action-btn {
+.ComplianceContainer .view-btn,
+.ComplianceContainer .download-btn {
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
     transition: all 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    min-width: 80px;
+    text-align: center;
 }
 
 .ComplianceContainer .view-btn {
-    background: #f0f0f0;
-    color: #666;
+    background: #000;
+    color: white;
 }
 
 .ComplianceContainer .view-btn:hover {
-    background: #e0e0e0;
-    color: #333;
+    background: #333;
+    transform: translateY(-1px);
 }
 
 .ComplianceContainer .download-btn {
-    background: #000;
-    color: white;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #d0d0d0;
 }
 
 .ComplianceContainer .download-btn:hover {
-    background: #333;
-}
-
-/* Mobile Menu Button */
-.ComplianceContainer .mobile-menu-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background: #000;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 500;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: all 0.2s ease;
-}
-
-.ComplianceContainer .mobile-menu-btn:hover {
-    background: #333;
-    transform: scale(1.05);
-}
-
-/* Mobile Categories Modal */
-.ComplianceContainer .mobile-categories-modal .ant-modal-content {
-    border-radius: 16px;
-}
-
-.ComplianceContainer .mobile-categories-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.ComplianceContainer .mobile-category-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 20px;
-    background: white;
-    border: 1px solid #f0f0f0;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.ComplianceContainer .mobile-category-item:hover {
-    background: #fafafa;
-    border-color: #e0e0e0;
-}
-
-.ComplianceContainer .mobile-category-item span {
-    font-size: 15px;
-    font-weight: 500;
-    color: #333;
-}
-
-.ComplianceContainer .mobile-category-item .arrow {
-    color: #999;
-    font-size: 18px;
-}
-
-/* PDF Viewer Modal */
-.ComplianceContainer .pdf-viewer-modal .ant-modal-content {
-    border-radius: 16px;
-}
-
-.ComplianceContainer .pdf-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.ComplianceContainer .pdf-modal-header span {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333;
-}
-
-.ComplianceContainer .close-btn {
-    background: #f0f0f0;
-    color: #666;
-    border: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-    font-size: 18px;
-    font-weight: 300;
-}
-
-.ComplianceContainer .close-btn:hover {
     background: #e0e0e0;
-    color: #333;
+    transform: translateY(-1px);
 }
 
-.ComplianceContainer .pdf-viewer-content {
-    padding: 20px 0;
-}
-
-.mobile-categories-list .mobile-category-item {
-    display: flex
-;
-    justify-content: space-between;
-    background: black;
-    color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-/* Responsive adjustments */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
-    .ComplianceContainer .compliance-content{
-        min-height: 100% !important;
-    }
-    .ComplianceContainer .mobile-category-header{
-        gap: 20px;
-    }
     .ComplianceContainer .compliance-content {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
-
+    
     .ComplianceContainer .categories-sidebar {
-        display: none;
+        order: 2;
+        border-right: none;
+        border-top: 1px solid #f0f0f0;
     }
-
+    
     .ComplianceContainer .content-section {
+        order: 1;
         padding: 20px;
     }
-
-    .ComplianceContainer .folders-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 12px;
-    }
-
+    
     .ComplianceContainer .documents-grid {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 15px;
     }
-}
-
-@media (max-width: 480px) {
-    .ComplianceContainer .financial-wrapper {
-        padding: 0 15px;
-    }
-
-    .ComplianceContainer .content-section {
+    
+    .ComplianceContainer .document-card {
         padding: 15px;
     }
-
-    .ComplianceContainer .mobile-menu-btn {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        display: none;
+    
+    .ComplianceContainer .action-btn {
+        flex-direction: column;
     }
-
-    .ComplianceContainer .title-section h2 {
-        font-size: 24px;
+    
+    .ComplianceContainer .view-btn,
+    .ComplianceContainer .download-btn {
+        width: 100%;
     }
-
-    .ComplianceContainer .content-header h3 {
-        font-size: 18px;
-    }
-}
-
-/* Hover Effects */
-.ComplianceContainer .folder-card:hover .arrow,
-.ComplianceContainer .document-card:hover .arrow {
-    color: #000;
-}
-
-/* Smooth transitions */
-.ComplianceContainer * {
-    transition: all 0.2s ease;
-}
-
-/* Focus states for accessibility */
-.ComplianceContainer .action-btn:focus,
-.ComplianceContainer .category-item:focus,
-.ComplianceContainer .folder-card:focus {
-    outline: 2px solid #000;
-    outline-offset: 2px;
 }

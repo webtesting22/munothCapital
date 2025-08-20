@@ -93,8 +93,13 @@
 
 .financial-documents-container .category-item.active {
     background: #000;
-    color: white;
+    color: white !important;
     border-color: #000;
+}
+
+.financial-documents-container .category-item.active span {
+    font-weight: 500;
+    color: white !important;
 }
 
 .financial-documents-container .category-item span {
@@ -190,12 +195,20 @@
     background: #e8e8e8;
     color: #333;
 }
-
+.back-btn{
+    margin-bottom: 20px;
+}
 /* Folders Grid */
+
+.view-btn{
+    background-color: #000 !important;
+    color: white !important;
+}
 .financial-documents-container .folders-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 16px;
+    margin-top: 20px;
 }
 
 .financial-documents-container .folder-card {
@@ -238,6 +251,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 16px;
+    margin-top: 20px;
 }
 
 .financial-documents-container .document-card {

@@ -1084,7 +1084,7 @@ const FinancialDocuments = () => {
                                     // Show Documents directly for Annual Return with folder-like styling
                                     <>
                                         <h3>Annual Return Documents</h3>
-                                        <br />
+                                        {/* <br /> */}
                                         <div className="documents-grid">
                                             {documents["2022-23"] && documents["2022-23"].map((doc, index) => (
                                                 <div key={`2022-23-${index}`} className="document-card">
@@ -1094,7 +1094,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -1124,7 +1124,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -1154,7 +1154,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -1184,7 +1184,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -1214,7 +1214,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -1242,7 +1242,7 @@ const FinancialDocuments = () => {
                                     // Show Child Folders for Quarterly Reports
                                     <>
                                         <h3>Quarterly Reports - Select Category</h3>
-                                        <br />
+                                        {/* <br /> */}
                                         <div className="folders-grid">
                                             <div
                                                 className="folder-card"
@@ -1277,10 +1277,10 @@ const FinancialDocuments = () => {
                                             <button className="back-btn" onClick={handleBackToFolders}>
                                                 <FaArrowLeft /> Back to Quarterly Reports
                                             </button>
-                                            <br />
+                                            {/* <br /> */}
                                             <h3>Documents in {selectedFolder}</h3>
                                         </div>
-                                        <br />
+                                        {/* <br /> */}
 
                                         {selectedFolder === "Shareholding Pattern" ? (
                                             <div className="documents-grid">
@@ -1292,7 +1292,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1322,7 +1322,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1352,7 +1352,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1382,7 +1382,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1415,7 +1415,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1445,7 +1445,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1475,7 +1475,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1505,7 +1505,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1535,7 +1535,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1565,7 +1565,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1595,7 +1595,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1624,7 +1624,7 @@ const FinancialDocuments = () => {
                                     // Show Child Folders for Annual Results
                                     <>
                                         <h3>Annual Results - Select Category</h3>
-                                        <br />
+                                        {/* <br /> */}
                                         <div className="folders-grid">
                                             <div
                                                 className="folder-card"
@@ -1659,11 +1659,11 @@ const FinancialDocuments = () => {
                                             <button className="back-btn" onClick={handleBackToFolders}>
                                                 <FaArrowLeft /> Back to Annual Results
                                             </button>
-                                            <br />
+                                            {/* <br /> */}
 
                                             <h3>Documents in {selectedFolder}</h3>
                                         </div>
-                                        <br />
+                                        {/* <br /> */}
                                         {selectedFolder === "Audited Financial Results" ? (
                                             <div className="documents-grid">
                                                 {documents["Audited Financial Results 2017-18"] && documents["Audited Financial Results 2017-18"].map((doc, index) => (
@@ -1674,7 +1674,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1704,7 +1704,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1734,7 +1734,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1764,7 +1764,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1797,7 +1797,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1827,7 +1827,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1857,7 +1857,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1887,7 +1887,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1917,7 +1917,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1947,7 +1947,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -1977,7 +1977,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -2007,7 +2007,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -2037,7 +2037,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -2067,7 +2067,7 @@ const FinancialDocuments = () => {
                                                                 <div className="document-meta">
                                                                     <span className="document-date">{doc.date}</span>
                                                                     <span className="document-size">{doc.size}</span>
-                                                                    <span className="document-type">{doc.type}</span>
+                                                                    {/* <span className="document-type">{doc.type}</span> */}
                                                                 </div>
                                                             </div>
                                                             <div className="action-btn">
@@ -2096,7 +2096,7 @@ const FinancialDocuments = () => {
                                     // Show Documents directly for Announcements with folder-like styling
                                     <>
                                         <h3>Announcements Documents</h3>
-                                        <br />
+                                        {/* <br /> */}
                                         <div className="documents-grid">
                                             {documents["2024"] && documents["2024"].map((doc, index) => (
                                                 <div key={`2024-${index}`} className="document-card">
@@ -2106,7 +2106,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2136,7 +2136,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2166,7 +2166,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2196,7 +2196,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2226,7 +2226,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2256,7 +2256,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2286,7 +2286,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2314,7 +2314,7 @@ const FinancialDocuments = () => {
                                     // Show Documents directly for Documents and Others with folder-like styling
                                     <>
                                         <h3>Policies Documents</h3>
-                                        <br />
+                                        {/* <br /> */}
                                         <div className="documents-grid">
                                             {documents["Policies"] && documents["Policies"].map((doc, index) => (
                                                 <div key={`Policies-${index}`} className="document-card">
@@ -2324,7 +2324,7 @@ const FinancialDocuments = () => {
                                                             <div className="document-meta">
                                                                 <span className="document-date">{doc.date}</span>
                                                                 <span className="document-size">{doc.size}</span>
-                                                                <span className="document-type">{doc.type}</span>
+                                                                {/* <span className="document-type">{doc.type}</span> */}
                                                             </div>
                                                         </div>
                                                         <div className="action-btn">
@@ -2352,7 +2352,7 @@ const FinancialDocuments = () => {
                                     // Show Folders View for other categories
                                     <>
                                         <h3>{selectedCategory} Folders</h3>
-                                        <br />
+                                        {/* <br /> */}
                                         {folderStructure[selectedCategory] ? (
                                             <div className="folders-grid">
                                                 {folderStructure[selectedCategory].map((folderName, index) => (
