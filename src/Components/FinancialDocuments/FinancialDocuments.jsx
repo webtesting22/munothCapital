@@ -5,6 +5,7 @@ import "./FinancialDocuments.css";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa";
 
 const FinancialDocuments = () => {
     const [selectedCategory, setSelectedCategory] = useState("Annual Return");
