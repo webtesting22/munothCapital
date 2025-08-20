@@ -181,7 +181,6 @@
 /* Mobile Navigation Menu */
 .mobile-menu {
     position: fixed;
-    top: 200px;
     left: 0;
     right: 0;
     background: white;
@@ -192,12 +191,24 @@
     visibility: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Dynamic top position handled by JavaScript */
+    will-change: transform, opacity, visibility, top;
 }
 
 .mobile-menu.open {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+}
+
+/* Ensure smooth transitions for navigation height changes */
+.navigation-bar {
+    transition: height 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Prevent layout shifts during transitions */
+.mobile-menu {
+    transform-origin: top center;
 }
 
 .mobile-nav-link {
@@ -259,10 +270,7 @@
         display: flex;
     }
 
-    .mobile-menu {
-        top: 120px;
-    }
-
+    /* Mobile menu top position now handled dynamically by JavaScript */
     .nav-container {
         padding: 0 15px;
     }
@@ -286,10 +294,7 @@
         height: 70px;
     }
 
-    .mobile-menu {
-        top: 100px;
-    }
-
+    /* Mobile menu top position now handled dynamically by JavaScript */
     .nav-container {
         padding: 0 10px;
     }

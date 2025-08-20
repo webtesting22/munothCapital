@@ -7,12 +7,17 @@ import './NavigationBar.css';
 const NavigationBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [navHeight, setNavHeight] = useState(100); // Default height: 100px
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const scrolled = scrollPosition > 100;
             setIsScrolled(scrolled);
+
+            // Update navigation height based on scroll state
+            const newHeight = scrolled ? 70 : 100; // Scrolled: 70px, Default: 100px
+            setNavHeight(newHeight);
 
             // Add/remove body class for proper spacing
             if (scrolled) {
@@ -114,9 +119,10 @@ const NavigationBar = () => {
                 </motion.button>
             </div>
 
-            {/* Mobile Navigation Menu */}
+            {/* Mobile Navigation Menu - Dynamic positioning */}
             <motion.div
                 className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}
+                style={{ top: `${navHeight}px` }} // Dynamic top position
                 initial={{ opacity: 0, y: -20 }}
                 animate={{
                     opacity: isMobileMenuOpen ? 1 : 0,

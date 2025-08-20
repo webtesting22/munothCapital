@@ -26,7 +26,7 @@ const ReloadModelsSecond = ({ isOpen, onClose }) => {
                     borderBottom: 'none'
                 },
                 body: {
-                  padding: '10px 0px'
+                    padding: '10px 0px'
                 }
             }}
         >
@@ -124,7 +124,7 @@ const ReloadModelsSecond = ({ isOpen, onClose }) => {
                 <Link to="https://www.sebi.gov.in/reports-and-statistics/research/jan-2023/study-analysis-of-profit-and-loss-of-individual-traders-dealing-in-equity-fando-segment_67525.html" target="_blank" style={{ color: "red" }}><i>SEBI study dated January 25, 2023 on “Analysis of Profit and Loss of Individual Traders dealing in equity Futures and Options (F&O) Segment”, wherein Aggregate Level findings are based on annual Profit/Loss incurred by individual traders in equity F&O during FY 2021-22.</i></Link>
             </div>
 
-            <motion.div
+            {/* <motion.div
                 style={{ textAlign: 'center', marginTop: '30px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -152,7 +152,7 @@ const ReloadModelsSecond = ({ isOpen, onClose }) => {
                 >
                     I Understand the Risks
                 </motion.button>
-            </motion.div>
+            </motion.div> */}
         </Modal>
     );
 };

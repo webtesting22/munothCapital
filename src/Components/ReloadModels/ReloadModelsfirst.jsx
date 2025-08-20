@@ -100,7 +100,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 </p>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
                 style={{ textAlign: 'center', marginTop: '30px' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -128,7 +128,7 @@ const ReloadModelsfirst = ({ onClose }) => {
                 >
                     I Understand & Acknowledge
                 </motion.button>
-            </motion.div>
+            </motion.div> */}
         </Modal>
     );
 };
