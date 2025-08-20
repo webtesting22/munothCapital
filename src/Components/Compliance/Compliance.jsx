@@ -9,17 +9,66 @@ const Compliance = () => {
     const [pdfViewer, setPdfViewer] = useState({ isOpen: false, url: '', title: '' });
     const [isMobileModalOpen, setIsMobileModalOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [hasError, setHasError] = useState(false);
 
     // Detect mobile devices and handle resize
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         };
-
+        
         checkMobile();
         window.addEventListener('resize', checkMobile);
-
+        
         return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Reset component state when component mounts or route changes
+    useEffect(() => {
+        setIsLoading(true);
+        setHasError(false);
+        
+        try {
+            // Reset to default state when component mounts
+            setSelectedCategory("Investor Charters");
+            setSelectedFolder(null);
+            setPdfViewer({ isOpen: false, url: '', title: '' });
+            setIsMobileModalOpen(false);
+            
+            // Force a re-render to ensure content loads
+            const timer = setTimeout(() => {
+                // This will trigger a re-render
+                setSelectedCategory("Investor Charters");
+                setIsLoading(false);
+            }, 100);
+            
+            return () => {
+                clearTimeout(timer);
+            };
+        } catch (error) {
+            console.error('Error initializing Compliance:', error);
+            setHasError(true);
+            setIsLoading(false);
+        }
+    }, []);
+
+    // Additional effect to handle route changes
+    useEffect(() => {
+        // Reset state when component becomes active
+        const handleRouteChange = () => {
+            setSelectedCategory("Investor Charters");
+            setSelectedFolder(null);
+            setPdfViewer({ isOpen: false, url: '', title: '' });
+            setIsMobileModalOpen(false);
+        };
+
+        // Listen for route changes
+        window.addEventListener('focus', handleRouteChange);
+        
+        return () => {
+            window.removeEventListener('focus', handleRouteChange);
+        };
     }, []);
 
     const categories = [
@@ -291,9 +340,9 @@ const Compliance = () => {
     };
 
     return (
-        <div className="ComplianceContainer paddingTop200px">
+        <div className="ComplianceContainer paddingTop200px Container">
             {/* Mobile Floating Folder Button */}
-            {isMobile && (
+            {/* {isMobile && (
                 <motion.button
                     className="mobile-menu-btn"
                     onClick={handleMobileModalOpen}
@@ -305,30 +354,85 @@ const Compliance = () => {
                 >
                     <span>Menu</span>
                 </motion.button>
-            )}
+            )} */}
 
-            {/* Mobile Categories Modal */}
-            <Modal
-                title="Select Category"
-                open={isMobileModalOpen}
-                onCancel={handleMobileModalClose}
-                footer={null}
-                width="90%"
-                className="mobile-categories-modal"
-            >
-                <div className="mobile-categories-list">
-                    {categories.map((category) => (
-                        <div
-                            key={category}
-                            className="mobile-category-item"
-                            onClick={() => handleMobileCategoryClick(category)}
-                        >
-                            <span>{category}</span>
-                            <div className="arrow">→</div>
+                                {/* Mobile Categories Modal */}
+                    <Modal
+                        title="Select Category"
+                        open={isMobileModalOpen}
+                        onCancel={handleMobileModalClose}
+                        footer={null}
+                        width="90%"
+                        className="mobile-categories-modal"
+                    >
+                        <div className="mobile-categories-list">
+                            {categories.map((category) => {
+                                const getCategoryIcon = (cat) => {
+                                    switch (cat) {
+                                        case "Investor Charters":
+                                            return "📋";
+                                        case "Investor Complaints Data":
+                                            return "📊";
+                                        case "Documents":
+                                            return "📄";
+                                        case "Compliance Policies":
+                                            return "⚖️";
+                                        default:
+                                            return "📁";
+                                    }
+                                };
+
+                                const getCategoryDescription = (cat) => {
+                                    switch (cat) {
+                                        case "Investor Charters":
+                                            return "Depositories and stock broker charters";
+                                        case "Investor Complaints Data":
+                                            return "Complaint statistics and data";
+                                        case "Documents":
+                                            return "Account opening and trading guides";
+                                        case "Compliance Policies":
+                                            return "Corporate policies and procedures";
+                                        default:
+                                            return "Compliance documents and policies";
+                                    }
+                                };
+
+                                const getCategoryCount = (cat) => {
+                                    switch (cat) {
+                                        case "Investor Charters":
+                                            return 2;
+                                        case "Investor Complaints Data":
+                                            return 1;
+                                        case "Documents":
+                                            return 8;
+                                        case "Compliance Policies":
+                                            return 11;
+                                        default:
+                                            return 0;
+                                    }
+                                };
+
+                                return (
+                                    <div
+                                        key={category}
+                                        className={`mobile-category-item ${selectedCategory === category ? 'active' : ''}`}
+                                        onClick={() => handleMobileCategoryClick(category)}
+                                    >
+                                        <div className="category-content">
+                                            {/* <div className="category-icon">
+                                                {getCategoryIcon(category)}
+                                            </div> */}
+                                            <div className="category-text">
+                                                <div className="category-name">{category}</div>
+                                                {/* <div className="category-description">{getCategoryDescription(category)}</div> */}
+                                            </div>
+                                        </div>
+                                        <div className="arrow">→</div>
+                                    </div>
+                                );
+                            })}
                         </div>
-                    ))}
-                </div>
-            </Modal>
+                    </Modal>
 
             <div className="compliance-wrapper">
                 <motion.div
