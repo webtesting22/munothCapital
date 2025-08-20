@@ -353,13 +353,13 @@
     background: #ffffff;
 }
 
-.financial-documents-container .mobile-categories-list {
+.mobile-categories-list {
     display: flex;
     flex-direction: column;
     background: #ffffff;
 }
 
-.financial-documents-container .mobile-category-item {
+.mobile-category-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -782,7 +782,7 @@
 }
 
 @media (max-width: 768px) {
-    
+
 
     .financial-documents-container .financial-header {
         margin-bottom: 30px;
@@ -826,7 +826,7 @@
         border-radius: 10px;
     }
 
-   
+
 
     .financial-documents-container .mobile-category-header {
         padding: 16px;
@@ -844,9 +844,6 @@
 }
 
 @media (max-width: 480px) {
-    .financial-documents-container.Container {
-        padding: 0 12px;
-    }
 
     .financial-documents-container .financial-header {
         margin-bottom: 25px;
@@ -900,13 +897,6 @@
         padding: 10px 16px;
     }
 
-    .financial-documents-container .mobile-menu-btn {
-        bottom: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 12px;
-    }
 
     .financial-documents-container .mobile-category-header {
         padding: 14px;
@@ -950,9 +940,7 @@
 }
 
 @media (max-width: 360px) {
-    .financial-documents-container.Container {
-        padding: 0 10px;
-    }
+
 
     .financial-documents-container .content-section {
         padding: 12px;
@@ -963,13 +951,7 @@
         padding: 12px;
     }
 
-    .financial-documents-container .mobile-menu-btn {
-        bottom: 15px;
-        left: 15px;
-        width: 45px;
-        height: 45px;
-        font-size: 11px;
-    }
+
 }
 
 /* Hover Effects */
@@ -993,6 +975,7 @@
 
 /* Touch-friendly interactions for mobile */
 @media (hover: none) and (pointer: coarse) {
+
     .financial-documents-container .folder-card:hover,
     .financial-documents-container .document-card:hover,
     .financial-documents-container .category-item:hover {
@@ -1061,4 +1044,47 @@
 
 .financial-documents-container .mobile-menu-btn:active {
     transform: scale(0.95);
+}
+
+
+/* Mobile Menu Button */
+.financial-documents-container .mobile-menu-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.financial-documents-container .mobile-menu-btn:hover {
+    background: #333;
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.financial-documents-container .mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 480px) {
+    .financial-documents-container .mobile-menu-btn {
+        bottom: 25px;
+        left: 25px;
+        width: 55px;
+        height: 55px;
+        font-size: 13px;
+    }
 }

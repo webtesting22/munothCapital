@@ -263,13 +263,13 @@
     background: #ffffff;
 }
 
-.ComplianceContainer .mobile-categories-list {
+ .mobile-categories-list {
     display: flex;
     flex-direction: column;
     background: #ffffff;
 }
 
-.ComplianceContainer .mobile-category-item {
+ .mobile-category-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
