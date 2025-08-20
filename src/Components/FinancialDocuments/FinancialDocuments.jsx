@@ -3,6 +3,7 @@ import { Modal } from "antd";
 import { motion } from "framer-motion";
 import "./FinancialDocuments.css";
 import { FaArrowLeft } from "react-icons/fa";
+import { FaFilePdf } from "react-icons/fa";
 
 const FinancialDocuments = () => {
     const [selectedCategory, setSelectedCategory] = useState("Annual Return");
